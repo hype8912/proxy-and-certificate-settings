@@ -6,7 +6,8 @@
 | Arch Linux | Arch | archlinux:latest | 150MB | curl, unzip, step-cli.rpm| `/etc/ca-certificates/trust-source/anchors/` | `update-ca-trust extract` |
 | Clear Linux | Other Linux | clearlinux:latest | 69MB | | `/usr/local/share/ca-certificates/` | `update-ca-certificates` |
 | Crux | Other Linux | curx:latest | 152MB | | `/etc/ssl/certs` | |
-| Darwin | Unix | | | | | `security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain "$SSL_CA_CERT"`[^windows_mac] |
+| CoreOS[^coreos] | RPM | | | | `/etc/pki/ca-trust/source/anchors/` | `update-ca-certificates` |
+| Darwin | Unix | | | | `/Library/Keychains/System.keychain` | `security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain "$SSL_CA_CERT"`[^windows_mac] |
 | Debian Linux | Debian | debian:stable-slim<br>ubuntu:latest | 27MB<br>28MB | curl, ca-certificates, unzip | `/usr/local/share/ca-certificates/` | `update-ca-certificates` |
 | FreeBSD | Unix | | | | `/usr/local/share/certs/` | |
 | Gentoo Linux | Gentoo | gentoo/python:latest | 611MB | | `/usr/local/share/ca-certificates/` | `update-ca-certificates` |
@@ -29,6 +30,7 @@
 * [Unix Distro History Map](https://upload.wikimedia.org/wikipedia/commons/7/77/Unix_history-simple.svg)
 * https://github.com/casey/just
 
+[^coreos]: https://github.com/endocode/coreos-docs/blob/master/os/adding-certificate-authorities.md
 [^test_image]: Every attempt is made to find the recently updated images from known publishers but some images are very old or published by individuals and should be used at your own risk.
 [^image_size]: `Test Image Size` are approximate and mainly given for managing bandwidth when testing in a pipeline. Image sizes could change at any time.
 [^windows_mac]: https://manuals.gfi.com/en/kerio/connect/content/server-configuration/ssl-certificates/adding-trusted-root-certificates-to-the-server-1605.html

@@ -29,6 +29,7 @@ See also applicable [Proxy](proxy-environment-variables.md) environment variable
 | SYSTEM_CERTIFICATE_PATH[^haskell] | Haskell Stack | $SSL_CERT_DIR | %SSL_CERT_DIR% |
 | TENSORSTORE_CA_BUNDLE[^tensorstore] | TensorStore | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 | TENSORSTORE_CA_PATH[^tensorstore] | TensorStore | $SSL_CERT_DIR | %SSL_CERT_DIR% |
+| TLS_CA_FILE[^mongo] | MongoDB | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 
 # Optional Suggested
 | Variable name | Use | Linux Settings | Windows Settings |
@@ -44,15 +45,16 @@ See also applicable [Proxy](proxy-environment-variables.md) environment variable
 [^deno]: https://docs.deno.com/runtime/reference/env_variables/#std%2Fcli
 [^git_cainfo]: https://git-scm.com/docs/git-config#Documentation/git-config.txt-httpsslCAInfo
 [^git_capath]: https://git-scm.com/docs/git-config#Documentation/git-config.txt-httpsslCAPath
-[^megalinter]: https://megalinter.io/v5/reporters/GitlabCommentReporter/
 [^grype]: https://github.com/anchore/grype/issues/653
+[^haskell]: https://github.com/commercialhaskell/stack/blob/123622ab2a2b90d80fc617791b57e486aef725a1/doc/faq.md?plain=1#L218
 [^hex]: https://hexdocs.pm/hex/Mix.Tasks.Hex.Config.html
 [^maven]: https://maven.apache.org/guides/mini/guide-repository-ssl.html
+[^megalinter]: https://megalinter.io/v5/reporters/GitlabCommentReporter/
+[^mongo]: https://www.mongodb.com/docs/languages/cpp/cpp-driver/current/connect/tls/#specify-a-ca-file
 [^nix]: https://wiki.nixos.org/wiki/Enterprise
 [^node]: https://nodejs.org/docs/latest-v4.x/api/cli.html#cli_node_extra_ca_certs_file
 [^pip]: https://pip.pypa.io/en/latest/topics/https-certificates/
-[^tanzu]: https://github.com/halkyonio/tap
 [^py_requests]: https://requests.readthedocs.io/en/latest/user/advanced/#proxies
 [^openssl]: https://docs.openssl.org/master/man3/SSL_CTX_load_verify_locations/#description
-[^haskell]: https://github.com/commercialhaskell/stack/blob/123622ab2a2b90d80fc617791b57e486aef725a1/doc/faq.md?plain=1#L218
+[^tanzu]: https://github.com/halkyonio/tap
 [^tensorstore]: https://google.github.io/tensorstore/environment.html#tls-ca-certificates
