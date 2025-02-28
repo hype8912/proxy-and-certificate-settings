@@ -97,7 +97,7 @@ These are known package managers but require more research and testing before be
 | crew | ChromeBrew[^crew] | Debian | satmandu/crewbuild:latest | 2.7GB | | |
 | cobolget | | | | | | |
 | ipkg | | | | | | |
-| | Apache Ivy | | | | <pre lang="bash">export ANT_OPTS="-Dhttp.proxyHost=$HTTP_PROXY_HOST -Dhttp.proxyPort=$HTTP_PROXY_PORT -Dhttps.proxyHost=$HTTPS_PROXY_HOST -Dhttps.proxyPort=$HTTPS_PROXY_PORT"</pre> | See [java](application-proxy-settings.md#java). |
+| | Apache Ivy | | | | <pre lang="bash" style="white-space:pre-wrap;">export ANT_OPTS="-Dhttp.proxyHost=$HTTP_PROXY_HOST -Dhttp.proxyPort=$HTTP_PROXY_PORT -Dhttps.proxyHost=$HTTPS_PROXY_HOST -Dhttps.proxyPort=$HTTPS_PROXY_PORT"</pre> | See [java](application-proxy-settings.md#java). |
 | lin | Lunar | Sorcerer | esselfe/lunar-linux:latest | 786MB | | |
 | n | n (node) | | **NEED IMAGE** | | See [npm](#npm). | See [npm](#npm). |
 | netpkg | | | | | | |
