@@ -5,9 +5,10 @@ See also applicable [Proxy](proxy-environment-variables.md) environment variable
 | Variable name | Use | Linux Settings | Windows Settings |
 |---|:---:|---|---|
 | ADDITIONAL_CA_CERT_BUNDLE[^gitlab_dps] | GitLab Dependency Scanning | $SSL_CERT_FILE | %SSL_CERT_FILE% |
-| AWS_CA_BUNDLE[^aws_cli] | AWS CLI | $SSL_CERT_FILE | %SSL_CERT_FILE% |
+| AWS_CA_BUNDLE | [AWS CLI](application-proxy-settings.md#aws_cli) | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 | CA_CERT[^suse] | SUSE Manager | $SSL_CERT_FILE | |
 | CARGO_HTTP_CAINFO[^cargo] | Cargo | $SSL_CERT_FILE | %SSL_CERT_FILE% |
+| COMPOSER_CAFILE | [Composer](application-proxy-settings.md#composer) | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 | CONAN_CACERT_PATH[^conan] | Conan | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 | CURL_CA_BUNDLE[^curl] | curl | $SSL_CA_CERT | %SSL_CA_CERT% |
 | DENO_CERT[^deno] | Deno | $SSL_CERT_FILE | %SSL_CERT_FILE% |
@@ -23,13 +24,15 @@ See also applicable [Proxy](proxy-environment-variables.md) environment variable
 | PIP_CERT[^pip] | Python | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 | REGISTRY_CA_PATH[^tanzu] | Tanzu Application Platform | $SSL_CA_CERT | %SSL_CA_CERT% |
 | REQUESTS_CA_BUNDLE[^py_requests] | Python | $SSL_CERT_FILE | %SSL_CERT_FILE% |
+| SLY_EXTRA_CA_CERTS | [Supervisely](application-proxy-settings.md#supervisely) | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 | SSL_CA_CERT | standard | $SSL_CERT_DIR/mycert.crt | %SSL_CERT_DIR%\mycert.crt |
-| SSL_CERT_DIR[^openssl] | OpenSSL | See [Image Distro Certs](https://gist.github.com/hype8912/7352d81e1f20269c1d95ea105b66cf6c) for location. | |
+| SSL_CERT_DIR[^openssl] | OpenSSL | See [Image Distro Certs](image-os-distro-settings.md) for location. | |
 | SSL_CERT_FILE[^openssl] | OpenSSL | $SSL_CERT_DIR/mycert.pem | %SSL_CERT_DIR%\mycert.pem |
 | SYSTEM_CERTIFICATE_PATH[^haskell] | Haskell Stack | $SSL_CERT_DIR | %SSL_CERT_DIR% |
 | TENSORSTORE_CA_BUNDLE[^tensorstore] | TensorStore | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 | TENSORSTORE_CA_PATH[^tensorstore] | TensorStore | $SSL_CERT_DIR | %SSL_CERT_DIR% |
 | TLS_CA_FILE[^mongo] | MongoDB | $SSL_CERT_FILE | %SSL_CERT_FILE% |
+| TWINE_CERT[^twine] | Twine | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 
 # Optional Suggested
 | Variable name | Use | Linux Settings | Windows Settings |
@@ -37,7 +40,6 @@ See also applicable [Proxy](proxy-environment-variables.md) environment variable
 | SSL_KEYSTORE_FILE | Custom | $SSL_CERT_DIR/myjks.keystore | %SSL_CERT_DIR%\myjks.keystore |
 
 [^gitlab_dps]: https://docs.gitlab.com/ee/user/application_security/dependency_scanning/#global-analyzer-settings
-[^aws_cli]: https://docs.aws.amazon.com/cli/v1/userguide/cli-configure-envvars.html
 [^suse]: https://documentation.suse.com/suma/4.3/en/suse-manager/administration/ssl-certs-mported.html#_import_certificates_for_new_installations
 [^cargo]: https://doc.rust-lang.org/cargo/reference/config.html#httpcainfo
 [^conan]: https://docs.conan.io/1/reference/env_vars.html#conan-cacert-path
@@ -58,3 +60,4 @@ See also applicable [Proxy](proxy-environment-variables.md) environment variable
 [^openssl]: https://docs.openssl.org/master/man3/SSL_CTX_load_verify_locations/#description
 [^tanzu]: https://github.com/halkyonio/tap
 [^tensorstore]: https://google.github.io/tensorstore/environment.html#tls-ca-certificates
+[^twine]: https://twine.readthedocs.io/en/stable/#environment-variables

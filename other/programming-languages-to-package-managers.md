@@ -1,14 +1,41 @@
 ﻿# List of Programming Languages to Package Managers
 
-Please do not include Meta Package Managers in this list.
+Please do not include [Meta Package Managers](/other/meta-package-mangagers.md) in this list.
 
 ![xkcd 2309](https://imgs.xkcd.com/comics/x.png)
+
+[A](#a)
+[B](#b)
+[C](#c)
+[D](#d)
+[E](#e)
+[F](#f)
+[G](#g)
+[H](#h)
+[I](#i)
+[J](#j)
+[K](#k)
+[L](#l)
+[M](#m)
+[N](#n)
+[O](#o)
+[P](#p)
+[Q](#q)
+[R](#r)
+[S](#s)
+[T](#t)
+[U](#u)
+[V](#v)
+[W](#w)
+[X](#x)
+[Y](#y)
+[Z](#z)
 
 ## A
 | Language | Package Manager |
 |:---:|---|
 | A+ | :grey_question: |
-| <a name="A"></a>A.NET | See [C#](#csharp) |
+| A.NET | See [C#](#csharp) |
 | Aardvark | [apm](https://github.com/zplusfour/apm) |
 | ABAP | [apm](https://abappm.com)<br>[APACK](https://community.sap.com/t5/technology-blogs-by-sap/introducing-apack-a-package-and-dependency-manager-for-abap/ba-p/13422397) |
 | ABC | :grey_question: |
@@ -71,7 +98,7 @@ Please do not include Meta Package Managers in this list.
 ## C
 | Language | Package Manager |
 |:---:|---|
-| <a name="c"></a>C | [Biicode (dead)](https://biicode-docs.readthedocs.io)<br>[clib](https://github.com/clibs/clib)<br>[Conan](https://conan.io/)<br>[Conda](https://docs.conda.io/en/latest)<br>[CPK](https://github.com/DEgITx/cpk)<br>[CPM.cmake](https://github.com/cpm-cmake/CPM.cmake)<br>[Hunter](https://github.com/cpp-pm/hunter?tab=readme-ov-file)<br>[Maid (dead)](https://github.com/lukewilson2002/maid)<br>[Mamba](https://github.com/mamba-org/mamba)<br>[Mason (dead)](https://github.com/mapbox/mason)<br>[pixi](https://prefix.dev/)<br>[pkg](https://github.com/genshen/pkg)<br>[Spack](https://spack.io/)<br>[Teaport](https://bitbucket.org/benman/teaport)<br>[vcpkg](https://vcpkg.io/en/)<br>[Xrepo](https://xrepo.xmake.io/#/) |
+| C | [Biicode (dead)](https://biicode-docs.readthedocs.io)<br>[clib](https://github.com/clibs/clib)<br>[Conan](https://conan.io/)<br>[Conda](https://docs.conda.io/en/latest)<br>[CPK](https://github.com/DEgITx/cpk)<br>[CPM.cmake](https://github.com/cpm-cmake/CPM.cmake)<br>[Hunter](https://github.com/cpp-pm/hunter?tab=readme-ov-file)<br>[Maid (dead)](https://github.com/lukewilson2002/maid)<br>[Mamba](https://github.com/mamba-org/mamba)<br>[Mason (dead)](https://github.com/mapbox/mason)<br>[pixi](https://prefix.dev/)<br>[pkg](https://github.com/genshen/pkg)<br>[Spack](https://spack.io/)<br>[Teaport](https://bitbucket.org/benman/teaport)<br>[vcpkg](https://vcpkg.io/en/)<br>[Xrepo](https://xrepo.xmake.io/#/) |
 | C++ | [Buckaroo](https://buckaroo.pm/)<br>[cabin](https://github.com/cabinpkg/cabin)<br>[cget](https://github.com/pfultz2/cget)<br>[Gradle](https://gradle.org)<br>[Magnet](https://github.com/Futureblur/magnet)<br>[Maven](https://www.mojohaus.org/maven-native/native-maven-plugin)<br>[NuGet](https://www.nuget.org)<br>[PACC](https://github.com/PoetaKodu/pacc)<br>[wsjcpp](https://github.com/wsjcpp/wsjcpp)<br>See [C](#c) |
 | C#<a name="csharp"></a> | [Cement (dead)](https://github.com/skbkontur/cement)<br>[Maven](https://doodleproject.sourceforge.net/mavenite/dotnet-maven-plugin/index.html)<br>[NuGet](https://www.nuget.org)<br>[Paket](https://fsprojects.github.io/Paket/index.html) |
 | Cairo | [Scarb](https://github.com/software-mansion/scarb) |
@@ -136,44 +163,44 @@ Please do not include Meta Package Managers in this list.
 ## E
 | Language | Package Manager |
 |:---:|---|
-| E | |
-| EDL | |
-| EDSAC | |
+| E | :grey_question: |
+| EDL | :grey_question: |
 | Eiffel | [IRON](https://www.eiffel.org/doc/solutions/IRON-_Eiffel_package_repository#IRON_client_tool) |
-| ELAN | |
+| ELAN | :grey_question: |
 | Elixir | See [Erlang](#erlang) |
 | Elm | [Elm Install](https://github.com/gdotdesign/elm-github-install) |
-| Epigram | |
+| Epigram | :grey_question: |
 | <a name="erlang"></a>Erlang | [agner](https://github.com/agner/agner)<br>[epax](https://github.com/erlware/epax)<br>[Hex](https://hex.pm)<br>[PARN](https://github.com/imerkle/parn) |
 | Euphoria | [eudrop (dead)](https://github.com/xecronix/eudrop) |
 
 ## F
 | Language | Package Manager |
 |:---:|---|
-| FP | |
+| FP | :grey_question: |
 | F# | See [C#](#csharp) |
 | Fennel | [fnx](https://github.com/gbaptista/fnx) |
 | Fish | [fundle](https://github.com/danhper/fundle) |
 | Flat | [Airship](https://github.com/FlatLang/Airship) |
 | Flex | [Maven (dead)](https://github.com/velo/flexmojos) |
 | Flix | [flix](https://doc.flix.dev/packages.html) |
-| FLOW-MATIC | |
-| Forth | |
+| FLOW-MATIC | :grey_question: |
+| FOCAL | :grey_question: |
+| Forth | :grey_question: |
 | Fortran | [Conda](https://docs.conda.io/en/latest)<br>[fpm](https://fpm.fortran-lang.org/)<br>[Mamba](https://github.com/mamba-org/mamba)<br>[Spack](https://spack.io/) |
-| FreeBASIC | |
+| FreeBASIC | :grey_question: |
 
 ## G
 | Language | Package Manager |
 |:---:|---|
-| Gambas | |
+| Gambas | :grey_question: |
 | Game Maker Language | [Catalyst](https://gamemakerhub.net/catalyst) |
 | Gera | [gerap](https://github.com/geralang/gerap) |
-| GLBasic | |
+| GLBasic | :grey_question: |
 | Gleam | See [Erlang](#erlang) |
 | Go | [Bingo](https://github.com/TekWizely/bingo)<br>[Dep (dead)](https://github.com/golang/dep)<br>[Glide](https://github.com/Masterminds/glide)<br>[Go Modules](https://go.dev/doc/modules/gomod-ref)<br>[Gopher](https://github.com/theghostmac/gopher)<br>[gpm (dead)](https://github.com/pote/gpm)<br>[gpm](https://github.com/mkloubert/go-package-manager)<br>[gopm (dead)](https://github.com/gpmgo/gopm)<br>[grog](https://github.com/LOTaher/grog)<br>[johnny-deps (dead)](https://github.com/VividCortex/johnny-deps)<br>[Melody (dead)](https://github.com/mdy/melody)<br>[pixi](https://prefix.dev/) |
 | GOAL | See [Java](#java) |
-| Gofer | |
-| GolfScript | |
+| Gofer | :grey_question:[^gofer] |
+| GolfScript | :grey_question: |
 | Gosu | See [Java](#java) |
 | Groovy | [Grape](https://docs.groovy-lang.org/latest/html/documentation/grape.htm)<br>[Maven](https://docs.gradle.org/current/userguide/groovy_plugin.html) |
 
@@ -181,59 +208,60 @@ Please do not include Meta Package Managers in this list.
 | Language | Package Manager |
 |:---:|---|
 | Harbour | [Harbourmaster](https://github.com/kloptops/harbourmaster)<br>[PortMaster](https://github.com/christianhaitian/PortMaster) |
-| Haskell | [cabal](https://hackage.haskell.org/package/cabal-install)<br>[stack](https://docs.haskellstack.org/en/stable/)<br>[tinc](https://github.com/sol/tinc) |
+| Haskell | [cabal](https://hackage.haskell.org/package/cabal-install)<br>[stack](https://docs.haskellstack.org/en/stable/)<br>[tinc](https://github.com/sol/tinc)[^tinc] |
 | Haxe | [Haxelib](https://lib.haxe.org/documentation/using-haxelib/)<br>[lix.client](https://github.com/lix-pm/lix.client) |
 | HDL | [FuseSoC](https://github.com/olofk/fusesoc)<br>[HCM](https://github.com/jeremiah-c-leary/hdl-component-manager)<br>[legoHDL](https://github.com/chaseruskin/legoHDL) |
-| HLSL | |
+| HLSL | :x: |
 | HyperTalk | [CommandCougar](https://github.com/hypertalk/CommandCougar) |
 
 ## I
 | Language | Package Manager |
 |:---:|---|
-| IDL | |
+| IDL | :grey_question: |
 | Idris | [elba (dead)](https://github.com/elba/elba) |
 | Io | [Eerie](https://github.com/IoLanguage/io) |
-| Inform | |
-| INTERCAL | |
-| IPL | |
+| Inform | [Inbuild](https://ganelson.github.io/inform/inbuild/M-ui.html) |
+| INTERCAL | :grey_question: |
+| IPL | :grey_question: |
 | IronPython | See [C#](#csharp) |
-| ISLISP | |
+| ISLISP | :grey_question: |
 
 ## J
 | Language | Package Manager |
 |:---:|---|
 | J | [pacman](https://code.jsoftware.com/wiki/Pacman) |
 | JScript.Net | See [C#](#csharp) |
-| JADE | |
+| JADE | :grey_question: |
 | Janet | [Jeep](https://github.com/pyrmont/jeep) |
 | Java<a name="java"></a> | [Conda](https://docs.conda.io/en/latest)<br>[Gradle](https://gradle.org)<br>[Ivy](https://ant.apache.org/ivy/)<br>[Maven](https://maven.apache.org)<br>[Nuts](https://github.com/thevpc/nuts) |
 | JavaScript<a name="javascript"></a> | [Bower](https://bower.io/)<br>[Bun](https://bun.sh/package-manager)<br>[Conda](https://docs.conda.io/en/latest)<br>[Cotton](https://github.com/danielhuang/cotton)<br>[Deno](https://deno.com/)<br>[ied (dead)](https://github.com/alexanderGugel/ied)<br>[jacli (dead)](https://github.com/yegor256/jacli)<br>[jam (dead)](https://github.com/caolan/jam)<br>[jspm](https://jspm.org/docs/jspm-cli/stable/)<br>[n](https://github.com/tj/n)<br>[npm](https://docs.npmjs.com/)<br>[Orogene](https://github.com/orogene/orogene)<br>[pacquet](https://github.com/pnpm/pacquet)<br>[pixi](https://prefix.dev/)<br>[pnpm](https://pnpm.io/)<br>[px](https://pxcli.com/)<br>[Qipi](https://github.com/nehu3n/qipi)<br>[Trex](https://github.com/crewdevio/Trex)<br>[ultra (dead)](https://github.com/nachoaldamav/ultra)<br>[vite](https://vite.dev/guide/)<br>[vōlt](https://www.vlt.sh/)<br>[Yarn](https://yarnpkg.com/cli)<br>[Zap](https://github.com/elbywan/zap) |
-| JOSS | |
-| Joule | |
-| Joy | |
-| jq | |
+| JOSS | :grey_question: |
+| Joule | :grey_question: |
+| Joy | :grey_question: |
+| jq | :grey_question: |
 | Julia | [Conda.jl](https://github.com/JuliaPy/Conda.jl)<br>[jlpkg](https://github.com/fredrikekre/jlpkg)<br>[Pkg.jl](https://github.com/JuliaLang/Pkg.jl) |
 
 ## K
 | Language | Package Manager |
 |:---:|---|
-| K | |
+| K (KCL) | [kpm](https://peefy.github.io/docs/tools/cli/package-management/command-reference/) |
 | Kit | [Kitten](https://github.com/AlexPoulsen/Kitten) |
 | Kitten | [cabal](https://hackage.haskell.org/package/cabal-install)<br>[stack](https://docs.haskellstack.org/en/stable/) |
 | Kotlin | See [Java](#java) |
-| Ksh | |
+| Ksh | :grey_question: |
 
 ## L
 | Language | Package Manager |
 |:---:|---|
 | LabVIEW | [G Package Manager](https://gpackage.io)<br>[NI Package Manager](https://www.ni.com/en/support/downloads/ni-package-manager.html)<br>[VI Package Manager](https://www.vipm.io) |
-| LaTeX | |
-| Lean | |
-| Lisp | |
-| LiveCode | |
-| Logo | |
+| LaTeX | See [TeX](#tex) |
+| Lean | [Lake](https://lean-lang.org/lean4/doc/setup.html?highlight=Lake#lake) |
+| Ligo | [ligo](https://ligolang.org/docs/advanced/package-management/?lang=jsligo#workflow) |
+| Lisp | :grey_question: |
+| LiveCode (MetaTalk) | :grey_question: |
+| Logo | :grey_question: |
 | Logtalk | [packs](https://logtalk.org/manuals/devtools/packs.html) |
-| Linden Scripting Language (LSL) | |
+| Linden Scripting Language (LSL) | :grey_question: |
 | Lua | [Conda](https://docs.conda.io/en/latest)<br>[LuaDist](https://luadist.org/repository/)<br>[LuaRocks](https://github.com/luarocks/luarocks)<br>[lux](https://github.com/nvim-neorocks/lux) |
 
 ## M
@@ -259,22 +287,24 @@ Please do not include Meta Package Managers in this list.
 ## N
 | Language | Package Manager |
 |:---:|---|
-| NELIAC | |
+| NELIAC | :grey_question: |
 | Nelua | [Pancake](https://github.com/linkpy/pancake-pm) |
 | Nim | [nimble](https://github.com/nim-lang/nimble) |
 
 ## O
 | Language | Package Manager |
 |:---:|---|
-| Oberon | |
+| Oberon | :grey_question: |
 | Object Pascal | See [Delphi](#delphi) |
 | Objective-C | [Carthage](https://github.com/Carthage/Carthage)<br>[CocoaPods](https://github.com/CocoaPods/CocoaPods)<br>[Swift Package Manager](https://github.com/apple/swift-package-manager) |
 | OCaml<a name="ocaml"></a> | [opam](https://github.com/ocaml/opam)<br>[opam-nix](https://github.com/tweag/opam-nix) |
-| Occam | |
+| Occam | :grey_question: |
+| Odin | :grey_question: |
 | Opa | See [JavaScript](#javascript) |
-| OpenLisp | |
+| OpenLisp | :grey_question: |
+| Original-E | See [Java](#java) |
 | Oxygene | Depends on target platform[^oxygene] |
-| Oz-Mozart | |
+| Oz-Mozart | :grey_question: |
 
 ## P
 | Language | Package Manager |
@@ -308,8 +338,6 @@ Please do not include Meta Package Managers in this list.
 |:---:|---|
 | Q# | See [C#](#csharp) |
 | Quest | |
-
-**STOPPED HERE**
 
 ## R
 | Language | Package Manager |
@@ -358,7 +386,7 @@ Please do not include Meta Package Managers in this list.
 | Language | Package Manager |
 |:---:|---|
 | Tcl | [tpkg](https://github.com/bef/tpkg) |
-| TeX | |
+| TeX<a name="tex"></a> | [MacTeX](https://www.tug.org/mactex/)<br>[MiKTeX](https://miktex.org/about)<br>[teTeX (dead)](https://www.linuxfromscratch.org/blfs/view/6.3/pst/tetex.html)<br>[TeX Live](https://en.wikibooks.org/wiki/LaTeX/Installation#Installing_LaTeX) |
 | TypeScript | See [JavaScript](#javascript) |
 
 ## U
@@ -422,5 +450,7 @@ Please do not include Meta Package Managers in this list.
 
 [^carbon]: https://github.com/carbon-language/carbon-lang/discussions/3669
 [^charm]: https://www.reddit.com/r/ProgrammingLanguages/comments/1b7uihq/pipefish_formerly_charm_is_now_pipefish/
+[^gofer]: The Gofer [documentation](https://eng.libretexts.org/Bookshelves/Computer_Science/Programming_Languages/Book%3A_Deep_into_Pharo_(Bergel_Cassou_Ducasse_and_Laval)/07%3A_Gofer__Scripting_Package_Loading) implies there is a possible package manager.
 [^mercury]: https://www.remobjects.com/elements/mercury/
 [^oxygene]: https://www.remobjects.com/elements/oxygene/
+[^tinc]: Can't determine if `tinc` actually downloads packages or just calls `cabal` or `nix` to download packages.

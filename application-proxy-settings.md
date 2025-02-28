@@ -2,26 +2,41 @@
 
 | Application | Name | Test Image[^test_image] | Test Image Size[^image_size] | Proxy Instructions | Certificate Instructions |
 |:---:|:---:|---|:---:|---|---|
-| aws | AWS CLI | amazon/aws-cli:latest | 127MB | | <pre lang="bash">export AWS_CA_BUNDLE="$SSL_CERT_FILE"</pre> |
+| | Apache Karaf | apache/karaf:latest | 121MB | | <pre lang="bash">export EXTRA_JAVA_OPTS="-Djavax.net.ssl.trustStore=$SSL_KEYSTORE_FILE -Djavax.net.ssl.trustStorePassword={Password}"</pre> |
+| aws<a name="aws_cli"></a> | AWS CLI | amazon/aws-cli:latest | 127MB | | <pre lang="bash">export AWS_CA_BUNDLE="$SSL_CERT_FILE"[^aws_cli]</pre> |
+| | Bash-It<a name="bash_it"></a> | ellerbrock/bash-it:latest | 19MB | <pre lang="bash">export BASH_IT_HTTP_PROXY="$HTTP_PROXY"&#13;export BASH_IT_HTTPS_PROXY="$HTTPS_PROXY"&#13;export BASH_IT_NO_PROXY="$NO_PROXY"[^bash_it]</pre> | |
+| | Boto | demisto/boto3py3:1.0.0.2587407 | 43MB | | See [AWS CLI](#aws_cli) [^boto] |
 | docker | Docker Service[^docker_service] | | | `/etc/systemd/system/docker.service.d/http-proxy.conf`<br><pre lang="ini">[Service]&#13;Environment="HTTP_PROXY=$HTTP_PROXY"&#13;Environment="HTTPS_PROXY=$HTTPS_PROXY"&#13;Environment="NO_PROXY=$NO_PROXY"</pre>`~/.docker/config.json`<br><pre lang="json">{&#13;  "proxies" : {&#13;    "default" : {&#13;      "httpProxy" : "$HTTP_PROXY",&#13;      "httpsProxy" : "$HTTPS_PROXY",&#13;      "noProxy" : "$NO_PROXY"&#13;    }&#13;  }&#13;}</pre> | |
-| git<br>git-lfs | | alpine/git:latest | 32MB | | <pre lang="bash">git config --global http.sslverify true&#13;git config --global http.sslCAInfo $SSL_CERT_FILE&#13;git config --global http.sslbackend schannel</pre>Windows-only:<br>`git config --global credential.helper wincred`<br><br>Mac-only:<pre lang="bash">git config --global credential.helper osxkeychain</pre> |
+| git<br>git-lfs | | alpine/git:latest | 32MB | | <pre lang="bash">git config --global http.sslverify true&#13;git config --global http.sslCAInfo $SSL_CERT_FILE&#13;git config --global http.sslCAPath $SSL_CERT_DIR&#13;git config --global http.sslbackend schannel</pre>Windows-only:<br>`git config --global credential.helper wincred`<br><br>Mac-only:<pre lang="bash">git config --global credential.helper osxkeychain</pre> |
 | | GitLab Runner Service | gitlab/gitlab-runner:latest | 106MB | `/etc/systemd/system/gitlab-runner.service.d/http-proxy.conf`<br><pre lang="ini">[Service]&#13;Environment="HTTP_PROXY=$HTTP_PROXY"&#13;Environment="HTTPS_PROXY=$HTTPS_PROXY"&#13;Environment="NO_PROXY=$NO_PROXY"</pre>`/etc/gitlab-runner/config.toml`<pre lang="yaml">[[runners]]&#13;pre_get_sources_script = "git config --global http.proxy $HTTP_PROXY; git config --global https.proxy $HTTPS_PROXY"&#13;environment = ["https_proxy=$HTTPS_PROXY", "http_proxy=$HTTP_PROXY", "HTTPS_PROXY=$HTTPS_PROXY", "HTTP_PROXY=$HTTP_PROXY"]</pre> | `/etc/gitlab-runner/config.toml`<pre lang="yaml">[runners.docker]&#13;volumes = ["/path/to-ca-cert-dir/ca.crt:/etc/gitlab-runner/certs/ca.crt:ro"] [^gitlab_runner]</pre> |
 | grype | | anchore/grype:latest | 22MB | | <pre lang="bash">export GRYPE_DB_CA_CERT=$SSL_CA_CERT[^grype]</pre> |
-| subscription-manager | RHEL Subscription Manager | redhat/ubi9:latest | 84MB | <pre lang="bash">subscription-manager config --server.proxy_hostname $HTTP_PROXY_HOST --server.proxy_port $HTTP_PROXY_PORT</pre> | |
-| wget | GNU Wget | alpine:latest | 4MB | `/etc/wgetrc` or `~/.wgetrc` file<pre lang="properties">use_proxy = on&#13;http_proxy=$HTTP_PROXY&#13;https_proxy=$HTTPS_PROXY&#13;HTTP_PROXY=$HTTP_PROXY&#13;HTTPS_PROXY=$HTTPS_PROXY&#13;no_proxy=$NO_PROXY</pre> | `/etc/wgetrc` or `~/.wgetrc` file<pre lang="properties">ca_certificate=$SSL_CERT_FILE&#13;ca_directory=$SSL_CERT_DIR[^wget]</pre> |
 | hpm | DevEco OpenHarmony | | | <pre lang="bash">hpm config set http_proxy $HTTP_PROXY&#13;hpm config set https_proxy $HTTPS_PROXY[^hpm]</pre> | |
-| <a name="java"></a>java | OpenJDK | openjdk:25-slim | 233MB | <pre lang="bash">export JAVA_OPTS="$JAVA_OPTS -Dhttp.proxyHost=$HTTP_PROXY_HOST -Dhttp.proxyPort=$HTTP_PROXY_PORT -Dhttps.proxyHost=$HTTPS_PROXY_HOST -Dhttps.proxyPort=$HTTPS_PROXY_PORT"</pre> | Linux and Darwin:<br><pre lang="bash">keytool -importkeystore -srckeystore $SSL_KEYSTORE_FILE -destkeystore $JAVA_HOME/lib/security/cacerts</pre>Windows:<pre>keytool -importkeystore -srckeystore %SSL_KEYSTORE_FILE% -destkeystore %JAVA_HOME%\lib\security\cacerts</pre> |
-| | Apache Karaf | apache/karaf:latest | 121MB | | <pre lang="bash">export EXTRA_JAVA_OPTS="-Djavax.net.ssl.trustStore=$SSL_KEYSTORE_FILE -Djavax.net.ssl.trustStorePassword={Password}"</pre> |
-| svn | Subversion | elleflorio/svn-server:latest | 18MB | `~/.subversion/servers` or `%APPDATA%\Subversion\servers`<br><pre lang="ini">[global]&#13;http-proxy-host=$HTTP_PROXY_HOST&#13;http-proxy-port=$HTTP_PROXY_PORT[^svn]</pre> | `~/.subversion/servers` or `%APPDATA%\Subversion\servers`<br><pre lang="ini">[global]&#13;ssl-trust-default-ca=no&#13;ssl-authority-files=$SSL_CERT_FILE</pre> |
+| java<a name="java"></a> | OpenJDK | openjdk:25-slim | 233MB | <pre lang="bash">export JAVA_OPTS="$JAVA_OPTS -Dhttp.proxyHost=$HTTP_PROXY_HOST -Dhttp.proxyPort=$HTTP_PROXY_PORT -Dhttps.proxyHost=$HTTPS_PROXY_HOST -Dhttps.proxyPort=$HTTPS_PROXY_PORT"</pre> | Linux and Darwin:<br><pre lang="bash">keytool -importkeystore -srckeystore $SSL_KEYSTORE_FILE -destkeystore $JAVA_HOME/lib/security/cacerts</pre>Windows:<pre>keytool -importkeystore -srckeystore %SSL_KEYSTORE_FILE% -destkeystore %JAVA_HOME%\lib\security\cacerts</pre> |
+| | Microsoft Azure CLI | mcr.microsoft.com/azure-cli:latest | | | <pre lang="bash">export REQUESTS_CA_BUNDLE="$SSL_CERT_FILE"[^azure_cli]</pre> |
 | | .Net Framework Application | | | `appname.exe.config` or `web.config`<br><pre lang="xml"> &lt;configuration&gt;&#13;  &lt;system.net&gt;&#13;    &lt;defaultProxy enabled="true"&gt;&#13;      &lt;proxy address="%HTTP_PROXY%" /&gt;&#13;    &lt;/defaultProxy&gt;&#13;  &lt;/system.net&gt;&#13;&lt;/configuration&gt;</pre> | |
-| | Periscope Authenticator | | | <pre lang="bash">git config --global lfs.transfer.enablehrefrewrite true&#13;git config --global url."http://localhost:[Local Port]".insteadOf"[Git Host URL]"</pre> | |
 | | Netbeans IDE | | | 1. Open Netbeans, go to **Tools** then **Options** menu item.<br>2. Click the **General** tab.<br>3. Select **Manual Proxy Settings**.<br>4. Set **Address** to "$HTTP_PROXY_HOST" and **Port** to "$HTTP_PROXY_PORT".| |
+| | Periscope Authenticator | | | <pre lang="bash">git config --global lfs.transfer.enablehrefrewrite true&#13;git config --global url."http://localhost:[Local Port]".insteadOf"[Git Host URL]"</pre> | |
+| subscription-manager | RHEL Subscription Manager | redhat/ubi9:latest | 84MB | <pre lang="bash">subscription-manager config --server.proxy_hostname $HTTP_PROXY_HOST --server.proxy_port $HTTP_PROXY_PORT</pre> | |
+| svn | Subversion | elleflorio/svn-server:latest | 18MB | `~/.subversion/servers` or `%APPDATA%\Subversion\servers`<br><pre lang="ini">[global]&#13;http-proxy-host=$HTTP_PROXY_HOST&#13;http-proxy-port=$HTTP_PROXY_PORT[^svn]</pre> | `~/.subversion/servers` or `%APPDATA%\Subversion\servers`<br><pre lang="ini">[global]&#13;ssl-trust-default-ca=no&#13;ssl-authority-files=$SSL_CERT_FILE</pre> |
+| <a name="supervisely"></a> | Supervisely | | | | <pre lang="bash">export REQUESTS_CA_BUNDLE="$SSL_CERT_FILE"&#13;export SLY_EXTRA_CA_CERTS="$SSL_CERT_FILE"[^supervisely]</pre> |
+| | TerraTeam | ghcr.io/terrateamio/terrat-oss:latest | | | <pre lang="yaml">hooks:&#13;  all:&#13;    pre:&#13;      - type: run&#13;        cmd: ['sh', '-c', 'echo "$SELF_SIGNED_CERT" > $SSL_CA_CERT && update-ca-certificates'] [^terrateam]</pre> |
+| wget | GNU Wget | alpine:latest | 4MB | `/etc/wgetrc` or `~/.wgetrc` file<pre lang="properties">use_proxy = on&#13;http_proxy=$HTTP_PROXY&#13;https_proxy=$HTTPS_PROXY&#13;HTTP_PROXY=$HTTP_PROXY&#13;HTTPS_PROXY=$HTTPS_PROXY&#13;no_proxy=$NO_PROXY</pre> | `/etc/wgetrc` or `~/.wgetrc` file<pre lang="properties">ca_certificate=$SSL_CERT_FILE&#13;ca_directory=$SSL_CERT_DIR[^wget]</pre> |
+
+## References
+
+[Adding Custom Certificate to an Application-Specific Trust Store](https://help.zscaler.com/zia/adding-custom-certificate-application-specific-trust-store)
 
 [^test_image]: Every attempt is made to find the recently updated images from known publishers but some images are very old or published by individuals and should be used at your own risk.
 [^image_size]: `Test Image Size` are approximate and mainly given for managing bandwidth when testing in a pipeline. Image sizes could change at any time.
+[^aws_cli]: https://docs.aws.amazon.com/cli/v1/userguide/cli-configure-envvars.html
+[^azure_cli]: https://learn.microsoft.com/en-us/cli/azure/use-azure-cli-successfully-troubleshooting#work-behind-a-proxy
+[^bash_it]: https://bash-it.readthedocs.io/en/latest/proxy_support/
+[^boto]: https://boto3.amazonaws.com/v1/documentation/api/latest/guide/configuration.html
 [^docker_service]: https://docs.docker.com/engine/daemon/proxy/#systemd-unit-file
 [^gitlab_runner]: https://docs.gitlab.com/runner/configuration/tls-self-signed.html#trusting-the-certificate-for-the-other-cicd-stages
 [^grype]: https://github.com/anchore/grype/issues/653#issuecomment-1059995685
-[^wget]: https://www.gnu.org/software/wget/manual/html_node/Wgetrc-Commands.html#Wgetrc-Commands-1
 [^hpm]: https://device.harmonyos.com/en/docs/documentation/guide/hpm_proxy-0000001074487706
+[^supervisely]: https://developer.supervisely.com/app-development/advanced/custom-configuration/fixing-ssl-certificate-errors-in-supervisely
 [^svn]: https://subversion.apache.org/faq.html#proxy
+[^terrateam]: https://docs.terrateam.io/security-and-compliance/self-signed-certificates/
+[^wget]: https://www.gnu.org/software/wget/manual/html_node/Wgetrc-Commands.html#Wgetrc-Commands-1

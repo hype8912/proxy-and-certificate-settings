@@ -1,14 +1,8 @@
-<style>
-  table {
-    width: 100%;
-  }
-</style>
-
-Set the applicable [proxy](proxy-environment-variables.md), [certificate](certificate-environment-variables.md), and [OS/Distro](image-os-distro-settings.md) variables along with [application](application-proxy-settings.md) configurations.
+Set the applicable [Proxy](proxy-environment-variables.md), [Certificate](certificate-environment-variables.md), and [OS/Distro](image-os-distro-settings.md) variables along with [application](application-proxy-settings.md) configurations.
 
 # Current Package Managers
 
-If no information is provide in the `Proxy Instructions` or `Certificate Instructions` means they use the typical OS or Distro environment values and will work just by setting those value(s).
+If no information is provided in the `Proxy Instructions` or `Certificate Instructions` means they use the typical OS or Distro environment values and will work by setting those value(s).
 
 | Package manager | Name | Image Base | Test Image[^test_image] | Test Image Size[^image_size] | Proxy Instructions | Certificate Instructions |
 |:---:|:---:|:---:|---|:---:|---|---|
@@ -26,9 +20,9 @@ If no information is provide in the `Proxy Instructions` or `Certificate Instruc
 | cargo | Cargo (rust)[^cargo] | Debian | rust:slim | 280MB | | <pre lang="bash">export CARGO_HTTP_CAINFO="$SSL_CERT_FILE"</pre> |
 | cast | | Sorcerer | sourcemage:latest | 251MB | | |
 | ck | Collective Knowledge | Debian | ctuning/ck-web-server:latest | 135MB | | |
-| composer | Composer (PHP)[^composer] | Alpine | composer:latest | 71MB | <pre lang="bash">export CGI_HTTP_PROXY="HTTP_PROXY"</pre> | |
+| composer<a name="composer"></a> | Composer (PHP) | Alpine | composer:latest | 71MB | <pre lang="bash">export CGI_HTTP_PROXY="HTTP_PROXY"[^composer_proxy]</pre> | <pre lang="bash">export COMPOSER_CAFILE="$SSL_CERT_FILE"[^composer_cert]</pre> |
 | conan | Conan | Debian | conanio/gcc9:2.9.1 | 306MB | | <pre lang="bash">export CONAN_CACERT_PATH="$SSL_CERT_FILE"</pre> |
-| conda<a name="conda"></a> | Conda | Debian | continuumio/miniconda3:latest | 198MB | `conda config --set proxy_servers.http "$HTTP_PROXY"`<br>`conda config --set proxy_servers.https "$HTTPS_PROXY"` | `conda config --set ssl_verify "$SSL_CERT_FILE"` |
+| conda<a name="conda"></a> | Conda | Debian | continuumio/miniconda3:latest | 198MB | <pre lang="bash">conda config --set proxy_servers.http "$HTTP_PROXY"&#13;conda config --set proxy_servers.https "$HTTPS_PROXY"</pre> | <pre lang="bash">conda config --set ssl_verify "$SSL_CERT_FILE"</pre> |
 | corepack | Corepack (node) | Alpine<br>Debian | node:current-alpine<br>node:slim | 54MB<br>76MB | See [npm](#npm). | See [npm](#npm). |
 | cpan | CPAN | Debian | perl:stable-slim | 56MB | | |
 | cran | CRAN | Debian | r-base:latest | 343MB | | |
@@ -50,12 +44,12 @@ If no information is provide in the `Proxy Instructions` or `Certificate Instruc
 | hatch | Hatchling (python) | | | | | See [pip](#pip). |
 | hex[^hex] | | Debian | erlang:slim | 119MB | | <pre lang="bash">export HEX_CACERTS_PATH="$SSL_CERT_FILE"</pre> |
 | hpm | HarmonyOS Package Manager | | | | <pre lang="bash">hpm config set http_proxy $HTTP_PROXY&#13;hpm config set https_proxy $HTTPS_PROXY</pre> | |
-| lein<a name="lein"></a> | Leiningen | Debian | clojure:latest | 287MB | | See [java](https://gist.github.com/hype8912/40116cb5e1051fc1a9b29ea54e6c2139#java). |
+| lein<a name="lein"></a> | Leiningen | Debian | clojure:latest | 287MB | | See [java](application-proxy-settings.md#java). |
 | luarocks | LuaRocks | Alpine<br>Debian | nickblah/lua:5-luarocks-alpine3<br>nickblah/lua:latest | 7MB<br>47MB | | |
 | mamba | Mamba | Debian | condaforge/miniforge3:latest | 141MB | | See [conda](#conda).<pre lang="bash">export CURL_CA_BUNDLE="$SSL_CA_CERT"&#13;export REQUESTS_CA_BUNDLE="SSL_CERT_FILE"</pre> |
 | microdnf | MicroDNF | Red Hat | almalinux:9-minimal<br>centos:stream10-minimal<br>eurolinux/eurolinux-9-minimal:latest<br>rockylinux:9-minimal<br>oraclelinux:9-slim<br>redhat/ubi9-minimal:latest[^ubi] | 34MB<br>78MB<br>37MB<br>44MB<br>47MB<br>38MB | See [dnf](#dnf) | |
 | micromamba | Micromamba | Debian | mambaorg/micromamba:latest | 33MB | | <pre lang="bash">export CURL_CA_BUNDLE="$SSL_CA_CERT"&#13;export REQUESTS_CA_BUNDLE="SSL_CERT_FILE"&#13;micromamba config set ssl_verify "$SSL_CERT_FILE"</pre> |
-| mvn | Maven | Debian | maven:latest | 231MB | <pre lang="bash">mvn -DproxySet=true -D proxyHost=$HTTP_PROXY_HOST \ &#13; -DproxyPort=$HTTP_PROXY_PORT \ &#13; -DproxyProtocol=http \ &#13; -DproxyId=http \ &#13; -DproxyNonProxyHosts=$NO_PROXY&#13;mvn -D proxyHost=$HTTPS_PROXY_HOST \ &#13; -DproxyPort=$HTTPS_PROXY_PORT \ &#13; -DproxyProtocol=https \ &#13; -DproxyId=https \ &#13; -DproxyNonProxyHosts=$NO_PROXY</pre> | See [java](https://gist.github.com/hype8912/40116cb5e1051fc1a9b29ea54e6c2139#java).<pre lang="bash">export MAVEN_OPTS="-Djavax.net.ssl.trustStore=$SSL_KEYSTORE_FILE -Djavax.net.ssl.trustStorePassword={Password}"</pre> |
+| mvn | Maven | Debian | maven:latest | 231MB | <pre lang="bash">mvn -DproxySet=true -D proxyHost=$HTTP_PROXY_HOST \ &#13; -DproxyPort=$HTTP_PROXY_PORT \ &#13; -DproxyProtocol=http \ &#13; -DproxyId=http \ &#13; -DproxyNonProxyHosts=$NO_PROXY&#13;mvn -D proxyHost=$HTTPS_PROXY_HOST \ &#13; -DproxyPort=$HTTPS_PROXY_PORT \ &#13; -DproxyProtocol=https \ &#13; -DproxyId=https \ &#13; -DproxyNonProxyHosts=$NO_PROXY</pre> | See [java](application-proxy-settings.md#java).<pre lang="bash">export MAVEN_OPTS="-Djavax.net.ssl.trustStore=$SSL_KEYSTORE_FILE -Djavax.net.ssl.trustStorePassword={Password}"</pre> |
 | nix | Nix Package Manager | NixOS | nixos:nix:latest | 213MB | | <pre lang="bash">export NIX_SSL_CERT_FILE="$SSL_CERT_FILE"</pre> |
 | npm<a name="npm"></a> | Node Package Manager | Alpine<br>Debian | node:current-alpine<br>node:slim | 54MB<br>76MB | <pre lang="bash">npm config set proxy "$HTTP_PROXY"&#13;npm config set https-proxy "$HTTPS_PROXY"&#13;npm config set noproxy "$NO_PROXY"</pre>Electron:<pre lang="bash">export ELECTRON_GET_USE_PROXY=true</pre> | <pre lang="bash">export NODE_EXTRA_CA_CERTS="$SSL_CERT_FILE"</pre> |
 | nuget | NuGet | Windows | mcr.microsoft.com/dotnet/framework/sdk:4.8.1 | 2.2GB | <pre lang="bash">nuget config -set http_proxy="$HTTP_PROXY"&#13;nuget config -set https_proxy="$HTTPS_PROXY"</pre> | |
@@ -75,7 +69,7 @@ If no information is provide in the `Proxy Instructions` or `Certificate Instruc
 | port | MacPorts | MacOS | | | | |
 | rpm<a name="rpm"></a> | RPM Package Manager | Red Hat | almalinux:latest<br>amazonlinux:latest<br>centos8:latest<br>quay.io/centos/centos:stream10<br>eurolinux/eurolinux-9:latest<br>fedora:latest<br>rockylinux:9<br>oraclelinux:9<br>redhat/ubi9:latest[^ubi] | 75MB<br>80MB<br>105MB<br>61MB<br>56MB<br>61MB<br>101MB<br>84MB | | |
 | rye | Rye (python) | Debian | Superseded by [uv](#uv).<br>jfxs/rye:latest | 215MB | | See [pip](#pip). |
-| sbt | simple build tool[^sbt] | Alpine | sbtscala/scala-sbt:eclipse-temurin-alpine-23.0.1_11_1.10.7_3.3.5 | 503MB | <pre lang="bash">export JAVA_OPTS="$JAVA_OPTS -Dhttp.proxyHost=$HTTP_PROXY_HOST -Dhttp.proxyPort=$HTTP_PROXY_PORT -Dhttps.proxyHost=$HTTPS_PROXY_HOST -Dhttps.proxyPort=$HTTPS_PROXY_PORT"</pre> | See [java](https://gist.github.com/hype8912/40116cb5e1051fc1a9b29ea54e6c2139#java). |
+| sbt | simple build tool[^sbt] | Alpine | sbtscala/scala-sbt:eclipse-temurin-alpine-23.0.1_11_1.10.7_3.3.5 | 503MB | <pre lang="bash">export JAVA_OPTS="$JAVA_OPTS -Dhttp.proxyHost=$HTTP_PROXY_HOST -Dhttp.proxyPort=$HTTP_PROXY_PORT -Dhttps.proxyHost=$HTTPS_PROXY_HOST -Dhttps.proxyPort=$HTTPS_PROXY_PORT"</pre> | See [java](application-proxy-settings.md#java). |
 | slackpkg | Slack Package | Slackware | aclemons/slacware:latest | 66MB | | |
 | slapt-get | | Slackware | gnujaos/slapt-get-current-min:latest | 71MB | | |
 | snap | Snap | Arch Linux | manjarolinux/base:latest | 277MB | <pre lang="bash">snap set system proxy.http="$HTTP_PROXY"&#13;snap set system proxy.https="$HTTPS_PROXY"</pre> | |
@@ -103,7 +97,7 @@ These are known package managers but require more research and testing before be
 | crew | ChromeBrew[^crew] | Debian | satmandu/crewbuild:latest | 2.7GB | | |
 | cobolget | | | | | | |
 | ipkg | | | | | | |
-| | Apache Ivy | | | | <pre lang="bash">export ANT_OPTS="-Dhttp.proxyHost=$HTTP_PROXY_HOST -Dhttp.proxyPort=$HTTP_PROXY_PORT -Dhttps.proxyHost=$HTTPS_PROXY_HOST -Dhttps.proxyPort=$HTTPS_PROXY_PORT"</pre> | See [java](https://gist.github.com/hype8912/40116cb5e1051fc1a9b29ea54e6c2139#java). |
+| | Apache Ivy | | | | <pre lang="bash">export ANT_OPTS="-Dhttp.proxyHost=$HTTP_PROXY_HOST -Dhttp.proxyPort=$HTTP_PROXY_PORT -Dhttps.proxyHost=$HTTPS_PROXY_HOST -Dhttps.proxyPort=$HTTPS_PROXY_PORT"</pre> | See [java](application-proxy-settings.md#java). |
 | lin | Lunar | Sorcerer | esselfe/lunar-linux:latest | 786MB | | |
 | n | n (node) | | **NEED IMAGE** | | See [npm](#npm). | See [npm](#npm). |
 | netpkg | | | | | | |
@@ -124,7 +118,8 @@ See the list [here](deprecated-package-manager-settings.md).
 [^bower]: Bower is deprecated and suggested to move to [yarn](#yarn) or [vite](#vite).
 [^brew]: The homebrew image can be made significantly smaller by updating the `Dockerfile` to `git clone --depth 1` instead of the whole `homebrew-core` repo.
 [^cargo]: https://doc.rust-lang.org/cargo/reference/config.html#httpproxy
-[^composer]: https://getcomposer.org/doc/faqs/how-to-use-composer-behind-a-proxy.md
+[^composer_proxy]: https://getcomposer.org/doc/faqs/how-to-use-composer-behind-a-proxy.md
+[^composer_cert]: https://getcomposer.org/doc/03-cli.md#composer-cafile
 [^ubi]: Red Hat UBI images require a subscription to use.
 [^gradle]: Gradle requires a `gradle.properties` file before being able to set the proxy.
 [^hex]: https://hexdocs.pm/hex/Mix.Tasks.Hex.Config.html#module-config-keys

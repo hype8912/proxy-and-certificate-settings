@@ -6,9 +6,10 @@ See also applicable [Certificate](certificate-environment-variables.md) environm
 |---|:---:|---|---|
 | ALL_PROXY | standard | | |
 | all_proxy | standard | $ALL_PROXY | %ALL_PROXY% |
-| BASH_IT_HTTP_PROXY[^bash_it] | Bash-It | $HTTP_PROXY | %HTTP_PROXY% |
-| BASH_IT_HTTPS_PROXY[^bash_it] | Bash-It | $HTTPS_PROXY | %HTTPS_PROXY% |
-| BASH_IT_NO_PROXY[^bash_it] | Bash-It | $NO_PROXY | %NO_PROXY% |
+| BASH_IT_HTTP_PROXY | [Bash-It](application-proxy-settings.md#bash_it) | $HTTP_PROXY | %HTTP_PROXY% |
+| BASH_IT_HTTPS_PROXY | [Bash-It](application-proxy-settings.md#bash_it) | $HTTPS_PROXY | %HTTPS_PROXY% |
+| BASH_IT_NO_PROXY | [Bash-It](application-proxy-settings.md#bash_it) | $NO_PROXY | %NO_PROXY% |
+| CGI_HTTP_PROXY | [Composer](application-proxy-settings.md#composer) | $HTTP_PROXY | %HTTP_PROXY% |
 | CURLOPT_NOPROXY[^curl_npx] | libcurl | $NO_PROXY | %NO_PROXY% |
 | CURLOPT_PROXY[^curl_px] | libcurl | $HTTP_PROXY | %HTTP_PROXY% |
 | EC2_JVM_ARGS[^aws_cloudwatch] | AWS | -Dhttp.proxySet=true -Dhttp.proxyHost=$HTTP_PROXY_HOST -Dhttp.proxyPort=$HTTP_PROXY_PORT -Dhttps.proxyHost=$HTTPS_PROXY_HOST -Dhttps.proxyPort=$HTTPS_PROXY_PORT -Dhttp.nonProxyHosts=$NO_PROXY | -Dhttp.proxySet=true -Dhttp.proxyHost=%HTTP_PROXY_HOST% -Dhttp.proxyPort=%HTTP_PROXY_PORT% -Dhttps.proxyHost=%HTTPS_PROXY_HOST% -Dhttps.proxyPort=%HTTPS_PROXY_PORT% -Dhttp.nonProxyHosts=%NO_PROXY% |
@@ -54,7 +55,6 @@ Using the below variables will make it easier when having to set the values for 
 
 * https://about.gitlab.com/blog/2021/01/27/we-need-to-talk-no-proxy/?utm_medium=social&utm_source=twitter&utm_campaign=blog
 
-[^bash_it]: https://bash-it.readthedocs.io/en/latest/proxy_support/
 [^curl_npx]: https://curl.se/libcurl/c/CURLOPT_NOPROXY.html
 [^curl_px]: https://curl.se/libcurl/c/CURLOPT_PROXY.html
 [^npm]: https://www.npmjs.com/package/global-agent
