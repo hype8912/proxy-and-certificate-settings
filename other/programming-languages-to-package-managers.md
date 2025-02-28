@@ -1,6 +1,6 @@
 ﻿# List of Programming Languages to Package Managers
 
-Please do not include [Meta Package Managers](/other/meta-package-mangagers.md) in this list.
+Please do not include [Meta Package Managers](meta-package-mangagers.md) in this list.
 
 ![xkcd 2309](https://imgs.xkcd.com/comics/x.png)
 

@@ -8,7 +8,7 @@ See also applicable [Proxy](proxy-environment-variables.md) environment variable
 | AWS_CA_BUNDLE | [AWS CLI](application-proxy-settings.md#aws_cli) | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 | CA_CERT[^suse] | SUSE Manager | $SSL_CERT_FILE | |
 | CARGO_HTTP_CAINFO[^cargo] | Cargo | $SSL_CERT_FILE | %SSL_CERT_FILE% |
-| COMPOSER_CAFILE | [Composer](application-proxy-settings.md#composer) | $SSL_CERT_FILE | %SSL_CERT_FILE% |
+| COMPOSER_CAFILE | [Composer](package-manager-settings.md#composer) | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 | CONAN_CACERT_PATH[^conan] | Conan | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 | CURL_CA_BUNDLE[^curl] | curl | $SSL_CA_CERT | %SSL_CA_CERT% |
 | DENO_CERT[^deno] | Deno | $SSL_CERT_FILE | %SSL_CERT_FILE% |
