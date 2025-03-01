@@ -21,7 +21,7 @@ See also applicable [Proxy](proxy-environment-variables.md) environment variable
 | GRYPE_DB_CA_CERT[^grype] | Grype | $SSL_CA_CERT | %SSL_CA_CERT% |
 | HEX_CACERTS_PATH[^hex] | Hex | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 | KIBANA_CA[^elasticsearch] | Kibana | $SSL_CERT_FILE | %SSL_CERT_FILE% |
-| MAVEN_OPTS[^maven] | Maven | <pre lang="bash">-Djavax.net.ssl.trustStore=$SSL_KEYSTORE_FILE -Djavax.net.ssl.trustStorePassword={Password}</pre> | <pre lang="bash">-Djavax.net.ssl.trustStore=%SSL_KEYSTORE_FILE% -Djavax.net.ssl.trustStorePassword={Password}</pre> |
+| MAVEN_OPTS[^maven] | Maven | <pre lang="bash" style="white-space:pre-wrap;">-Djavax.net.ssl.trustStore=$SSL_KEYSTORE_FILE -Djavax.net.ssl.trustStorePassword={Password}</pre> | <pre lang="bat" style="white-space:pre-wrap;">-Djavax.net.ssl.trustStore=%SSL_KEYSTORE_FILE% -Djavax.net.ssl.trustStorePassword={Password}</pre> |
 | NEXTCLADE_EXTRA_CA_CERTS[^nextclade_cli] | Nextclade CLI | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 | NIX_SSL_CERT_FILE[^nix] | NixOS | $SSL_CERT_FILE | |
 | NODE_EXTRA_CA_CERTS[^node] | Node | $SSL_CERT_FILE | %SSL_CERT_FILE% |

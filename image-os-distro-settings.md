@@ -23,7 +23,7 @@
 | Sorcerer | Other Linux | sourcemage:latest | 251MB | | `/etc/ssl/certs/` | <pre lang="bash">update-ca-certificates</pre> |
 | SUSE | SUSE | opensuse/leap:latest<br>opensuse/tumbleweed:latest | 42MB<br>36MB | curl, unzip, [step-cli.rpm](https://dl.smallstep.com/cli/docs-ca-install/latest/step-cli_amd64.rpm) | `/etc/pki/trust/anchors/` | <pre lang="bash">update-ca-certificates</pre> |
 | Void Linux | Other Linux | voidlinux/voidlinux:latest | 43MB | | `/usr/local/share/ca-certificates/` | <pre lang="bash">update-ca-certificates</pre> |
-| Windows | Windows | mcr.microsoft.com/dotnet/framework/sdk:4.8.1 | 2.2GB | | | <pre lang="bash" style="white-space:pre-wrap;">certutil.exe -addstore CA "%SSL_CERT_FILE%"[^windows_mac]</pre> |
+| Windows | Windows | mcr.microsoft.com/dotnet/framework/sdk:4.8.1 | 2.2GB | | | <pre lang="bat" style="white-space:pre-wrap;">certutil.exe -addstore CA "%SSL_CERT_FILE%"[^windows_mac]</pre> |
 
 ## References
 
