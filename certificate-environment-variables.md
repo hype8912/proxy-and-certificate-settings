@@ -56,6 +56,7 @@ See also applicable [Proxy](proxy-environment-variables.md) environment variable
 [^grype]: https://github.com/anchore/grype/issues/653
 [^haskell]: https://github.com/commercialhaskell/stack/blob/123622ab2a2b90d80fc617791b57e486aef725a1/doc/faq.md?plain=1#L218
 [^hex]: https://hexdocs.pm/hex/Mix.Tasks.Hex.Config.html
+[^libcloud]: https://libcloud.readthedocs.io/en/latest/other/ssl-certificate-validation.html#using-a-custom-ca-certificate
 [^maven]: https://maven.apache.org/guides/mini/guide-repository-ssl.html
 [^megalinter]: https://megalinter.io/v5/reporters/GitlabCommentReporter/
 [^mongo]: https://www.mongodb.com/docs/languages/cpp/cpp-driver/current/connect/tls/#specify-a-ca-file
