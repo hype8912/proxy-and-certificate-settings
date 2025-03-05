@@ -6,6 +6,12 @@ The expectation is for this to be a one stop location for developers to get all 
 
 # Disclaimer
 
-We do our best to test every single bit of information that is published but we can't guarantee everything provided will work for every firewall. Every attempt is made to find the recently updated docker images from known publishers but some images are very old or published by individuals and should be used at your own risk.
+We do our best to test every single bit of information that is published but we can't guarantee everything provided will work for every firewall.
+
+## Test Image
+
+Every attempt is made to find the recently updated docker images from known publishers but some images are very old or published by individuals and should be used at your own risk. You can use tools like [Trivy](https://trivy.dev/latest/) to scan images for vulnerabilities.
+
+## Test Image Size
 
 Container and distro image sizes are approximate and mainly given for managing bandwidth when testing in a pipeline. Image sizes could change at any time.

@@ -1,0 +1,74 @@
+# Common settings that generally should always be used with your language specific settings
+
+# Auto detect text files and perform LF normalization
+*          text=auto
+
+#
+# The above will handle all files NOT found below
+#
+
+# Documents
+*.bibtex         text diff=bibtex
+*.doc            diff=astextplain
+*.DOC            diff=astextplain
+*.docx           diff=astextplain
+*.DOCX           diff=astextplain
+*.dot            diff=astextplain
+*.DOT            diff=astextplain
+*.pdf            diff=astextplain
+*.PDF            diff=astextplain
+*.rtf            diff=astextplain
+*.RTF            diff=astextplain
+*.md             text diff=markdown
+*.mdx            text diff=markdown
+*.tex            text diff=tex
+*.adoc           text
+*.textile        text
+*.mustache       text
+*.csv            text eol=crlf
+*.tab            text
+*.tsv            text
+*.txt            text
+*.sql            text
+*.epub           diff=astextplain
+AUTHORS          text diff=markdown
+CHANGES          text
+CONTRIBUTING     text diff=markdown
+license          text
+LICENSE          text diff=markdown
+README           text diff=markdown
+SUPPORT          text diff=markdown
+
+# Graphics
+*.gif      binary
+*.ico      binary
+*.jpg      binary
+*.jpeg     binary
+*.png      binary
+*.tif      binary
+*.tiff     binary
+
+# SVG treated as text by default.
+*.svg      text
+# If you want to treat it as binary,
+# use the following line instead.
+# *.svg    binary
+*.eps      binary
+
+# Configs
+*.json     text
+*.lock     text -diff
+*.toml     text diff=toml
+*.xml      text
+*.yaml     text eol=lf
+*.yml      text eol=lf
+
+# Exclude files from exporting
+.gitattributes text export-ignore
+.gitignore     text export-ignore
+.gitkeep       text export-ignore
+
+# Docker
+.dockerignore     text
+Dockerfile        text eol=lf
+*.Dockerfile      text eol=lf

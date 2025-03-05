@@ -331,7 +331,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Prolog | [PPM](https://github.com/wouterbeek/ppm)<br>[prolog_pack](https://www.swi-prolog.org/pldoc/doc/_SWI_/library/prolog_pack.pl) |
 | PureBasic | |
 | PureScript | [psc-package](https://github.com/purescript/psc-package)<br>[spago](https://github.com/purescript/spago) |
-| Python<a name="python"></a> | [Conda](https://docs.conda.io/en/latest)<br>[Curdling](https://github.com/clarete/curdling)<br>[edm](https://docs.enthought.com/edm/)<br>[Ferry](https://github.com/Lioncat2002/Ferry)<br>[Fext (dead)](https://github.com/fextpkg/cli)<br>[Hatch](https://hatch.pypa.io/latest/)<br>[huak](https://github.com/cnpryer/huak)<br>[Mamba](https://github.com/mamba-org/mamba)<br>[pdm](https://github.com/pdm-project/pdm)<br>[pip](https://pip.pypa.io/en/stable/)<br>[pipenv](https://pipenv.pypa.io/en/latest/)<br>[pipflow](https://github.com/iMerica/pipflow)<br>[pipx](https://pipx.pypa.io/stable/)<br>[pixi](https://prefix.dev/)<br>[PLZ](https://github.com/juancarlospaco/plz)<br>[poet (dead)](https://github.com/sdispater/poet)<br>[poetry](https://github.com/python-poetry/poetry)<br>[pym](https://github.com/beenotung/pym)<br>[PyOCI](https://github.com/AllexVeldman/pyoci)<br>[PyPM](https://github.com/ableinc/pypm)<br>[rye (dead)](https://github.com/astral-sh/rye)<br>[Spack](https://spack.io/)<br>[uv](https://github.com/astral-sh/uv) |
+| Python<a name="python"></a> | [Conda](https://docs.conda.io/en/latest)<br>[Curdling](https://github.com/clarete/curdling)<br>[edm](https://docs.enthought.com/edm/)<br>[Ferry](https://github.com/Lioncat2002/Ferry)<br>[Fext (dead)](https://github.com/fextpkg/cli)<br>[Hatch](https://hatch.pypa.io/latest/)<br>[huak](https://github.com/cnpryer/huak)<br>[Mamba](https://github.com/mamba-org/mamba)<br>[pdm](https://github.com/pdm-project/pdm)<br>[pip](https://pip.pypa.io/en/stable/)<br>[pipenv](https://pipenv.pypa.io/en/latest/)<br>[pipflow](https://github.com/iMerica/pipflow)<br>[pipx](https://pipx.pypa.io/stable/)<br>[pixi](https://prefix.dev/)<br>[PLZ](https://github.com/juancarlospaco/plz)<br>[poet (dead)](https://github.com/sdispater/poet)<br>[poetry](https://github.com/python-poetry/poetry)<br>[pym](https://github.com/beenotung/pym)<br>[PyOCI](https://github.com/AllexVeldman/pyoci)<br>[PyPM](https://github.com/ableinc/pypm)<br>[rye (dead)](https://github.com/astral-sh/rye)<br>[Spack](https://spack.io/)<br>[twine (publishing)](https://twine.readthedocs.io/)<br>[uv](https://github.com/astral-sh/uv) |
 
 ## Q
 | Language | Package Manager |
@@ -437,7 +437,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Zig | [gyro (dead)](https://github.com/mattnite/gyro)<br>[Zigmod](https://github.com/nektro/zigmod)<br>[ZPM](https://github.com/zigtools/zpm) |
 | zsh | [antibody](https://github.com/getantibody/antibody)<br>[antidote](https://github.com/mattmc3/antidote)<br>[antigen](https://github.com/zsh-users/antigen)<br>[zcomet](https://github.com/agkozak/zcomet)<br>[zinit](https://github.com/zdharma-continuum/zinit) |
 
-# References
+# See also
 
 * https://en.wikipedia.org/wiki/Comparison_of_programming_languages
 * https://en.wikipedia.org/wiki/List_of_programming_languages
