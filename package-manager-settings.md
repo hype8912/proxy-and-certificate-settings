@@ -108,7 +108,6 @@ These are known package managers but require more research and testing before be
 | pixi | pixi | Debian | ghcr.io/prefix-dev/pixi:latest | 118MB | | (Python) See [pip](#pip). |
 | swift | Swift Package Manager | Debian | swift:latest | 921MB | | |
 | twine<a name="twine"></a> | Twine (python) | | | |  | <code class="language-bash">export TWINE_CERT="$SSL_CERT_FILE"</code>[^twine]<br>See also [pip](#pip) |
-
 | vite<a name="vite"></a> | Vite (node) | | | | See [npm](#npm). | See [npm](#npm). |
 | vlt | vōlt (node) | | | | See [npm](#npm). | See [npm](#npm). |
 

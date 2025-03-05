@@ -6,7 +6,7 @@ The expectation is for this to be a one stop location for developers to get all 
 
 # Disclaimer
 
-We do our best to test every single bit of information that is published but we can't guarantee everything provided will work for every firewall.
+We do our best to test every single bit of information that is published in our private network behind a firewall but we can't guarantee everything provided will work for every firewall.
 
 ## Test Image
 
