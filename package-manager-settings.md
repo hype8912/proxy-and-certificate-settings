@@ -1,6 +1,8 @@
+# Package Managers
+
 Set the applicable [Proxy](proxy-environment-variables.md), [Certificate](certificate-environment-variables.md), and [OS/Distro](image-os-distro-settings.md) variables along with [application](application-proxy-settings.md) configurations.
 
-# Current Package Managers
+## Current Package Managers
 
 If no information is provided in the `Proxy Instructions` or `Certificate Instructions` means they use the typical OS or Distro environment values and will work by setting those value(s).
 
@@ -86,7 +88,7 @@ If no information is provided in the `Proxy Instructions` or `Certificate Instru
 | zig | | Alpine | ziglang/static-base:llvm13-x86_64-1 | 177MB | | |
 | zypper | Zypper | SUSE | opensuse/leap:latest<br>opensuse/tumbleweed:latest | 42MB<br>36MB | | |
 
-# Further Research Package Managers
+## Further Research Package Managers
 
 These are known package managers but require more research and testing before being moved to the above table.
 
@@ -94,26 +96,32 @@ These are known package managers but require more research and testing before be
 |:---:|:---:|:---:|---|:---:|---|---|
 | bal | Ballerina[^ballerina] | Alpine | ballerina/ballerina:latest | 610MB | `$HOME/.ballerina/Settings.toml`<pre><code class="language-toml">[proxy]&#13;host = "$HTTP_PROXY_HOST"&#13;port = "$HTTP_PROXY_PORT"</code></pre> | <pre><code class="language-bash">export BALLERINA_CA_BUNDLE="$SSL_CERT_FILE"&#13;export BALLERINA_CA_CERT="$SSL_CA_CERT"</code></pre> |
 | cfpm | ColdFusion Package Manager | Debian | adobecoldfusion/coldfusion:latest | 222MB | | |
-| crew | ChromeBrew[^crew] | Debian | satmandu/crewbuild:latest | 2.7GB | | |
+| choco | Chocolatey | Debian | chocolatey/choco:latest | 249MB | [^choco_proxy] | |
 | cobolget | | | | | | |
-| ipkg | | | | | | |
+| crew | ChromeBrew[^crew] | Debian | satmandu/crewbuild:latest | 2.7GB | | |
 | | Apache Ivy | | | | <code class="language-bash" style="white-space:pre-wrap;">export ANT_OPTS="-Dhttp.proxyHost=$HTTP_PROXY_HOST -Dhttp.proxyPort=$HTTP_PROXY_PORT -Dhttps.proxyHost=$HTTPS_PROXY_HOST -Dhttps.proxyPort=$HTTPS_PROXY_PORT"</code> | See [java](application-proxy-settings.md#java). |
 | lin | Lunar | Sorcerer | esselfe/lunar-linux:latest | 786MB | | |
 | n | n (node) | | **NEED IMAGE** | | See [npm](#npm). | See [npm](#npm). |
 | netpkg | | | | | | |
 | openpkg | OpenPKG | Unix | | | | |
 | openupm<a name="openupm"></a> | OpenUPM | | | | <code class="language-bash">export UNITY_NOPROXY="$NO_PROXY"</code>[^unity_proxy]<br>See also [npm](#npm). | |
-| opkg[^opkg] | OPKG | | | | | |
+| opkg[^opkg]<a name="opkg"></a> | OPKG | | | | | |
 | petget | PETget | | | | | |
 | pixi | pixi | Debian | ghcr.io/prefix-dev/pixi:latest | 118MB | | (Python) See [pip](#pip). |
+| pkgm[^pkgm] | | Debian | pkgxdev/pkgx:latest | 66MB | | |
+| qpkg | QPKG | Debian | owncloudci/qnap-qpkg-builder:latest | 197MB | | |
 | swift | Swift Package Manager | Debian | swift:latest | 921MB | | |
 | twine<a name="twine"></a> | Twine (python) | | | |  | <code class="language-bash">export TWINE_CERT="$SSL_CERT_FILE"</code>[^twine]<br>See also [pip](#pip) |
 | vite<a name="vite"></a> | Vite (node) | | | | See [npm](#npm). | See [npm](#npm). |
 | vlt | vōlt (node) | | | | See [npm](#npm). | See [npm](#npm). |
 
-# Deprecated Package Managers
+## Deprecated Package Managers
 
 See the list [here](deprecated-package-manager-settings.md).
+
+## See also
+
++ [Package URL Type definitions](https://github.com/package-url/purl-spec/blob/346589846130317464b677bc4eab30bf5040183a/PURL-TYPES.rst)
 
 [^test_image]: [Test Image Disclaimer](README.md#test-image)
 [^ballerina]: https://ballerina.io/learn/configure-a-network-proxy/
@@ -121,6 +129,7 @@ See the list [here](deprecated-package-manager-settings.md).
 [^brew]: The homebrew image can be made significantly smaller by updating the `Dockerfile` to `git clone --depth 1` instead of the whole `homebrew-core` repo.
 [^cargo]: https://doc.rust-lang.org/cargo/reference/config.html#httpproxy
 [^cargo_cert]: https://doc.rust-lang.org/cargo/reference/config.html#httpcainfo
+[^choco_proxy]: https://docs.chocolatey.org/en-us/guides/usage/proxy-settings-for-chocolatey/
 [^composer_proxy]: https://getcomposer.org/doc/faqs/how-to-use-composer-behind-a-proxy.md
 [^composer_cert]: https://getcomposer.org/doc/03-cli.md#composer-cafile
 [^conan_cert]: https://docs.conan.io/1/reference/env_vars.html#conan-cacert-path
@@ -134,6 +143,7 @@ See the list [here](deprecated-package-manager-settings.md).
 [^node_certs]: https://nodejs.org/docs/latest/api/cli.html#node_extra_ca_certsfile
 [^pear]: Requires the installation of [Crypt_GPG-1.4.2](https://pear.php.net/package/Crypt_GPG/download) before you can set the 'https_proxy'. See [link](https://www.reddit.com/r/PHP/comments/4phpz2/errors_installing_crypt_gpg/) for more information.
 [^pip_cert]: https://pip.pypa.io/en/latest/topics/https-certificates/
+[^pkgm]: https://github.com/pkgxdev/pkgm
 [^opkg]: https://git.yoctoproject.org/opkg/about/#opkg-package-manager
 [^sbt]: https://www.scala-sbt.org/1.x/docs/Command-Line-Reference.html#sbt+JVM+options+and+system+properties
 [^twine]: https://twine.readthedocs.io/en/stable/#environment-variables

@@ -16,6 +16,7 @@
 | | .Net Framework Application | | | `appname.exe.config` or `web.config`[^net_framework_proxy]<pre><code class="language-xml"> &lt;configuration&gt;&#13;  &lt;system.net&gt;&#13;    &lt;defaultProxy enabled="true"&gt;&#13;      &lt;proxy address="%HTTP_PROXY%" /&gt;&#13;    &lt;/defaultProxy&gt;&#13;  &lt;/system.net&gt;&#13;&lt;/configuration&gt;</code></pre> | |
 | | Netbeans IDE | | | 1. Open Netbeans, go to **Tools** then **Options** menu item.<br>2. Click the **General** tab.<br>3. Select **Manual Proxy Settings**.<br>4. Set **Address** to "$HTTP_PROXY_HOST" and **Port** to "$HTTP_PROXY_PORT".| |
 | | Periscope Authenticator | | | <pre><code class="language-bash" style="white-space:pre-wrap;">git config --global lfs.transfer.enablehrefrewrite true&#13;&#13;git config --global url."http://localhost:[Local Port]".insteadOf"[Git Host URL]"</code></pre> | |
+| pio | PlatformIO Core | | | | <code class="language-bash">export REQUESTS_CA_BUNDLE="$SSL_CERT_FILE"</code>[^platformio_cert] |
 | subscription-manager | RHEL Subscription Manager | redhat/ubi9:latest | 84MB | <code class="language-bash" style="white-space:pre-wrap;">subscription-manager config --server.proxy_hostname "$HTTP_PROXY_HOST" --server.proxy_port "$HTTP_PROXY_PORT"</code> | |
 | svn | Subversion | elleflorio/svn-server:latest | 18MB | `~/.subversion/servers` or `%APPDATA%\Subversion\servers`[^svn]<pre><code class="language-ini">[global]&#13;http-proxy-host=$HTTP_PROXY_HOST&#13;http-proxy-port=$HTTP_PROXY_PORT</code></pre> | `~/.subversion/servers` or `%APPDATA%\Subversion\servers`<pre><code class="language-ini">[global]&#13;ssl-trust-default-ca=no&#13;ssl-authority-files=$SSL_CERT_FILE</code></pre> |
 | <a name="supervisely"></a> | Supervisely | | | | <pre><code class="language-bash">export REQUESTS_CA_BUNDLE="$SSL_CERT_FILE"&#13;export SLY_EXTRA_CA_CERTS="$SSL_CERT_FILE"</code>[^supervisely]</pre> |
@@ -41,6 +42,7 @@
 [^grype]: https://github.com/anchore/grype/issues/653#issuecomment-1059995685
 [^hpm]: https://device.harmonyos.com/en/docs/documentation/guide/hpm_proxy-0000001074487706
 [^net_framework_proxy]: https://learn.microsoft.com/en-us/dotnet/framework/configure-apps/file-schema/network/proxy-element-network-settings
+[^platformio_cert]: https://docs.platformio.org/en/latest/core/installation/proxy-configuration.html
 [^supervisely]: https://developer.supervisely.com/app-development/advanced/custom-configuration/fixing-ssl-certificate-errors-in-supervisely
 [^svn]: https://subversion.apache.org/faq.html#proxy
 [^terrateam]: https://docs.terrateam.io/security-and-compliance/self-signed-certificates/

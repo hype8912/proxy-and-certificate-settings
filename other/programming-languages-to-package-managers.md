@@ -314,22 +314,21 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Perl | [cpan](https://www.cpan.org/modules/INSTALL.html)<br>[PPM](https://metacpan.org/pod/PPM) |
 | Pharo | [pi](https://github.com/hernanmd/pi) |
 | PHP | [Composer](https://github.com/composer/composer)<br>[Compote](https://github.com/jlaswell/compote)<br>[Maven (dead)](https://github.com/sarnowski/maven-php-plugin)<br>[pear](https://pear.php.net/manual/)<br>[phpkg](https://github.com/php-repos/phpkg)<br>[Saeghe (dead)](https://github.com/saeghe/saeghe) |
-| Piet | |
+| Piet | :grey_question: |
 | Pike | :grey_question: |
 | Pipefish (Charm)[^charm] | :grey_question: |
-| PL/0 | |
-| PL/1 | |
-| PL/360 | |
-| PL/M | |
-| PL/SQL | |
-| Plus | |
-| Poetry | |
+| PL/0 | :grey_question: |
+| PL/1 | :grey_question: |
+| PL/360 | :grey_question: |
+| PL/M | :grey_question: |
+| PL/SQL | :grey_question: |
+| Plus | :grey_question: |
 | Polaris | [Polaris' Package System](https://web.archive.org/web/20250107085614/https://cohost.org/prophet/post/749629-polaris-package-sys) |
 | Pony | [Corral](https://github.com/ponylang/corral)<br>[pony-stable (dead)](https://github.com/ponylang/pony-stable) |
-| PostScript | |
+| PostScript | :grey_question: |
 | PowerShell | [AnyPackage](https://github.com/anypackage/anypackage)<br>[Kombucha (dead)](https://github.com/lptstr/kombucha)<br>[OneGet (dead)](https://github.com/oneget/oneget)<br>[PowerShellGet](https://github.com/powershell/powershellget)<br>[PowerShellGetv2 (dead)](https://github.com/PowerShell/PowerShellGetv2)<br>[PSDepend](https://github.com/RamblingCookieMonster/PSDepend)<br>[PSResourceGet](https://github.com/PowerShell/PSResourceGet)<br>[winget](https://github.com/microsoft/winget-cli)<br>See also [C#](#csharp) |
 | Prolog | [PPM](https://github.com/wouterbeek/ppm)<br>[prolog_pack](https://www.swi-prolog.org/pldoc/doc/_SWI_/library/prolog_pack.pl) |
-| PureBasic | |
+| PureBasic | :grey_question: |
 | PureScript | [psc-package](https://github.com/purescript/psc-package)<br>[spago](https://github.com/purescript/spago) |
 | Python<a name="python"></a> | [Conda](https://docs.conda.io/en/latest)<br>[Curdling](https://github.com/clarete/curdling)<br>[edm](https://docs.enthought.com/edm/)<br>[Ferry](https://github.com/Lioncat2002/Ferry)<br>[Fext (dead)](https://github.com/fextpkg/cli)<br>[Hatch](https://hatch.pypa.io/latest/)<br>[huak](https://github.com/cnpryer/huak)<br>[Mamba](https://github.com/mamba-org/mamba)<br>[pdm](https://github.com/pdm-project/pdm)<br>[pip](https://pip.pypa.io/en/stable/)<br>[pipenv](https://pipenv.pypa.io/en/latest/)<br>[pipflow](https://github.com/iMerica/pipflow)<br>[pipx](https://pipx.pypa.io/stable/)<br>[pixi](https://prefix.dev/)<br>[PLZ](https://github.com/juancarlospaco/plz)<br>[poet (dead)](https://github.com/sdispater/poet)<br>[poetry](https://github.com/python-poetry/poetry)<br>[pym](https://github.com/beenotung/pym)<br>[PyOCI](https://github.com/AllexVeldman/pyoci)<br>[PyPM](https://github.com/ableinc/pypm)<br>[rye (dead)](https://github.com/astral-sh/rye)<br>[Spack](https://spack.io/)<br>[twine (publishing)](https://twine.readthedocs.io/)<br>[uv](https://github.com/astral-sh/uv) |
 
@@ -337,7 +336,9 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Language | Package Manager |
 |:---:|---|
 | Q# | See [C#](#csharp) |
-| Quest | |
+| Quest | [QPMv1 (dead)](https://github.com/RedBrumbler/QuestPackageManager-Rust)<br>[QPM.CLI](https://github.com/QuestPackageManager/QPM.CLI) |
+| Qu | [qu](http://centrin.net.id/~marc/modules.html) |
+| Quill | :grey_question: |
 
 ## R
 | Language | Package Manager |
@@ -363,7 +364,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | SARL | See [Java](#java) |
 | SAS | |
 | Sather | |
-| Scala | [Conda](https://docs.conda.io/en/latest)<br>[Maven](https://docs.scala-lang.org/tutorials/scala-with-maven.html) |
+| Scala | [Conda](https://docs.conda.io/en/latest)<br>[Coursier](https://get-coursier.io/)<br>[Maven](https://docs.scala-lang.org/tutorials/scala-with-maven.html)<br>[sbt](https://www.scala-sbt.org) |
 | Scheme | |
 | Sed | |
 | Seed7 | |
@@ -380,7 +381,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | SQL | |
 | Squeak | |
 | Standard ML | |
-| Swift | [Conche](https://github.com/Conche/Conche)<br>[Ice](https://github.com/jakeheis/Ice)<br>[Swiftbrew](https://github.com/swiftbrew/Swiftbrew)<br>[Swift Package Manager](https://github.com/apple/swift-package-manager) |
+| Swift | [Conche](https://github.com/Conche/Conche)<br>[Ice](https://github.com/jakeheis/Ice)<br>[Mint](https://github.com/yonaskolb/Mint)<br>[Swiftbrew](https://github.com/swiftbrew/Swiftbrew)<br>[Swift Package Manager](https://github.com/apple/swift-package-manager) |
 
 ## T
 | Language | Package Manager |
