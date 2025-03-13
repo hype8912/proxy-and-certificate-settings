@@ -57,7 +57,7 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/* \
   && sed -i -E 's/^(USERGROUPS_ENAB\s+)yes$/\1no/' /etc/login.defs \
   && localedef -i en_US -f UTF-8 en_US.UTF-8 \
-  && useradd -u "${USER_ID}" --create-home --shell /bin/bash --user-group linuxbrew \
+  && useradd -l -u "${USER_ID}" --create-home --shell /bin/bash --user-group linuxbrew \
   && echo 'linuxbrew ALL=(ALL) NOPASSWD:ALL' >>/etc/sudoers \
   && su - linuxbrew -c 'mkdir ~/.linuxbrew'
 

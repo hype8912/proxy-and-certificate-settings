@@ -31,6 +31,9 @@ See also applicable [Certificate](certificate-environment-variables.md) environm
 | sftp_proxy | standard | $SFTP_PROXY | %SFTP_PROXY% |
 | socks5_proxy | standard | | |
 | ssh_proxy | standard | | |
+| TKG_HTTP_PROXY[^tkg] | Tanzo Kubernetes Grid | $HTTP_PROXY | |
+| TKG_HTTPS_PROXY[^tkg] | Tanzo Kubernetes Grid | $HTTPS_PROXY | |
+| TKG_NO_PROXY[^tkg] | Tanzo Kubernetes Grid | $NO_PROXY | |
 | UNITY_NOPROXY | [Unity Package Manager](package-manager-settings.md#openupm) | $NO_PROXY | %NO_PROXY% |
 | VSCODE_PROXY_URI | [VS Code Server](application-proxy-settings.md#vs-code-server) | $HTTP_PROXY | |
 
@@ -55,8 +58,9 @@ Using the below variables will make it easier when having to set the values for 
 
 * [We need to talk: Can we standardize NO_PROXY?](https://about.gitlab.com/blog/2021/01/27/we-need-to-talk-no-proxy/)
 
+[^aws_cloudwatch]: https://gist.github.com/atushi/5898322#file-how_to_use_the_cloudwatch_api_about_getting_the_jvm_info_with_proxy-sh
 [^curl_npx]: https://curl.se/libcurl/c/CURLOPT_NOPROXY.html
 [^curl_px]: https://curl.se/libcurl/c/CURLOPT_PROXY.html
 [^npm]: https://www.npmjs.com/package/global-agent
 [^rsync]: https://ss64.com/bash/rsync.html
-[^aws_cloudwatch]: https://gist.github.com/atushi/5898322#file-how_to_use_the_cloudwatch_api_about_getting_the_jvm_info_with_proxy-sh
+[^tkg]: https://techdocs.broadcom.com/us/en/vmware-tanzu/standalone-components/tanzu-kubernetes-grid/2-5/tkg/config-ref.html#proxies

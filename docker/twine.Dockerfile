@@ -3,7 +3,7 @@ ARG TWINE_MIN_VERSION=6.0.0
 FROM python:3-alpine
 
 RUN apk update && \
-    apk add ca-certificates gnupg && \
+    apk add --no-cache ca-certificates gnupg && \
     rm -rf /var/cache/apk/*
 
 # Turns off buffering for easier container logging and updating pip as root

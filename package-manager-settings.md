@@ -21,6 +21,7 @@ If no information is provided in the `Proxy Instructions` or `Certificate Instru
 | cards | | Linux From Scratch | sundev79/nutyx-images:nutyx | 130MB | | |
 | cargo<a name="cargo"></a> | Cargo (rust)[^cargo] | Debian | rust:slim | 280MB | | <code class="language-bash">export CARGO_HTTP_CAINFO="$SSL_CERT_FILE"</code>[^cargo_cert] |
 | cast | | Sorcerer | sourcemage:latest | 251MB | | |
+| choco | Chocolatey | Debian | chocolatey/choco:latest | 249MB | | |
 | ck | Collective Knowledge | Debian | ctuning/ck-web-server:latest | 135MB | | |
 | composer<a name="composer"></a> | Composer (PHP) | Alpine | composer:latest | 71MB | <code class="language-bash">export CGI_HTTP_PROXY="HTTP_PROXY"</code>[^composer_proxy] | <code class="language-bash">export COMPOSER_CAFILE="$SSL_CERT_FILE"</code>[^composer_cert] |
 | conan<a name="conan"></a> | Conan | Debian | conanio/gcc9:2.9.1 | 306MB | | <code class="language-bash">export CONAN_CACERT_PATH="$SSL_CERT_FILE"</code>[^conan_cert] |
@@ -59,18 +60,18 @@ If no information is provided in the `Proxy Instructions` or `Certificate Instru
 | pacman | Pacman | Arch Linux | archlinux:latest | 150MB | | |
 | paket | | Debian | nojaf/fable:latest | 284MB | | |
 | pdm | pdm (python) | Debian | frostming/pdm:latest | 47MB | | See [pip](#pip). |
-| pear[^pear] | PEAR (PHP) | Alpine<br>Debian | php:alpine<br>php:latest | 40MB<br>178MB | <pre><code class="language-bash">pear config-set http_proxy "$HTTP_PROXY"&#13;pear config-set https_proxy "$HTTPS_PROXY"</code></pre> | |
+| pear | PEAR (PHP) | Alpine<br>Debian | php:alpine<br>php:latest | 40MB<br>178MB | <pre><code class="language-bash">pear config-set http_proxy "$HTTP_PROXY"&#13;pear config-set https_proxy "$HTTPS_PROXY"</code>[^pear]</pre> | |
 | pip<a name="pip"></a> | pip (python) | Alpine<br>Debian | python:alpine<br>python:slim | 16MB<br>42MB | | <pre><code class="language-bash">export CURL_CA_BUNDLE="$SSL_CA_CERT"&#13;export PIP_CERT="SSL_CERT_FILE"&#13;export REQUESTS_CA_BUNDLE="SSL_CERT_FILE"</code>[^pip_cert]</pre> |
 | pipenv | Pipenv (python) | Alpine | fsfe/pipenv:alpine-3.13 | 36MB | | See [pip](#pip). |
 | pkg | | FreeBSD | | | | |
 | pkgadd<br>ports | pkgutils | Crux | crux:latest | 152MB | <pre><code class="language-bash">echo "ROOT_DIR=/usr/ports/core" > /etc/ports/core.httpup&#13;echo "URL=http://crux.nu/ports/crux-3.8/core" >> /etc/ports/core.httpup&#13;mv /etc/ports/core.rsync /etc/ports/core.rsync.inactive&#13;&#13;echo "ROOT_DIR=/usr/ports/opt" > /etc/ports/opt.httpup&#13;echo "URL=http://crux.nu/ports/crux-3.8/opt" >> /etc/ports/opt.httpup&#13;mv /etc/ports/opt.rsync /etc/ports/opt.rsync.inactive&#13;&#13;echo "ROOT_DIR=/usr/ports/xorg" > /etc/ports/xorg.httpup&#13;echo "URL=http://crux.nu/ports/crux-3.8/xorg" >> /etc/ports/xorg.httpup&#13;mv /etc/ports/xorg.rsync /etc/ports/xorg.rsync.inactive</code></pre> | <code class="language-bash">install -Dm 644 cacert.pem /etc/ssl/cert.pem</code> |
+| pkg_add<br>pkgin | pkgsrc | NetBSD | | | | |
 | pkgtool | Package Tool | Slackware | aclemons:slackware:latest | 66MB | | |
 | pnpm | Performant NPM (node) | Alpine<br>Debian | node:current-alpine<br>node:slim | 54MB<br>76MB | See [npm](#npm). | See [npm](#npm). |
 | pod | CocoaPods | Debian | renovate/cocoapods:latest | 149MB | | |
 | poetry | Poetry (python) | Debian | sunpeek/poetry:py3.11-slim | 90MB | | See [pip](#pip). |
 | port | MacPorts | MacOS | | | | |
 | rpm<a name="rpm"></a> | RPM Package Manager | Red Hat | almalinux:latest<br>amazonlinux:latest<br>centos8:latest<br>quay.io/centos/centos:stream10<br>eurolinux/eurolinux-9:latest<br>fedora:latest<br>rockylinux:9<br>oraclelinux:9<br>redhat/ubi9:latest[^ubi] | 75MB<br>80MB<br>105MB<br>61MB<br>56MB<br>61MB<br>101MB<br>84MB | | |
-| rye | Rye (python) | Debian | Superseded by [uv](#uv).<br>jfxs/rye:latest | 215MB | | See [pip](#pip). |
 | sbt | simple build tool[^sbt] | Alpine | sbtscala/scala-sbt:eclipse-temurin-alpine-23.0.1_11_1.10.7_3.3.5 | 503MB | <pre><code class="language-bash" style="white-space: pre-wrap;">export JAVA_OPTS="$JAVA_OPTS -Dhttp.proxyHost=$HTTP_PROXY_HOST -Dhttp.proxyPort=$HTTP_PROXY_PORT -Dhttps.proxyHost=$HTTPS_PROXY_HOST -Dhttps.proxyPort=$HTTPS_PROXY_PORT"</code></pre> | See [java](application-proxy-settings.md#java). |
 | slackpkg | Slack Package | Slackware | aclemons/slacware:latest | 66MB | | |
 | slapt-get | | Slackware | gnujaos/slapt-get-current-min:latest | 71MB | | |
@@ -96,17 +97,11 @@ These are known package managers but require more research and testing before be
 |:---:|:---:|:---:|---|:---:|---|---|
 | bal | Ballerina[^ballerina] | Alpine | ballerina/ballerina:latest | 610MB | `$HOME/.ballerina/Settings.toml`<pre><code class="language-toml">[proxy]&#13;host = "$HTTP_PROXY_HOST"&#13;port = "$HTTP_PROXY_PORT"</code></pre> | <pre><code class="language-bash">export BALLERINA_CA_BUNDLE="$SSL_CERT_FILE"&#13;export BALLERINA_CA_CERT="$SSL_CA_CERT"</code></pre> |
 | cfpm | ColdFusion Package Manager | Debian | adobecoldfusion/coldfusion:latest | 222MB | | |
-| choco | Chocolatey | Debian | chocolatey/choco:latest | 249MB | [^choco_proxy] | |
-| cobolget | | | | | | |
 | crew | ChromeBrew[^crew] | Debian | satmandu/crewbuild:latest | 2.7GB | | |
 | | Apache Ivy | | | | <code class="language-bash" style="white-space:pre-wrap;">export ANT_OPTS="-Dhttp.proxyHost=$HTTP_PROXY_HOST -Dhttp.proxyPort=$HTTP_PROXY_PORT -Dhttps.proxyHost=$HTTPS_PROXY_HOST -Dhttps.proxyPort=$HTTPS_PROXY_PORT"</code> | See [java](application-proxy-settings.md#java). |
 | lin | Lunar | Sorcerer | esselfe/lunar-linux:latest | 786MB | | |
 | n | n (node) | | **NEED IMAGE** | | See [npm](#npm). | See [npm](#npm). |
-| netpkg | | | | | | |
-| openpkg | OpenPKG | Unix | | | | |
 | openupm<a name="openupm"></a> | OpenUPM | | | | <code class="language-bash">export UNITY_NOPROXY="$NO_PROXY"</code>[^unity_proxy]<br>See also [npm](#npm). | |
-| opkg[^opkg]<a name="opkg"></a> | OPKG | | | | | |
-| petget | PETget | | | | | |
 | pixi | pixi | Debian | ghcr.io/prefix-dev/pixi:latest | 118MB | | (Python) See [pip](#pip). |
 | pkgm[^pkgm] | | Debian | pkgxdev/pkgx:latest | 66MB | | |
 | qpkg | QPKG | Debian | owncloudci/qnap-qpkg-builder:latest | 197MB | | |
@@ -114,6 +109,7 @@ These are known package managers but require more research and testing before be
 | twine<a name="twine"></a> | Twine (python) | | | |  | <code class="language-bash">export TWINE_CERT="$SSL_CERT_FILE"</code>[^twine]<br>See also [pip](#pip) |
 | vite<a name="vite"></a> | Vite (node) | | | | See [npm](#npm). | See [npm](#npm). |
 | vlt | vōlt (node) | | | | See [npm](#npm). | See [npm](#npm). |
+| winget<a name="winget"></a> | Windows Package Manager[^winget] | | | | | |
 
 ## Deprecated Package Managers
 
@@ -144,9 +140,9 @@ See the list [here](deprecated-package-manager-settings.md).
 [^pear]: Requires the installation of [Crypt_GPG-1.4.2](https://pear.php.net/package/Crypt_GPG/download) before you can set the 'https_proxy'. See [link](https://www.reddit.com/r/PHP/comments/4phpz2/errors_installing_crypt_gpg/) for more information.
 [^pip_cert]: https://pip.pypa.io/en/latest/topics/https-certificates/
 [^pkgm]: https://github.com/pkgxdev/pkgm
-[^opkg]: https://git.yoctoproject.org/opkg/about/#opkg-package-manager
 [^sbt]: https://www.scala-sbt.org/1.x/docs/Command-Line-Reference.html#sbt+JVM+options+and+system+properties
 [^twine]: https://twine.readthedocs.io/en/stable/#environment-variables
 [^ubi]: Red Hat UBI images require a subscription to use.
 [^unity_proxy]: https://discussions.unity.com/t/difficulties-in-proxy-environment/774349
+[^winget]: https://learn.microsoft.com/en-us/windows/package-manager/
 [^yarn]: `caFilePath` was changed to `httpsCaFilePath` in Yarn [Version 4.0](https://yarnpkg.com/advanced/changelog#major-changes).
