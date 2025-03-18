@@ -17,7 +17,7 @@
 | Linux From Scratch | LFS | sundev79/nutyx-images:nutyx | 130MB | | `/etc/ssl/local/` | <pre language="bash">make-ca -g --force</pre> |
 | NetBSD | Unix | | | | `/etc/openssl/certs/` | |
 | NixOS | NixOS | nixos/nix:latest | 213MB | | `/etc/ssl/certs/` | <pre language="bash">export NIX_SSL_CERT_FILE="$SSL_CERT_FILE"</pre> |
-| Red Hat | RPM | almalinux:latest<br>amazonlinux:latest<br>centos8:latest<br>quay.io/centos/centos:stream10<br>eurolinux/eurolinux-9:latest<br>fedora:latest<br>rockylinux:9<br>oraclelinux:9<br>redhat/ubi9:latest[^ubi] | 75MB<br>51MB<br>80MB<br>105MB<br>61MB<br>56MB<br>61MB<br>101MB<br>84MB | curl, findutils, unzip, [step-cli.rpm](https://dl.smallstep.com/cli/docs-ca-install/latest/step-cli_amd64.rpm) | `/etc/pki/ca-trust/source/anchors/` | <pre language="bash">update-ca-trust extract</pre> |
+| Red Hat | RPM | almalinux:latest<br>amazonlinux:latest<br>centos8:latest<br>quay.io/centos/centos:stream10<br>eurolinux/eurolinux-9:latest<br>fedora:latest<br>rockylinux:9<br>oraclelinux:9<br>redhat/ubi9:latest | 75MB<br>51MB<br>80MB<br>105MB<br>61MB<br>56MB<br>61MB<br>101MB<br>84MB | curl, findutils, unzip, [step-cli.rpm](https://dl.smallstep.com/cli/docs-ca-install/latest/step-cli_amd64.rpm) | `/etc/pki/ca-trust/source/anchors/` | <pre language="bash">update-ca-trust extract</pre> |
 | Slackware | Slackware | aclemons/slackware:latest | 66MB | | `/etc/ssl/certs/` | <pre language="bash">update-ca-certificates</pre> |
 | Solus | Other Linux | silkeh/solus:slim | 268MB | | `/usr/local/share/ca-certificates/` | <pre language="bash">update-ca-certificates</pre> |
 | Sorcerer | Other Linux | sourcemage:latest | 251MB | | `/etc/ssl/certs/` | <pre language="bash">update-ca-certificates</pre> |
