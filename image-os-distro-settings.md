@@ -5,9 +5,9 @@
 | AIX | Unix | | | | `/var/ssl/serts/` | <pre language="bash">runmqakm</pre> |
 | Alpine Linux  | Alpine | alpine:latest | 3.5MB | ca-certificates, step-cli, unzip | `/usr/local/share/ca-certificates/` | <pre language="bash">update-ca-certificates</pre> |
 | Android | Debian | budtmo/docker-android:emulator_14.0 | 3GB | | `/system/etc/security/cacerts/` | |
-| Arch Linux | Arch | archlinux:latest | 150MB | curl, unzip, [step-cli.rpm](https://dl.smallstep.com/cli/docs-ca-install/latest/step-cli_amd64.rpm)| `/etc/ca-certificates/trust-source/anchors/` | <pre language="bash">update-ca-trust extract</pre> |
+| Arch Linux | Arch | archlinux:latest | 150MB | curl, unzip, step-cli | `/etc/ca-certificates/trust-source/anchors/` | <pre language="bash">update-ca-trust extract</pre> |
 | Clear Linux | Other Linux | clearlinux:latest | 69MB | | `/usr/local/share/ca-certificates/` |<pre language="bash">update-ca-certificates</pre> |
-| Crux | Other Linux | curx:latest | 152MB | | `/etc/ssl/certs` | |
+| Crux | Other Linux | crux:latest | 152MB | | `/etc/ssl/certs` | |
 | CoreOS[^coreos] | RPM | | | | `/etc/pki/ca-trust/source/anchors/` | <pre language="bash">update-ca-certificates</pre> |
 | Darwin | Unix | | | | `/Library/Keychains/System.keychain` | <pre language="bash" style="white-space:pre-wrap;">security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain "$SSL_CA_CERT"[^windows_mac]</pre> |
 | Debian Linux | Debian | debian:stable-slim<br>ubuntu:latest | 27MB<br>28MB | ca-certificates, curl, unzip | `/usr/local/share/ca-certificates/` | <pre language="bash">update-ca-certificates</pre> |
