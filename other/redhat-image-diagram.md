@@ -1,4 +1,4 @@
-# Red Hat Linux Image diagram
+# Red Hat Linux Image Diagram
 
 ```mermaid
 ---
@@ -33,3 +33,7 @@ flowchart LR
   centos:stream10 --> almalinux:10-kitten
   centos:stream10 --> redhat/ubi:10
 ```
+
+## Disclaimer
+
+This diagram is meant for general information to show the upstreams from various images to mimic Red Hat Enterprise Linux (RHEL). Red Hat stopped publishing the source code to RHEL in 2023. The area from version 8 may not be 100% correct.

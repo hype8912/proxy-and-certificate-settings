@@ -15,9 +15,9 @@ See also applicable [Certificate](certificate-environment-variables.md) environm
 | EC2_JVM_ARGS[^aws_cloudwatch] | AWS | <code class="lnaguage-bash" style="white-space:pre-wrap; max-width:276px;">-Dhttp.proxySet=true -Dhttp.proxyHost=$HTTP_PROXY_HOST -Dhttp.proxyPort=$HTTP_PROXY_PORT -Dhttps.proxyHost=$HTTPS_PROXY_HOST -Dhttps.proxyPort=$HTTPS_PROXY_PORT -Dhttp.nonProxyHosts=$NO_PROXY</code> | <code class="language-batchfile" style="white-space:pre-wrap; max-width:276px;">-Dhttp.proxySet=true -Dhttp.proxyHost=%HTTP_PROXY_HOST% -Dhttp.proxyPort=%HTTP_PROXY_PORT% -Dhttps.proxyHost=%HTTPS_PROXY_HOST% -Dhttps.proxyPort=%HTTPS_PROXY_PORT% -Dhttp.nonProxyHosts=%NO_PROXY%</code> |
 | FTP_PROXY | standard | | |
 | ftp_proxy | standard | $FTP_PROXY | %FTP_PROXY% |
-| GLOBAL_AGENT_HTTP_PROXY[^npm] | npm - global agent | $HTTP_PROXY | %HTTP_PROXY% |
-| GLOBAL_AGENT_HTTPS_PROXY[^npm] | npm - global agent | $HTTPS_PROXY | %HTTPS_PROXY% |
-| GLOBAL_AGENT_NO_PROXY[^npm] | npm - global agent | $NO_PROXY | %NO_PROXY% |
+| GLOBAL_AGENT_HTTP_PROXY[^global_agent] | node - global agent | $HTTP_PROXY | %HTTP_PROXY% |
+| GLOBAL_AGENT_HTTPS_PROXY[^global_agent] | node - global agent | $HTTPS_PROXY | %HTTPS_PROXY% |
+| GLOBAL_AGENT_NO_PROXY[^global_agent] | node - global agent | $NO_PROXY | %NO_PROXY% |
 | HTTP_PROXY | standard | $HTTP_PROXY_HOST:$HTTP_PROXY_PORT | %HTTP_PROXY_HOST%:%HTTP_PROXY_PORT% |
 | http_proxy | standard | $HTTP_PROXY | %HTTP_PROXY% |
 | HTTPS_PROXY | standard | $HTTPS_PROXY_HOST:$HTTPS_PROXY_PORT | %HTTPS_PROXY_HOST%:%HTTPS_PROXY_PORT% |
@@ -61,6 +61,6 @@ Using the below variables will make it easier when having to set the values for 
 [^aws_cloudwatch]: https://gist.github.com/atushi/5898322#file-how_to_use_the_cloudwatch_api_about_getting_the_jvm_info_with_proxy-sh
 [^curl_npx]: https://curl.se/libcurl/c/CURLOPT_NOPROXY.html
 [^curl_px]: https://curl.se/libcurl/c/CURLOPT_PROXY.html
-[^npm]: https://www.npmjs.com/package/global-agent
+[^global_agent]: https://www.npmjs.com/package/global-agent
 [^rsync]: https://ss64.com/bash/rsync.html
 [^tkg]: https://techdocs.broadcom.com/us/en/vmware-tanzu/standalone-components/tanzu-kubernetes-grid/2-5/tkg/config-ref.html#proxies
