@@ -6,6 +6,7 @@ This is a generic list of package managers that need testing beyond making the l
 | :---:|---|
 | 0install | Zero Install[^zinstall] |
 | cobolget | COBOL Package Manager[^cobolget] |
+| flox | Flox[^flox] - Universal |
 | ncl | Npackd[^npackd] - Windows |
 | netpkg[^netpkg] | |
 | ninite | Ninite[^ninite] - Windows |
@@ -19,6 +20,7 @@ This is a generic list of package managers that need testing beyond making the l
 | wpkg<a name="wpkg"></a> | WPKG[^wpkg] - Windows |
 
 [^cobolget]: https://github.com/OlegKunitsyn/cobolget
+[^flox]: https://flox.dev
 [^netpkg]: https://www.wikiwand.com/en/articles/Netpkg
 [^ninite]: https://ninite.com
 [^novus]: https://www.novuspkg.com/
