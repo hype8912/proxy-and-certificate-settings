@@ -6,10 +6,11 @@
 | Alpine Linux  | Alpine | alpine:latest | 3.5MB | ca-certificates, step-cli, unzip | `/usr/local/share/ca-certificates/` | <code class="language-bash">update-ca-certificates</code> |
 | Android | Debian | budtmo/docker-android:emulator_14.0 | 3GB | | `/system/etc/security/cacerts/` | |
 | Arch Linux | Arch | archlinux:latest | 150MB | curl, unzip, step-cli | `/etc/ca-certificates/trust-source/anchors/` | <code class="language-bash">update-ca-trust extract</code> |
+| ChromeOS | Other Linux | satmandu/crewbuild:latest | 1.9GB | | | |
 | Clear Linux | Other Linux | clearlinux:latest | 69MB | | `/usr/local/share/ca-certificates/` | <code class="language-bash">update-ca-certificates</code> |
-| Crux | Other Linux | crux:latest | 152MB | | `/etc/ssl/certs` | |
 | CoreOS[^coreos] | RPM | | | | `/etc/pki/ca-trust/source/anchors/` | <code class="language-bash">update-ca-certificates</code> |
-| Darwin | Unix | | | | `/Library/Keychains/System.keychain` | <pre style="white-space:pre-wrap;"><code class="language-bash" style="white-space:pre-wrap;">security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain "$SSL_CA_CERT"</code>[^windows_mac]</pre> |
+| Crux | Other Linux | crux:latest | 152MB | | `/etc/ssl/certs` | |
+| Darwin | Unix | | | | `/Library/Keychains/System.keychain` | <pre style="white-space:pre-wrap;"><code class="language-bash" style="white-space:pre-wrap;">security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain "$SSL_CA_CERT"&#13;echo \| sudo tee -a /etc/ssl/cert.pem < "$SSL_CERT_FILE"</code>[^windows_mac]</pre> |
 | Debian Linux | Debian | debian:stable-slim<br>ubuntu:latest | 27MB<br>28MB | ca-certificates, curl, unzip | `/usr/local/share/ca-certificates/` | <code class="language-bash">update-ca-certificates</code> |
 | FreeBSD | Unix | | | | `/usr/local/share/certs/` | |
 | Gentoo Linux | Gentoo | gentoo/python:latest | 611MB | | `/usr/local/share/ca-certificates/` | <code class="language-bash">update-ca-certificates</code> |
@@ -27,10 +28,11 @@
 
 ## See also
 
-* [Linux Distro History Map](https://upload.wikimedia.org/wikipedia/commons/1/1b/Linux_Distribution_Timeline.svg)
-* [Distroware Archive](https://distroware.gitlab.io/)
-* [Unix Distro History Map](https://upload.wikimedia.org/wikipedia/commons/7/77/Unix_history-simple.svg)
-* https://github.com/casey/just
++ [Linux Distro History Map](https://upload.wikimedia.org/wikipedia/commons/1/1b/Linux_Distribution_Timeline.svg)
++ [Distroware Archive](https://distroware.gitlab.io/)
++ [Unix Distro History Map](https://upload.wikimedia.org/wikipedia/commons/7/77/Unix_history-simple.svg)
++ [Add the certificate to operating systems](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/user-side-certificates/manual-deployment/#add-the-certificate-to-operating-systems)
++ https://github.com/casey/just
 
 [^coreos]: https://github.com/endocode/coreos-docs/blob/master/os/adding-certificate-authorities.md
 [^nix_cert]: https://nix.dev/manual/nix/2.24/installation/env-variables.html#nix_ssl_cert_file

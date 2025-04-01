@@ -57,7 +57,7 @@ If no information is provided in the `Proxy Instructions` or `Certificate Instru
 | npm<a name="npm"></a> | Node Package Manager | Alpine<br>Debian | node:current-alpine<br>node:slim | 54MB<br>76MB | <pre><code class="language-bash">npm config set proxy "$HTTP_PROXY"&#13;npm config set https-proxy "$HTTPS_PROXY"&#13;npm config set noproxy "$NO_PROXY"</code></pre>Electron:<br><code class="language-bash">export ELECTRON_GET_USE_PROXY=true</code> | <pre><code class="language-bash">export NODE_EXTRA_CA_CERTS="$SSL_CERT_FILE"&#13;export NODE_TLS_REJECT_UNAUTHORIZED=1</code>[^node_certs]</pre> |
 | nuget | NuGet | Windows | mcr.microsoft.com/dotnet/framework/sdk:4.8.1 | 2.2GB | <pre><code class="language-bash">nuget config -set http_proxy="$HTTP_PROXY"&#13;nuget config -set https_proxy="$HTTPS_PROXY"</code></pre> | |
 | opam | opam | Alpine<br>Debian | ocaml/opam:alpine<br>ocaml/opam:latest | 477MB<br>604MB | | |
-| pacman | Pacman | Arch Linux | archlinux:latest | 150MB | | |
+| pacman | Pacman | Arch Linux | archlinux:latest | 150MB | <code class="language-bash">export RSYNC_PROXY="$HTTP_PROXY"</code> | |
 | paket | | Debian | nojaf/fable:latest | 284MB | | |
 | pdm | pdm (python) | Debian | frostming/pdm:latest | 47MB | | See [pip](#pip). |
 | pear | PEAR (PHP) | Alpine<br>Debian | php:alpine<br>php:latest | 40MB<br>178MB | <pre><code class="language-bash">pear config-set http_proxy "$HTTP_PROXY"&#13;pear config-set https_proxy "$HTTPS_PROXY"</code>[^pear]</pre> | |

@@ -13,6 +13,7 @@
 | hpm | DevEco OpenHarmony | | | <pre><code class="language-bash">hpm config set http_proxy $HTTP_PROXY&#13;hpm config set https_proxy $HTTPS_PROXY</code>[^hpm]</pre> | |
 | java<a name="java"></a> | OpenJDK | openjdk:25-slim | 233MB | <code class="language-bash" style="white-space:pre-wrap;">export JAVA_OPTS="$JAVA_OPTS -Dhttp.proxyHost=$HTTP_PROXY_HOST -Dhttp.proxyPort=$HTTP_PROXY_PORT -Dhttps.proxyHost=$HTTPS_PROXY_HOST -Dhttps.proxyPort=$HTTPS_PROXY_PORT"</code> | Linux and Darwin:<br><code class="language-bash" style="white-space:pre-wrap;">keytool -importkeystore -srckeystore $SSL_KEYSTORE_FILE -destkeystore $JAVA_HOME/lib/security/cacerts</code><br><br>Windows:<br><code class="language-batchfile" style="white-space:pre-wrap;">keytool -importkeystore -srckeystore %SSL_KEYSTORE_FILE% -destkeystore %JAVA_HOME%\lib\security\cacerts</code> |
 | | Microsoft Azure CLI | mcr.microsoft.com/azure-cli:latest | | | <code class="language-bash">export REQUESTS_CA_BUNDLE="$SSL_CERT_FILE"</code>[^azure_cli] |
+| | minikube | | | | <code class="language-bash">cp "$SSL_CERT_FILE" ~/.minikube/files/etc/ssl/certs&#13;minikube delete&#13;minikube start --embed-certs</code>[^minikube_cert] |
 | | .Net Framework Application | | | `appname.exe.config` or `web.config`[^net_framework_proxy]<pre><code class="language-xml"> &lt;configuration&gt;&#13;  &lt;system.net&gt;&#13;    &lt;defaultProxy enabled="true"&gt;&#13;      &lt;proxy address="%HTTP_PROXY%" /&gt;&#13;    &lt;/defaultProxy&gt;&#13;  &lt;/system.net&gt;&#13;&lt;/configuration&gt;</code></pre> | |
 | | Netbeans IDE | | | 1. Open Netbeans, go to **Tools** then **Options** menu item.<br>2. Click the **General** tab.<br>3. Select **Manual Proxy Settings**.<br>4. Set **Address** to "$HTTP_PROXY_HOST" and **Port** to "$HTTP_PROXY_PORT".| |
 | | Periscope Authenticator | | | <pre><code class="language-bash" style="white-space:pre-wrap;">git config --global lfs.transfer.enablehrefrewrite true&#13;&#13;git config --global url."http://localhost:[Local Port]".insteadOf"[Git Host URL]"</code></pre> | |
@@ -28,6 +29,7 @@
 ## See also
 
 [Adding Custom Certificate to an Application-Specific Trust Store](https://help.zscaler.com/zia/adding-custom-certificate-application-specific-trust-store)
+[Add the certificate to applications](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/user-side-certificates/manual-deployment/#add-the-certificate-to-applications)
 
 [^test_image]: [Test Image Disclaimer](README.md#test-image)
 [^aws_cli]: https://docs.aws.amazon.com/cli/v1/userguide/cli-configure-envvars.html
@@ -42,6 +44,7 @@
 [^gitlab_runner]: https://docs.gitlab.com/runner/configuration/tls-self-signed.html#trusting-the-certificate-for-the-other-cicd-stages
 [^grype]: https://github.com/anchore/grype/issues/653#issuecomment-1059995685
 [^hpm]: https://device.harmonyos.com/en/docs/documentation/guide/hpm_proxy-0000001074487706
+[^minikube_cert]: https://minikube.sigs.k8s.io/docs/handbook/vpn_and_proxy/#x509-certificate-signed-by-unknown-authority
 [^net_framework_proxy]: https://learn.microsoft.com/en-us/dotnet/framework/configure-apps/file-schema/network/proxy-element-network-settings
 [^platformio_cert]: https://docs.platformio.org/en/latest/core/installation/proxy-configuration.html
 [^supervisely]: https://developer.supervisely.com/app-development/advanced/custom-configuration/fixing-ssl-certificate-errors-in-supervisely
