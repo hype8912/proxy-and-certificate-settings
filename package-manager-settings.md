@@ -33,6 +33,7 @@ If no information is provided in the `Proxy Instructions` or `Certificate Instru
 | dart | Dart Pub | Debian | dart:stable | 291MB | | |
 | deno<a name="deno"></a> | Deno (node) | Alpine<br>Debian | denoland/deno:alpine<br>denoland/deno:latest | 50MB<br>71MB | See [npm](#npm). | <pre><code class="language-bash">export DENO_CERT="$SSL_CERT_FILE"&#13;export DENO_TLS_CA_STORE=system</code>[^deno_cert]</pre>See also [npm](#npm). |
 | dnf<a name="dnf"></a> | DNF | Red Hat | almalinux:latest<br>amazonlinux:latest<br>centos8:latest<br>quay.io/centos/centos:stream10<br>eurolinux/eurolinux-9:latest<br>fedora:latest<br>fedora:rawhide<br>rockylinux:9<br>oraclelinux:9<br>redhat/ubi9:latest | 75MB<br>80MB<br>105MB<br>61MB<br>56MB<br>55MB<br>61MB<br>55MB<br>101MB<br>84MB | <code class="language-bash">echo "proxy=$HTTP_PROXY" >> /etc/dnf/dnf.conf</code> | |
+| dotnet nuget | NuGet | Debian | mcr.microsoft.com/dotnet/sdk:8.0 | 836MB | <pre><code class="language-bash">dotnet nuget config set http_proxy "$HTTP_PROXY"&#13;dotnet nuget config set https_proxy "$HTTPS_PROXY"</code></pre> | |
 | dpkg | Debian Package | Debian | debian:stable-slim<br>ubuntu:latest | 27MB<br>28MB | See [apt](#apt). | |
 | dub | DUB | Debian | dlanguage/ldc:latest | 304MB | | |
 | emerge | Portage | Gentoo | gentoo/stage3:musl<br>gentoo/python:latest | 290MB<br>611MB | | |

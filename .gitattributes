@@ -72,3 +72,7 @@ SUPPORT          text diff=markdown
 .dockerignore     text
 Dockerfile        text eol=lf
 *.Dockerfile      text eol=lf
+
+# Scripts
+*.sh    text eol=lf
+*.bat   text eol=crlf

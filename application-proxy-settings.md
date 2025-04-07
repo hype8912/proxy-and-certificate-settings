@@ -28,8 +28,8 @@
 
 ## See also
 
-[Adding Custom Certificate to an Application-Specific Trust Store](https://help.zscaler.com/zia/adding-custom-certificate-application-specific-trust-store)
-[Add the certificate to applications](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/user-side-certificates/manual-deployment/#add-the-certificate-to-applications)
++ [Adding Custom Certificate to an Application-Specific Trust Store](https://help.zscaler.com/zia/adding-custom-certificate-application-specific-trust-store)
++ [Add the certificate to applications](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/user-side-certificates/manual-deployment/#add-the-certificate-to-applications)
 
 [^test_image]: [Test Image Disclaimer](README.md#test-image)
 [^aws_cli]: https://docs.aws.amazon.com/cli/v1/userguide/cli-configure-envvars.html
