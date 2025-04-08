@@ -36,7 +36,7 @@ echo "Checking for installed package managers..."
 
 for manager in $package_managers; do
 	if command -v "$manager" >/dev/null 2>&1; then
-		echo "${green}$manager is installed.${reset}"
+		echo -e "${green}$manager is installed.${reset}"
 	else
 		echo "$manager not found."
 	fi
