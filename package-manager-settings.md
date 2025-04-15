@@ -96,7 +96,7 @@ These are known package managers but require more research and testing before be
 
 | Package manager | Name | Image Base | Test Image[^test_image] | Test Image Size[^test_size] | Proxy Instructions | Certificate Instructions |
 |:---:|:---:|:---:|---|:---:|---|---|
-| bal | Ballerina[^ballerina] | Alpine | ballerina/ballerina:latest | 610MB | `$HOME/.ballerina/Settings.toml`<pre><code class="language-toml">[proxy]&#13;host = "$HTTP_PROXY_HOST"&#13;port = "$HTTP_PROXY_PORT"</code></pre> | <pre><code class="language-bash">export BALLERINA_CA_BUNDLE="$SSL_CERT_FILE"&#13;export BALLERINA_CA_CERT="$SSL_CA_CERT"</code></pre> |
+| bal | Ballerina[^ballerina] | Alpine | ballerina/ballerina:1.2.57 | 357MB | `$HOME/.ballerina/Settings.toml`<pre><code class="language-toml">[proxy]&#13;host = "$HTTP_PROXY_HOST"&#13;port = "$HTTP_PROXY_PORT"</code></pre> | <pre><code class="language-bash">export BALLERINA_CA_BUNDLE="$SSL_CERT_FILE"&#13;export BALLERINA_CA_CERT="$SSL_CA_CERT"</code></pre> |
 | cfpm | ColdFusion Package Manager | Debian | adobecoldfusion/coldfusion:latest | 222MB | | |
 | crew | ChromeBrew[^crew] | Debian | satmandu/crewbuild:latest | 2.7GB | | |
 | | Apache Ivy | | | | <code class="language-bash" style="white-space:pre-wrap;">export ANT_OPTS="-Dhttp.proxyHost=$HTTP_PROXY_HOST -Dhttp.proxyPort=$HTTP_PROXY_PORT -Dhttps.proxyHost=$HTTPS_PROXY_HOST -Dhttps.proxyPort=$HTTPS_PROXY_PORT"</code> | See [java](application-proxy-settings.md#java). |
