@@ -6,6 +6,7 @@ See also applicable [Proxy](proxy-environment-variables.md) environment variable
 |---|:---:|---|---|
 | ADDITIONAL_CA_CERT_BUNDLE[^gitlab_dps] | GitLab Dependency Scanning | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 | AWS_CA_BUNDLE | [AWS CLI](application-proxy-settings.md#aws_cli) | $SSL_CERT_FILE | %SSL_CERT_FILE% |
+| BC_CA_BUNDLE | [checkov](application-proxy-settings.md#checkov) | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 | CA_CERT[^suse] | SUSE Manager | $SSL_CERT_FILE | |
 | CA_CERTS_FILE[^libcloud] | Apache Libcloud | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 | CARGO_HTTP_CAINFO | [Cargo](package-manager-settings.md#cargo) | $SSL_CERT_FILE | %SSL_CERT_FILE% |
@@ -25,6 +26,7 @@ See also applicable [Proxy](proxy-environment-variables.md) environment variable
 | NIX_SSL_CERT_FILE | [NixOS](package-manager-settings.md#nix) | $SSL_CERT_FILE | |
 | NODE_EXTRA_CA_CERTS | [Node](package-manager-settings.md#npm) | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 | PIP_CERT | [Python](package-manager-settings.md#pip) | $SSL_CERT_FILE | %SSL_CERT_FILE% |
+| PROXY_CA_PATH | [checkov](application-proxy-settings.md#checkov) | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 | REGISTRY_CA_PATH[^tanzu] | Tanzu Application Platform | $SSL_CA_CERT | %SSL_CA_CERT% |
 | REQUESTS_CA_BUNDLE[^py_requests] | Python | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 | SLY_EXTRA_CA_CERTS | [Supervisely](application-proxy-settings.md#supervisely) | $SSL_CERT_FILE | %SSL_CERT_FILE% |

@@ -24,6 +24,7 @@ See also applicable [Certificate](certificate-environment-variables.md) environm
 | https_proxy | standard | $HTTPS_PROXY | %HTTPS_PROXY% |
 | NO_PROXY | standard | | |
 | no_proxy | standard | $NO_PROXY | %NO_PROXY% |
+| PROXY_URL | [checkov](application-proxy-settings.md#checkov) | $HTTP_PROXY | %HTTP_PROXY% |
 | RSYNC_PROXY[^rsync] | rsync | | |
 | rsync_proxy[^rsync] | rsync | $RSYNC_PROXY | %RSYNC_PROXY% |
 | SERVICE_JVM_ARGS[^aws_cloudwatch] | AWS Cloudwatch | $EC2_JVM_ARGS | |
