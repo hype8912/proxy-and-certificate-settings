@@ -8,3 +8,8 @@
 
 + `docker run --rm -it --user root --entrypoint -v /certs:/certs:ro /bin/sh alpine:latest`
 + `docker run --rm -it --user root --entrypoint -v /certs:/certs:ro /bin/bash alpine:latest`
+
+## XBPS
+
++ [How do I use xbps with an authenticated proxy?](https://unix.stackexchange.com/questions/510497/how-do-i-use-xbps-with-an-authenticated-proxy)
++ [Working xbps via proxy](https://www.reddit.com/r/voidlinux/comments/l1swcm/working_xbps_via_proxy/)
