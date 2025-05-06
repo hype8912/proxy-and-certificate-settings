@@ -81,14 +81,14 @@ If no information is provided in the `Proxy Instructions` or `Certificate Instru
 | stack<a name="stack"></a> | | Debian | haskell:9.4.3-slim<br>haskell:slim | 319MB<br>576MB | | <code class="language-bash">export SYSTEM_CERTIFICATE_PATH="$SSL_CERT_DIR"</code>[^haskell_stack] |
 | swupd | swupd | Clear Linux | clearlinux:latest | 69MB | | |
 | urpmi | | Red Hat | mageia:latest | 97MB | | |
-| uv<a name="uv"></a> | uv (python) | Alpine | ghcr.io/astral-sh/uv:alpine | 45MB | | <pre><code class="language-bash">export UV_NATIVE_TLS=true</code></pre>See also [pip](#pip). |
+| uv<a name="uv"></a> | uv (python) | Alpine | ghcr.io/astral-sh/uv:python3.13-alpine | 85MB | | <pre><code class="language-bash">export UV_NATIVE_TLS=true</code></pre>See also [pip](#pip). |
 | vcpkg | Visual C Package | Alpine<br>Debian | acgetchell/vcpkg-image:alpine<br>acgetchell/vcpkg-image:latest | 136MB<br>507MB | | |
 | volta | | Debian | domjtalbot/volta:latest | 92MB | | |
 | xbps | X Binary Package System | Void Linux | ghcr.io/void-linux/void-musl-full:latest | 81MB | | |
 | yarn<a name="yarn"></a> | Yet Another Resource Negotiator (node)[^yarn] | Alpine | jitesoft/node-yarn:lts-slim | 60MB | <pre><code class="language-bash">yarn config set httpProxy "$HTTP_PROXY"&#13;yarn config set httpsProxy "$HTTPS_PROXY"</code></pre>See also [npm](#npm). | <code class="language-bash">yarn config set httpsCaFilePath "$SSL_CERT_FILE"</code><br>See also [npm](#npm). |
 | yum | Yellowdog Update Modifier | Red Hat | almalinux:latest<br>centos8:latest<br>quay.io/centos/centos:stream10<br>eurolinux/eurolinux-9:latest<br>fedora:latest<br>rockylinux:9<br>oraclelinux:9<br>redhat/ubi9:latest | 75MB<br>80MB<br>105MB<br>61MB<br>56MB<br>61MB<br>101MB<br>84MB | <code class="language-bash">echo "proxy=$HTTP_PROXY" >> /etc/yum.conf</code> | |
 | zig | | Alpine | ziglang/static-base:llvm13-x86_64-1 | 177MB | | |
-| zypper | Zypper | SUSE | opensuse/leap:latest<br>opensuse/tumbleweed:latest | 42MB<br>36MB | | |
+| zypper | Zypper | SUSE | opensuse/archive:13.2<br>opensuse/leap:latest<br>opensuse/tumbleweed:latest | 37MB<br>42MB<br>36MB | | |
 
 ## Further Research Package Managers
 
