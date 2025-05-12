@@ -127,7 +127,7 @@ See the list [here](deprecated-package-manager-settings.md).
 [^cargo]: https://doc.rust-lang.org/cargo/reference/config.html#httpproxy
 [^cargo_cert]: https://doc.rust-lang.org/cargo/reference/config.html#httpcainfo
 [^choco_proxy]: https://docs.chocolatey.org/en-us/guides/usage/proxy-settings-for-chocolatey/
-[^composer_proxy]: https://getcomposer.org/doc/faqs/how-to-use-composer-behind-a-proxy.md
+[^composer_proxy]: PHP Versions 5.6+ are more likely to be able to automatically detect the system's default CA file. https://getcomposer.org/doc/faqs/how-to-use-composer-behind-a-proxy.md
 [^composer_cert]: https://getcomposer.org/doc/03-cli.md#composer-cafile
 [^conan_cert]: https://docs.conan.io/1/reference/env_vars.html#conan-cacert-path
 [^crew]: https://github.com/chromebrew/chromebrew

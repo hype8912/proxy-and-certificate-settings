@@ -6,8 +6,8 @@
 
 ## How to run a docker image directly
 
-+ `docker run --rm -it --user root --entrypoint -v /certs:/certs:ro /bin/sh alpine:latest`
-+ `docker run --rm -it --user root --entrypoint -v /certs:/certs:ro /bin/bash alpine:latest`
++ `docker run --rm -it --user root --entrypoint sh -v /certs:/certs:ro alpine:latest`
++ `docker run --rm -it --user root --entrypoint bash -v /certs:/certs:ro alpine:latest`
 
 ## XBPS
 

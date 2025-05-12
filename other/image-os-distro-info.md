@@ -7,6 +7,7 @@ This is a list of ways to determine what image/distro/os you are possibly dealin
 | Linux | | | | <code class="language-bash">cat /etc/*verion</code> |
 | Linux | | | | <code class="language-bash">uname -a</code> |
 | Linux | | | | <code class="language-bash">cat /etc/*elease</code> |
+| Linux | | | | <code class="language-bash">hostname</code> |
 | Linux | | | | <code class="language-bash">hostnamectl</code> |
 | Windows | | | | <code class="language-batchfile">systeminfo</code> |
 
