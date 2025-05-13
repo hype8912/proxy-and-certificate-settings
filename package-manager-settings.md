@@ -32,7 +32,7 @@ If no information is provided in the `Proxy Instructions` or `Certificate Instru
 | ctan | CTAN | Debian | esolang/tex:latest | 245MB | |
 | dart | Dart Pub | Debian | dart:stable | 291MB | | |
 | deno<a name="deno"></a> | Deno (node) | Alpine<br>Debian | denoland/deno:alpine<br>denoland/deno:latest | 50MB<br>71MB | See [npm](#npm). | <pre><code class="language-bash">export DENO_CERT="$SSL_CERT_FILE"&#13;export DENO_TLS_CA_STORE=system</code>[^deno_cert]</pre>See also [npm](#npm). |
-| dnf<a name="dnf"></a> | DNF | Red Hat | almalinux:latest<br>amazonlinux:latest<br>centos8:latest<br>quay.io/centos/centos:stream10<br>eurolinux/eurolinux-9:latest<br>fedora:latest<br>fedora:rawhide<br>rockylinux:9<br>oraclelinux:9<br>redhat/ubi9:latest | 75MB<br>80MB<br>105MB<br>61MB<br>56MB<br>55MB<br>61MB<br>55MB<br>101MB<br>84MB | <code class="language-bash">echo "proxy=$HTTP_PROXY" >> /etc/dnf/dnf.conf</code> | |
+| dnf<a name="dnf"></a> | DNF | Red Hat | See [Red Hat Image Distros](other/redhat-image-distros.md) | | <code class="language-bash">echo "proxy=$HTTP_PROXY" >> /etc/dnf/dnf.conf</code> | |
 | dotnet nuget | NuGet | Debian | mcr.microsoft.com/dotnet/sdk:8.0 | 836MB | | |
 | dpkg | Debian Package | Debian | debian:stable-slim<br>ubuntu:latest | 27MB<br>28MB | See [apt](#apt). | |
 | dub | DUB | Debian | dlanguage/ldc:latest | 304MB | | |
@@ -51,7 +51,7 @@ If no information is provided in the `Proxy Instructions` or `Certificate Instru
 | lein<a name="lein"></a> | Leiningen | Debian | clojure:latest | 287MB | | See [java](application-proxy-settings.md#java). |
 | luarocks | LuaRocks | Alpine<br>Debian | nickblah/lua:5-luarocks-alpine3<br>nickblah/lua:latest | 7MB<br>47MB | | |
 | mamba | Mamba | Debian | condaforge/miniforge3:latest | 141MB | | <pre><code class="language-bash">export CURL_CA_BUNDLE="$SSL_CA_CERT"&#13;export REQUESTS_CA_BUNDLE="SSL_CERT_FILE"</code></pre>See also [conda](#conda). |
-| microdnf | MicroDNF | Red Hat | almalinux:9-minimal<br>centos:stream10-minimal<br>eurolinux/eurolinux-9-minimal:latest<br>rockylinux:9-minimal<br>oraclelinux:9-slim<br>redhat/ubi9-minimal:latest | 34MB<br>78MB<br>37MB<br>44MB<br>47MB<br>38MB | See [dnf](#dnf) | |
+| microdnf | MicroDNF | Red Hat | See [Red Hat Image Distros](other/redhat-image-distros.md) | | See [dnf](#dnf) | |
 | micromamba | Micromamba | Debian | mambaorg/micromamba:latest | 33MB | | <pre><code class="language-bash">export CURL_CA_BUNDLE="$SSL_CA_CERT"&#13;export REQUESTS_CA_BUNDLE="SSL_CERT_FILE"&#13;micromamba config set ssl_verify "$SSL_CERT_FILE"</code></pre> |
 | mvn<a name="mvn"></a> | Maven | Debian | maven:latest | 231MB | <pre><code class="language-bash">mvn -DproxySet=true -D proxyHost=$HTTP_PROXY_HOST \ &#13; -DproxyPort=$HTTP_PROXY_PORT \ &#13; -DproxyProtocol=http \ &#13; -DproxyId=http \ &#13; -DproxyNonProxyHosts=$NO_PROXY&#13;mvn -D proxyHost=$HTTPS_PROXY_HOST \ &#13; -DproxyPort=$HTTPS_PROXY_PORT \ &#13; -DproxyProtocol=https \ &#13; -DproxyId=https \ &#13; -DproxyNonProxyHosts=$NO_PROXY</code></pre> | See also [java](application-proxy-settings.md#java).<pre><code class="language-bash" style="white-space: pre-wrap;">export MAVEN_OPTS="-Djavax.net.ssl.trustStore=$SSL_KEYSTORE_FILE -Djavax.net.ssl.trustStorePassword={Password}"</code>[^maven_cert]</pre> |
 | nix<a name="nix"></a> | Nix Package Manager | NixOS | nixos:nix:latest | 213MB | | <code class="language-bash">export NIX_SSL_CERT_FILE="$SSL_CERT_FILE"</code>[^nix_cert] |
@@ -72,7 +72,7 @@ If no information is provided in the `Proxy Instructions` or `Certificate Instru
 | pod | CocoaPods | Debian | renovate/cocoapods:latest | 149MB | | |
 | poetry | Poetry (python) | Debian | sunpeek/poetry:py3.11-slim | 90MB | | See [pip](#pip). |
 | port | MacPorts | MacOS | | | | |
-| rpm<a name="rpm"></a> | RPM Package Manager | Red Hat | almalinux:latest<br>amazonlinux:latest<br>centos8:latest<br>quay.io/centos/centos:stream10<br>eurolinux/eurolinux-9:latest<br>fedora:latest<br>rockylinux:9<br>oraclelinux:9<br>redhat/ubi9:latest | 75MB<br>80MB<br>105MB<br>61MB<br>56MB<br>61MB<br>101MB<br>84MB | | |
+| rpm<a name="rpm"></a> | RPM Package Manager | Red Hat | See [Red Hat Image Distros](other/redhat-image-distros.md) | | | |
 | sbt | simple build tool[^sbt] | Alpine | sbtscala/scala-sbt:eclipse-temurin-alpine-23.0.1_11_1.10.7_3.3.5 | 503MB | <pre><code class="language-bash" style="white-space: pre-wrap;">export JAVA_OPTS="$JAVA_OPTS -Dhttp.proxyHost=$HTTP_PROXY_HOST -Dhttp.proxyPort=$HTTP_PROXY_PORT -Dhttps.proxyHost=$HTTPS_PROXY_HOST -Dhttps.proxyPort=$HTTPS_PROXY_PORT"</code></pre> | See [java](application-proxy-settings.md#java). |
 | slackpkg | Slack Package | Slackware | aclemons/slacware:latest | 66MB | | |
 | slapt-get | | Slackware | gnujaos/slapt-get-current-min:latest | 71MB | | |
@@ -86,7 +86,7 @@ If no information is provided in the `Proxy Instructions` or `Certificate Instru
 | volta | | Debian | domjtalbot/volta:latest | 92MB | | |
 | xbps | X Binary Package System | Void Linux | ghcr.io/void-linux/void-musl-full:latest | 81MB | | |
 | yarn<a name="yarn"></a> | Yet Another Resource Negotiator (node)[^yarn] | Alpine | jitesoft/node-yarn:lts-slim | 60MB | <pre><code class="language-bash">yarn config set httpProxy "$HTTP_PROXY"&#13;yarn config set httpsProxy "$HTTPS_PROXY"</code></pre>See also [npm](#npm). | <code class="language-bash">yarn config set httpsCaFilePath "$SSL_CERT_FILE"</code><br>See also [npm](#npm). |
-| yum | Yellowdog Update Modifier | Red Hat | almalinux:latest<br>centos8:latest<br>quay.io/centos/centos:stream10<br>eurolinux/eurolinux-9:latest<br>fedora:latest<br>rockylinux:9<br>oraclelinux:9<br>redhat/ubi9:latest | 75MB<br>80MB<br>105MB<br>61MB<br>56MB<br>61MB<br>101MB<br>84MB | <code class="language-bash">echo "proxy=$HTTP_PROXY" >> /etc/yum.conf</code> | |
+| yum | Yellowdog Update Modifier | Red Hat | See [Red Hat Image Distros](other/redhat-image-distros.md) | | <code class="language-bash">echo "proxy=$HTTP_PROXY" >> /etc/yum.conf</code> | |
 | zig | | Alpine | ziglang/static-base:llvm13-x86_64-1 | 177MB | | |
 | zypper | Zypper | SUSE | opensuse/archive:13.2<br>opensuse/leap:latest<br>opensuse/tumbleweed:latest | 37MB<br>42MB<br>36MB | | |
 
