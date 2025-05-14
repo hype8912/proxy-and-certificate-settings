@@ -1,6 +1,6 @@
-See also applicable [Certificate](certificate-environment-variables.md) environment variables.
-
 # Proxy Environment Variables
+
+See also applicable [Certificate](certificate-environment-variables.md) environment variables.
 
 | Variable name | Use | Linux Settings | Windows Settings |
 |---|:---:|---|---|
@@ -12,7 +12,7 @@ See also applicable [Certificate](certificate-environment-variables.md) environm
 | CGI_HTTP_PROXY | [Composer](package-manager-settings.md#composer) | $HTTP_PROXY | %HTTP_PROXY% |
 | CURLOPT_NOPROXY[^curl_npx] | libcurl | $NO_PROXY | %NO_PROXY% |
 | CURLOPT_PROXY[^curl_px] | libcurl | $HTTP_PROXY | %HTTP_PROXY% |
-| EC2_JVM_ARGS[^aws_cloudwatch] | AWS | <code class="lnaguage-bash" style="white-space:pre-wrap; max-width:276px;">-Dhttp.proxySet=true -Dhttp.proxyHost=$HTTP_PROXY_HOST -Dhttp.proxyPort=$HTTP_PROXY_PORT -Dhttps.proxyHost=$HTTPS_PROXY_HOST -Dhttps.proxyPort=$HTTPS_PROXY_PORT -Dhttp.nonProxyHosts=$NO_PROXY</code> | <code class="language-batchfile" style="white-space:pre-wrap; max-width:276px;">-Dhttp.proxySet=true -Dhttp.proxyHost=%HTTP_PROXY_HOST% -Dhttp.proxyPort=%HTTP_PROXY_PORT% -Dhttps.proxyHost=%HTTPS_PROXY_HOST% -Dhttps.proxyPort=%HTTPS_PROXY_PORT% -Dhttp.nonProxyHosts=%NO_PROXY%</code> |
+| EC2_JVM_ARGS[^aws_cloudwatch] | AWS | <code class="language-bash" style="white-space:pre-wrap; max-width:276px;">-Dhttp.proxySet=true -Dhttp.proxyHost=$HTTP_PROXY_HOST -Dhttp.proxyPort=$HTTP_PROXY_PORT -Dhttps.proxyHost=$HTTPS_PROXY_HOST -Dhttps.proxyPort=$HTTPS_PROXY_PORT -Dhttp.nonProxyHosts=$NO_PROXY</code> | <code class="language-batchfile" style="white-space:pre-wrap; max-width:276px;">-Dhttp.proxySet=true -Dhttp.proxyHost=%HTTP_PROXY_HOST% -Dhttp.proxyPort=%HTTP_PROXY_PORT% -Dhttps.proxyHost=%HTTPS_PROXY_HOST% -Dhttps.proxyPort=%HTTPS_PROXY_PORT% -Dhttp.nonProxyHosts=%NO_PROXY%</code> |
 | FTP_PROXY | standard | | |
 | ftp_proxy | standard | $FTP_PROXY | %FTP_PROXY% |
 | GLOBAL_AGENT_HTTP_PROXY[^global_agent] | node - global agent | $HTTP_PROXY | %HTTP_PROXY% |
@@ -32,13 +32,13 @@ See also applicable [Certificate](certificate-environment-variables.md) environm
 | sftp_proxy | standard | $SFTP_PROXY | %SFTP_PROXY% |
 | socks5_proxy | standard | | |
 | ssh_proxy | standard | | |
-| TKG_HTTP_PROXY[^tkg] | Tanzo Kubernetes Grid | $HTTP_PROXY | |
-| TKG_HTTPS_PROXY[^tkg] | Tanzo Kubernetes Grid | $HTTPS_PROXY | |
-| TKG_NO_PROXY[^tkg] | Tanzo Kubernetes Grid | $NO_PROXY | |
+| TKG_HTTP_PROXY[^tkg] | Tanzu Kubernetes Grid | $HTTP_PROXY | |
+| TKG_HTTPS_PROXY[^tkg] | Tanzu Kubernetes Grid | $HTTPS_PROXY | |
+| TKG_NO_PROXY[^tkg] | Tanzu Kubernetes Grid | $NO_PROXY | |
 | UNITY_NOPROXY | [Unity Package Manager](package-manager-settings.md#openupm) | $NO_PROXY | %NO_PROXY% |
 | VSCODE_PROXY_URI | [VS Code Server](application-proxy-settings.md#vs-code-server) | $HTTP_PROXY | |
 
-# Non-standard Suggested Variables
+## Non-standard Suggested Variables
 
 Using the below variables will make it easier when having to set the values for java based applications as shown above.
 
@@ -55,7 +55,7 @@ Using the below variables will make it easier when having to set the values for 
 | HTTPS_PROXY_PORT | Custom | | |
 | HTTPS_PROXY_USER | | | |
 
-# See also
+## See also
 
 * [We need to talk: Can we standardize NO_PROXY?](https://about.gitlab.com/blog/2021/01/27/we-need-to-talk-no-proxy/)
 

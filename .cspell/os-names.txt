@@ -1,0 +1,17 @@
+aclemons
+almalinux
+amazonlinux
+archlinux
+clearlinux
+distro
+distros
+distroware
+esolang
+eurolinux
+mageia
+manjarolinux
+metacall
+nixos
+nutyx
+oraclelinux
+rockylinux

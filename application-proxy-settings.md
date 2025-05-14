@@ -25,7 +25,7 @@
 | subscription-manager | RHEL Subscription Manager | redhat/ubi9:latest | 84MB | <code class="language-bash" style="white-space:pre-wrap;">subscription-manager config --server.proxy_hostname "$HTTP_PROXY_HOST" --server.proxy_port "$HTTP_PROXY_PORT" --server.no_proxy "$NO_PROXY"</code> | |
 | svn | Subversion | elleflorio/svn-server:latest | 18MB | `~/.subversion/servers` or `%APPDATA%\Subversion\servers`[^svn]<pre><code class="language-ini">[global]&#13;http-proxy-host=$HTTP_PROXY_HOST&#13;http-proxy-port=$HTTP_PROXY_PORT</code></pre> | `~/.subversion/servers` or `%APPDATA%\Subversion\servers`<pre><code class="language-ini">[global]&#13;ssl-trust-default-ca=no&#13;ssl-authority-files=$SSL_CERT_FILE</code></pre> |
 | <a name="supervisely"></a> | Supervisely | | | | <pre><code class="language-bash">export REQUESTS_CA_BUNDLE="$SSL_CERT_FILE"&#13;export SLY_EXTRA_CA_CERTS="$SSL_CERT_FILE"</code>[^supervisely]</pre> |
-| | TerraTeam | ghcr.io/terrateamio/terrat-oss:latest | | | <code class="language-yaml" style="white-space:pre-wrap;">hooks:&#13;  all:&#13;    pre:&#13;      - type: run&#13;        cmd: ['sh', '-c', 'echo "$SELF_SIGNED_CERT" > $SSL_CA_CERT && update-ca-certificates']</code>[^terrateam] |
+| | TerraTeam | ghcr.io/terrateamio/terrat-oss:latest | | | <code class="language-yaml" style="white-space:pre-wrap;">hooks:&#13;  all:&#13;    pre:&#13;      - type: run&#13;        cmd: ['sh', '-c', 'echo "$SELF_SIGNED_CERT" > $SSL_CA_CERT && update-ca-certificates']</code>[^terrateamio] |
 | vault | HashiCorp Vault | | | | <code class="language-bash">vault write /auth/jwt/config jwks_ca_pem=$SSL_CERT_FILE</code>[^vault_cert] |
 | <a name="vs-code-server"></a> | VS Code Server | | | <code class="language-bash">export VSCODE_PROXY_URI="$HTTP_PROXY"</code>[^vscode_srv] | |
 | wget | GNU Wget | alpine:latest | 4MB | | `/etc/wgetrc` or `~/.wgetrc` file[^wget]<pre><code class="language-properties">ca_certificate=$SSL_CERT_FILE&#13;ca_directory=$SSL_CERT_DIR</code></pre> |
@@ -56,7 +56,7 @@
 [^platformio_cert]: https://docs.platformio.org/en/latest/core/installation/proxy-configuration.html
 [^supervisely]: https://developer.supervisely.com/app-development/advanced/custom-configuration/fixing-ssl-certificate-errors-in-supervisely
 [^svn]: https://subversion.apache.org/faq.html#proxy
-[^terrateam]: https://docs.terrateam.io/security-and-compliance/self-signed-certificates/
+[^terrateamio]: https://docs.terrateam.io/security-and-compliance/self-signed-certificates/
 [^vault_cert]: https://developer.hashicorp.com/vault/api-docs/auth/jwt#jwks_ca_pem
 [^vscode_srv]: https://github.com/coder/code-server/blob/main/patches/proxy-uri.diff
 [^wget]: https://www.gnu.org/software/wget/manual/html_node/Wgetrc-Commands.html#Wgetrc-Commands-1

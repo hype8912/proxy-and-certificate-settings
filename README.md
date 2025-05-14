@@ -4,7 +4,7 @@ The repository contains a collection of information for running package managers
 
 The expectation is for this to be a one stop location for developers to get all the proxy information they need for running applications behind a corporate firewall.
 
-# Disclaimer
+## Disclaimer
 
 We do our best to test every single bit of information that is published in our private network behind a firewall but we can't guarantee everything provided will work for every firewall.
 

@@ -32,7 +32,7 @@ If no information is provided in the `Proxy Instructions` or `Certificate Instru
 | ctan | CTAN | Debian | esolang/tex:latest | 245MB | |
 | dart | Dart Pub | Debian | dart:stable | 291MB | | |
 | deno<a name="deno"></a> | Deno (node) | Alpine<br>Debian | denoland/deno:alpine<br>denoland/deno:latest | 50MB<br>71MB | See [npm](#npm). | <pre><code class="language-bash">export DENO_CERT="$SSL_CERT_FILE"&#13;export DENO_TLS_CA_STORE=system</code>[^deno_cert]</pre>See also [npm](#npm). |
-| dnf<a name="dnf"></a> | DNF | Red Hat | See [Red Hat Image Distros](other/redhat-image-distros.md) | | <code class="language-bash">echo "proxy=$HTTP_PROXY" >> /etc/dnf/dnf.conf</code> | |
+| dnf<a name="dnf"></a> | DNF | Red Hat | See [Red Hat Image Distros](other/redhat-image-distros.md) | | <code class="language-bash">echo "proxy=$HTTP_PROXY" >> "/etc/dnf/dnf.conf"</code> | |
 | dotnet nuget | NuGet | Debian | mcr.microsoft.com/dotnet/sdk:8.0 | 836MB | | |
 | dpkg | Debian Package | Debian | debian:stable-slim<br>ubuntu:latest | 27MB<br>28MB | See [apt](#apt). | |
 | dub | DUB | Debian | dlanguage/ldc:latest | 304MB | | |
@@ -65,7 +65,7 @@ If no information is provided in the `Proxy Instructions` or `Certificate Instru
 | pip<a name="pip"></a> | pip (python) | Alpine<br>Debian | python:alpine<br>python:slim | 16MB<br>42MB | | <pre><code class="language-bash">export CURL_CA_BUNDLE="$SSL_CA_CERT"&#13;export PIP_CERT="SSL_CERT_FILE"&#13;export REQUESTS_CA_BUNDLE="SSL_CERT_FILE"</code>[^pip_cert]</pre> |
 | pipenv | Pipenv (python) | Alpine | fsfe/pipenv:alpine-3.13 | 36MB | | See [pip](#pip). |
 | pkg | | FreeBSD | | | | |
-| pkgadd<br>ports | pkgutils | Crux | crux:latest | 152MB | <pre><code class="language-bash">echo "ROOT_DIR=/usr/ports/core" > /etc/ports/core.httpup&#13;echo "URL=http://crux.nu/ports/crux-3.8/core" >> /etc/ports/core.httpup&#13;mv /etc/ports/core.rsync /etc/ports/core.rsync.inactive&#13;&#13;echo "ROOT_DIR=/usr/ports/opt" > /etc/ports/opt.httpup&#13;echo "URL=http://crux.nu/ports/crux-3.8/opt" >> /etc/ports/opt.httpup&#13;mv /etc/ports/opt.rsync /etc/ports/opt.rsync.inactive&#13;&#13;echo "ROOT_DIR=/usr/ports/xorg" > /etc/ports/xorg.httpup&#13;echo "URL=http://crux.nu/ports/crux-3.8/xorg" >> /etc/ports/xorg.httpup&#13;mv /etc/ports/xorg.rsync /etc/ports/xorg.rsync.inactive</code></pre> | <code class="language-bash">install -Dm 644 cacert.pem /etc/ssl/cert.pem</code> |
+| pkgadd<br>ports | pkgutils | Crux | crux:latest | 152MB | <pre><code class="language-bash">echo "ROOT_DIR=/usr/ports/core" > /etc/ports/core.httpup&#13;echo "URL=http://crux.nu/ports/crux-3.8/core" >> "/etc/ports/core.httpup"&#13;mv "/etc/ports/core.rsync" "/etc/ports/core.rsync.inactive"&#13;&#13;echo "ROOT_DIR=/usr/ports/opt" > "/etc/ports/opt.httpup"&#13;echo "URL=http://crux.nu/ports/crux-3.8/opt" >> "/etc/ports/opt.httpup"&#13;mv "/etc/ports/opt.rsync" "/etc/ports/opt.rsync.inactive"&#13;&#13;echo "ROOT_DIR=/usr/ports/xorg" > "/etc/ports/xorg.httpup"&#13;echo "URL=http://crux.nu/ports/crux-3.8/xorg" >> "/etc/ports/xorg.httpup"&#13;mv "/etc/ports/xorg.rsync" "/etc/ports/xorg.rsync.inactive"</code></pre> | <code class="language-bash">install -Dm 644 cacert.pem "/etc/ssl/cert.pem"</code> |
 | pkg_add<br>pkgin | pkgsrc | NetBSD | | | | |
 | pkgtool | Package Tool | Slackware | aclemons:slackware:latest | 66MB | | |
 | pnpm | Performant NPM (node) | Alpine<br>Debian | node:current-alpine<br>node:slim | 54MB<br>76MB | See [npm](#npm). | See [npm](#npm). |
@@ -74,7 +74,7 @@ If no information is provided in the `Proxy Instructions` or `Certificate Instru
 | port | MacPorts | MacOS | | | | |
 | rpm<a name="rpm"></a> | RPM Package Manager | Red Hat | See [Red Hat Image Distros](other/redhat-image-distros.md) | | | |
 | sbt | simple build tool[^sbt] | Alpine | sbtscala/scala-sbt:eclipse-temurin-alpine-23.0.1_11_1.10.7_3.3.5 | 503MB | <pre><code class="language-bash" style="white-space: pre-wrap;">export JAVA_OPTS="$JAVA_OPTS -Dhttp.proxyHost=$HTTP_PROXY_HOST -Dhttp.proxyPort=$HTTP_PROXY_PORT -Dhttps.proxyHost=$HTTPS_PROXY_HOST -Dhttps.proxyPort=$HTTPS_PROXY_PORT"</code></pre> | See [java](application-proxy-settings.md#java). |
-| slackpkg | Slack Package | Slackware | aclemons/slacware:latest | 66MB | | |
+| slackpkg | Slack Package | Slackware | aclemons/slackware:latest | 66MB | | |
 | slapt-get | | Slackware | gnujaos/slapt-get-current-min:latest | 71MB | | |
 | snap | Snap | Arch Linux | manjarolinux/base:latest | 277MB | <pre><code class="language-bash">snap set system proxy.http="$HTTP_PROXY"&#13;snap set system proxy.https="$HTTPS_PROXY"</code></pre> | |
 | spack | | Debian<br>Red Hat | spack/ubuntu-focal:latest<br>spack/centos7:latest | 234MB<br>295MB | | |

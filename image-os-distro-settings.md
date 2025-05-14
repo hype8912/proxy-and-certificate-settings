@@ -2,7 +2,7 @@
 
 | OS/Distro | Image Base | Test Image[^test_image] | Test Image Size[^test_image] | Required Packages | Certificates Location | Update Certificates Command |
 |---|:---:|---|:---:|---|---|---|
-| AIX | Unix | | | | `/var/ssl/serts/` | <code class="language-bash">runmqakm</code> |
+| AIX | Unix | | | | `/var/ssl/certs/` | <code class="language-bash">runmqakm</code> |
 | Alpine Linux  | Alpine | alpine:latest | 3.5MB | ca-certificates, step-cli, unzip | `/usr/local/share/ca-certificates/` | <code class="language-bash">update-ca-certificates</code> |
 | Android | Debian | budtmo/docker-android:emulator_14.0 | 3GB | | `/system/etc/security/cacerts/` | |
 | Arch Linux | Arch | archlinux:latest | 150MB | curl, unzip, step-cli | `/etc/ca-certificates/trust-source/anchors/` | <code class="language-bash">update-ca-trust extract</code> |

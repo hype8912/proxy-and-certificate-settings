@@ -4,7 +4,7 @@ This is a generic list of package managers that need testing beyond making the l
 
 | Name | Notes |
 | :---:|---|
-| 0install | Zero Install[^zinstall] |
+| 0install | Zero Install[^0install] |
 | cobolget | COBOL Package Manager[^cobolget] |
 | fink | Darwin[^fink] |
 | flox | Flox[^flox] - Universal |
@@ -20,6 +20,7 @@ This is a generic list of package managers that need testing beyond making the l
 | unearth | Unearth[^unearth] - Python. Used by uv to download packages. |
 | wpkg<a name="wpkg"></a> | WPKG[^wpkg] - Windows |
 
+[^0install]: https://0install.net
 [^cobolget]: https://github.com/OlegKunitsyn/cobolget
 [^fink]: https://www.finkproject.org/doc/users-guide/usage.php
 [^flox]: https://flox.dev
@@ -32,4 +33,3 @@ This is a generic list of package managers that need testing beyond making the l
 [^scoop_proxy]: https://github.com/ScoopInstaller/Scoop/wiki/Using-Scoop-behind-a-proxy
 [^unearth]: https://unearth.readthedocs.io/en/latest/
 [^wpkg]: https://wpkg.org
-[^zinstall]: https://0install.net

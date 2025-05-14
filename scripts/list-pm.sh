@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 green='\e[0;32m'
 reset='\e[0m'

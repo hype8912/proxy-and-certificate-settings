@@ -32,6 +32,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 [Z](#z)
 
 ## A
+
 | Language | Package Manager |
 |:---:|---|
 | A+ | :grey_question: |
@@ -71,6 +72,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Awk | :grey_question: |
 
 ## B
+
 | Language | Package Manager |
 |:---:|---|
 | B | :grey_question: |
@@ -96,6 +98,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | BuildMaster | :grey_question: |
 
 ## C
+
 | Language | Package Manager |
 |:---:|---|
 | C | [Biicode (dead)](https://biicode-docs.readthedocs.io)<br>[clib](https://github.com/clibs/clib)<br>[Conan](https://conan.io/)<br>[Conda](https://docs.conda.io/en/latest)<br>[CPK](https://github.com/DEgITx/cpk)<br>[CPM.cmake](https://github.com/cpm-cmake/CPM.cmake)<br>[Hunter](https://github.com/cpp-pm/hunter?tab=readme-ov-file)<br>[Maid (dead)](https://github.com/lukewilson2002/maid)<br>[Mamba](https://github.com/mamba-org/mamba)<br>[Mason (dead)](https://github.com/mapbox/mason)<br>[pixi](https://prefix.dev/)<br>[pkg](https://github.com/genshen/pkg)<br>[Spack](https://spack.io/)<br>[Teaport](https://bitbucket.org/benman/teaport)<br>[vcpkg](https://vcpkg.io/en/)<br>[Xrepo](https://xrepo.xmake.io/#/) |
@@ -147,6 +150,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Cython | See [Python](#python) |
 
 ## D
+
 | Language | Package Manager |
 |:---:|---|
 | D | [DUB](https://github.com/dlang/dub) |
@@ -161,6 +165,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Dyon | :grey_question: |
 
 ## E
+
 | Language | Package Manager |
 |:---:|---|
 | E | :grey_question: |
@@ -174,6 +179,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Euphoria | [eudrop (dead)](https://github.com/xecronix/eudrop) |
 
 ## F
+
 | Language | Package Manager |
 |:---:|---|
 | FP | :grey_question: |
@@ -190,6 +196,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | FreeBASIC | :grey_question: |
 
 ## G
+
 | Language | Package Manager |
 |:---:|---|
 | Gambas | :grey_question: |
@@ -205,6 +212,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Groovy | [Grape](https://docs.groovy-lang.org/latest/html/documentation/grape.htm)<br>[Maven](https://docs.gradle.org/current/userguide/groovy_plugin.html) |
 
 ## H
+
 | Language | Package Manager |
 |:---:|---|
 | Harbour | [Harbourmaster](https://github.com/kloptops/harbourmaster)<br>[PortMaster](https://github.com/christianhaitian/PortMaster) |
@@ -215,6 +223,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | HyperTalk | [CommandCougar](https://github.com/hypertalk/CommandCougar) |
 
 ## I
+
 | Language | Package Manager |
 |:---:|---|
 | IDL | :grey_question: |
@@ -227,6 +236,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | ISLISP | :grey_question: |
 
 ## J
+
 | Language | Package Manager |
 |:---:|---|
 | J | [pacman](https://code.jsoftware.com/wiki/Pacman) |
@@ -242,6 +252,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Julia | [Conda.jl](https://github.com/JuliaPy/Conda.jl)<br>[jlpkg](https://github.com/fredrikekre/jlpkg)<br>[Pkg.jl](https://github.com/JuliaLang/Pkg.jl) |
 
 ## K
+
 | Language | Package Manager |
 |:---:|---|
 | K (KCL) | [kpm](https://peefy.github.io/docs/tools/cli/package-management/command-reference/) |
@@ -251,6 +262,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Ksh | :grey_question: |
 
 ## L
+
 | Language | Package Manager |
 |:---:|---|
 | LabVIEW | [G Package Manager](https://gpackage.io)<br>[NI Package Manager](https://www.ni.com/en/support/downloads/ni-package-manager.html)<br>[VI Package Manager](https://www.vipm.io) |
@@ -265,6 +277,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Lua | [Conda](https://docs.conda.io/en/latest)<br>[LuaDist](https://luadist.org/repository/)<br>[LuaRocks](https://github.com/luarocks/luarocks)<br>[lux](https://github.com/nvim-neorocks/lux) |
 
 ## M
+
 | Language | Package Manager |
 |:---:|---|
 | MAD | |
@@ -285,6 +298,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | MUMPS | |
 
 ## N
+
 | Language | Package Manager |
 |:---:|---|
 | NELIAC | :grey_question: |
@@ -292,6 +306,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Nim | [nimble](https://github.com/nim-lang/nimble) |
 
 ## O
+
 | Language | Package Manager |
 |:---:|---|
 | Oberon | :grey_question: |
@@ -307,6 +322,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Oz-Mozart | :grey_question: |
 
 ## P
+
 | Language | Package Manager |
 |:---:|---|
 | Pascal | [pjamas](https://github.com/glhrmfrts/pjamas/)<br>[fppkg](https://wiki.freepascal.org/fppkg) |
@@ -333,6 +349,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Python<a name="python"></a> | [Conda](https://docs.conda.io/en/latest)<br>[Curdling](https://github.com/clarete/curdling)<br>[edm](https://docs.enthought.com/edm/)<br>[Ferry](https://github.com/Lioncat2002/Ferry)<br>[Fext (dead)](https://github.com/fextpkg/cli)<br>[Hatch](https://hatch.pypa.io/latest/)<br>[huak](https://github.com/cnpryer/huak)<br>[Mamba](https://github.com/mamba-org/mamba)<br>[pdm](https://github.com/pdm-project/pdm)<br>[pip](https://pip.pypa.io/en/stable/)<br>[pipenv](https://pipenv.pypa.io/en/latest/)<br>[pipflow](https://github.com/iMerica/pipflow)<br>[pipx](https://pipx.pypa.io/stable/)<br>[pixi](https://prefix.dev/)<br>[PLZ](https://github.com/juancarlospaco/plz)<br>[poet (dead)](https://github.com/sdispater/poet)<br>[poetry](https://github.com/python-poetry/poetry)<br>[pym](https://github.com/beenotung/pym)<br>[PyOCI](https://github.com/AllexVeldman/pyoci)<br>[PyPM](https://github.com/ableinc/pypm)<br>[rye (dead)](https://github.com/astral-sh/rye)<br>[Spack](https://spack.io/)<br>[twine (publishing)](https://twine.readthedocs.io/)<br>[uv](https://github.com/astral-sh/uv) |
 
 ## Q
+
 | Language | Package Manager |
 |:---:|---|
 | Q# | See [C#](#csharp) |
@@ -341,6 +358,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Quill | :grey_question: |
 
 ## R
+
 | Language | Package Manager |
 |:---:|---|
 | R | [Conda](https://docs.conda.io/en/latest)<br>[Jetpack](https://github.com/ankane/jetpack)<br>[pixi](https://prefix.dev/)<br>[Rpkg](https://github.com/gwerbin/Rpkg)<br>[rut](https://github.com/datasnakes/rut)<br>[Spack](https://spack.io/) |
@@ -356,6 +374,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Rust<a name="rust"></a> | [Cargo](https://github.com/rust-lang/cargo)<br>[pixi](https://prefix.dev/) |
 
 ## S
+
 | Language | Package Manager |
 |:---:|---|
 | S | |
@@ -384,6 +403,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Swift | [Conche](https://github.com/Conche/Conche)<br>[Ice](https://github.com/jakeheis/Ice)<br>[Mint](https://github.com/yonaskolb/Mint)<br>[Swiftbrew](https://github.com/swiftbrew/Swiftbrew)<br>[Swift Package Manager](https://github.com/apple/swift-package-manager) |
 
 ## T
+
 | Language | Package Manager |
 |:---:|---|
 | Tcl | [tpkg](https://github.com/bef/tpkg) |
@@ -391,11 +411,13 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | TypeScript | See [JavaScript](#javascript) |
 
 ## U
+
 | Language | Package Manager |
 |:---:|---|
 | Ur/Web | |
 
 ## V
+
 | Language | Package Manager |
 |:---:|---|
 | V | [vpkg](https://github.com/vpkg-project/vpkg)<br>[vpm](https://github.com/vlang/vpm) |
@@ -409,6 +431,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Visual Prolog | |
 
 ## W
+
 | Language | Package Manager |
 |:---:|---|
 | WebAssembly | [wapm-cli (dead)](https://github.com/wasmerio/wapm-cli) |
@@ -416,6 +439,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Wolfram | |
 
 ## X
+
 | Language | Package Manager |
 |:---:|---|
 | X++ | See [C#](#csharp) |
@@ -424,6 +448,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Xojo | |
 
 ## Y
+
 | Language | Package Manager |
 |:---:|---|
 | YASS | |
@@ -431,6 +456,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | YQL | |
 
 ## Z
+
 | Language | Package Manager |
 |:---:|---|
 | Z++ | |
@@ -438,7 +464,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Zig | [gyro (dead)](https://github.com/mattnite/gyro)<br>[Zigmod](https://github.com/nektro/zigmod)<br>[ZPM](https://github.com/zigtools/zpm) |
 | zsh | [antibody](https://github.com/getantibody/antibody)<br>[antidote](https://github.com/mattmc3/antidote)<br>[antigen](https://github.com/zsh-users/antigen)<br>[zcomet](https://github.com/agkozak/zcomet)<br>[zinit](https://github.com/zdharma-continuum/zinit) |
 
-# See also
+## See also
 
 * https://en.wikipedia.org/wiki/Comparison_of_programming_languages
 * https://en.wikipedia.org/wiki/List_of_programming_languages

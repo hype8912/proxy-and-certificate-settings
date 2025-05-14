@@ -4,7 +4,7 @@ This is a list of ways to determine what image/distro/os you are possibly dealin
 
 | OS/Distro | Image Base | Test Image[^test_image] | Test Image Size[^image_size] | Commands |
 |---|:---:|---|:---:|---|
-| Linux | | | | <code class="language-bash">cat /etc/*verion</code> |
+| Linux | | | | <code class="language-bash">cat /etc/*version</code> |
 | Linux | | | | <code class="language-bash">uname -a</code> |
 | Linux | | | | <code class="language-bash">cat /etc/*elease</code> |
 | Linux | | | | <code class="language-bash">hostname</code> |
