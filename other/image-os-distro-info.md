@@ -4,11 +4,14 @@ This is a list of ways to determine what image/distro/os you are possibly dealin
 
 | OS/Distro | Image Base | Test Image[^test_image] | Test Image Size[^image_size] | Commands |
 |---|:---:|---|:---:|---|
-| Linux | | | | <code class="language-bash">cat /etc/*version</code> |
-| Linux | | | | <code class="language-bash">uname -a</code> |
 | Linux | | | | <code class="language-bash">cat /etc/*elease</code> |
+| Linux | | | | <code class="language-bash">cat /etc/*version</code> |
+| Linux | | | | <code class="language-bash">cat /proc/version</code> |
 | Linux | | | | <code class="language-bash">hostname</code> |
 | Linux | | | | <code class="language-bash">hostnamectl</code> |
+| Linux | | | | <code class="language-bash">ls --help 2>&1 \| head -1</code> |
+| Linux | | | | <code class="language-bash">uname -a</code> |
+| Linux | | | | <code class="language-bash">uname -m</code> |
 | Windows | | | | <code class="language-batchfile">systeminfo</code> |
 
 ## See also
