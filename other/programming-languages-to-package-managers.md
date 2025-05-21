@@ -119,6 +119,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Chapel | [mason](https://chapel-lang.org/docs/tools/mason/mason.html) |
 | Charm | :grey_question: |
 | Chef | :grey_question: |
+| Chez Scheme | [Raven (dead)](https://github.com/guenchi/Raven) |
 | Chomsky | :grey_question: |
 | CIL (Common Intermediate Language) | :grey_question: |
 | Cilk | :grey_question: |
@@ -156,7 +157,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | D | [DUB](https://github.com/dlang/dub) |
 | Dart | [dart pub](https://dart.dev/tools/pub/cmd) |
 | DASL | :grey_question: |
-| <a name="delphi"></a>Delphi | [boss](https://github.com/HashLoad/boss)<br>[DPM](https://github.com/DelphiPackageManager/DPM)<br>[DuGet](https://github.com/MattiaVicari/DuGet)<br>[GetIt](https://docwiki.embarcadero.com/RADStudio/Athens/en/Installing_a_Package_Using_GetIt_Package_Manager) |
+| Delphi<a name="delphi"></a> | [boss](https://github.com/HashLoad/boss)<br>[DPM](https://github.com/DelphiPackageManager/DPM)<br>[DuGet](https://github.com/MattiaVicari/DuGet)<br>[GetIt](https://docwiki.embarcadero.com/RADStudio/Athens/en/Installing_a_Package_Using_GetIt_Package_Manager) |
 | Datalog | :grey_question: |
 | Diesel | See [Rust](#rust) |
 | Draco | See [C#](#csharp) |
@@ -260,6 +261,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Kitten | [cabal](https://hackage.haskell.org/package/cabal-install)<br>[stack](https://docs.haskellstack.org/en/stable/) |
 | Kotlin | See [Java](#java) |
 | Ksh | :grey_question: |
+| Kubernetes (Application) | [kustomizer](https://github.com/stefanprodan/kustomizer) |
 
 ## L
 
@@ -303,7 +305,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 |:---:|---|
 | NELIAC | :grey_question: |
 | Nelua | [Pancake](https://github.com/linkpy/pancake-pm) |
-| Nim | [nimble](https://github.com/nim-lang/nimble) |
+| Nim | [nimble](https://github.com/nim-lang/nimble)<br>[Niv](https://github.com/nmattia/niv) |
 
 ## O
 
@@ -346,7 +348,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Prolog | [PPM](https://github.com/wouterbeek/ppm)<br>[prolog_pack](https://www.swi-prolog.org/pldoc/doc/_SWI_/library/prolog_pack.pl) |
 | PureBasic | :grey_question: |
 | PureScript | [psc-package](https://github.com/purescript/psc-package)<br>[spago](https://github.com/purescript/spago) |
-| Python<a name="python"></a> | [Conda](https://docs.conda.io/en/latest)<br>[Curdling](https://github.com/clarete/curdling)<br>[edm](https://docs.enthought.com/edm/)<br>[Ferry](https://github.com/Lioncat2002/Ferry)<br>[Fext (dead)](https://github.com/fextpkg/cli)<br>[Hatch](https://hatch.pypa.io/latest/)<br>[huak](https://github.com/cnpryer/huak)<br>[Mamba](https://github.com/mamba-org/mamba)<br>[pdm](https://github.com/pdm-project/pdm)<br>[pip](https://pip.pypa.io/en/stable/)<br>[pipenv](https://pipenv.pypa.io/en/latest/)<br>[pipflow](https://github.com/iMerica/pipflow)<br>[pipx](https://pipx.pypa.io/stable/)<br>[pixi](https://prefix.dev/)<br>[PLZ](https://github.com/juancarlospaco/plz)<br>[poet (dead)](https://github.com/sdispater/poet)<br>[poetry](https://github.com/python-poetry/poetry)<br>[pym](https://github.com/beenotung/pym)<br>[PyOCI](https://github.com/AllexVeldman/pyoci)<br>[PyPM](https://github.com/ableinc/pypm)<br>[rye (dead)](https://github.com/astral-sh/rye)<br>[Spack](https://spack.io/)<br>[twine (publishing)](https://twine.readthedocs.io/)<br>[uv](https://github.com/astral-sh/uv) |
+| Python<a name="python"></a> | [Conda](https://docs.conda.io/en/latest)<br>[Curdling](https://github.com/clarete/curdling)<br>[edm](https://docs.enthought.com/edm/)<br>[Ferry](https://github.com/Lioncat2002/Ferry)<br>[Fext (dead)](https://github.com/fextpkg/cli)<br>[Hatch](https://hatch.pypa.io/latest/)<br>[huak](https://github.com/cnpryer/huak)<br>[Mamba](https://github.com/mamba-org/mamba)<br>[pdm](https://github.com/pdm-project/pdm)<br>[pip](https://pip.pypa.io/en/stable/)<br>[pipenv](https://pipenv.pypa.io/en/latest/)<br>[pipflow](https://github.com/iMerica/pipflow)<br>[pipupgrade (dead)](https://github.com/achillesrasquinha/pipupgrade)<br>[pipx](https://pipx.pypa.io/stable/)<br>[pixi](https://prefix.dev/)<br>[PLZ](https://github.com/juancarlospaco/plz)<br>[poet (dead)](https://github.com/sdispater/poet)<br>[poetry](https://github.com/python-poetry/poetry)<br>[pym](https://github.com/beenotung/pym)<br>[PyOCI](https://github.com/AllexVeldman/pyoci)<br>[PyPM](https://github.com/ableinc/pypm)<br>[rye (dead)](https://github.com/astral-sh/rye)<br>[Spack](https://spack.io/)<br>[twine (publishing)](https://twine.readthedocs.io/)<br>[uv](https://github.com/astral-sh/uv) |
 
 ## Q
 
@@ -363,7 +365,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 |:---:|---|
 | R | [Conda](https://docs.conda.io/en/latest)<br>[Jetpack](https://github.com/ankane/jetpack)<br>[pixi](https://prefix.dev/)<br>[Rpkg](https://github.com/gwerbin/Rpkg)<br>[rut](https://github.com/datasnakes/rut)<br>[Spack](https://spack.io/) |
 | Racket | [PLaneT (dead)](https://docs.racket-lang.org/reference/require.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._planet%29%29)<br>[raco](https://docs.racket-lang.org/pkg/index.html) |
-| Raku | |
+| Raku | [Zef](https://github.com/ugexe/zef) |
 | REALbasic | |
 | Rebol | |
 | ReCT | [rectx (dead)](https://github.com/hrszpuk/rectx) |
@@ -395,12 +397,14 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Small Basic | See [C#](#csharp) |
 | Smalltalk | |
 | SNOBOL | |
+| Solidity | [Soldeer](https://github.com/mario-eth/soldeer) |
 | SPARK | |
 | SPARQL | |
 | SQL | |
+| SQLite (Application) | [sqlpkg](https://github.com/nalgeon/sqlpkg-cli) |
 | Squeak | |
 | Standard ML | |
-| Swift | [Conche](https://github.com/Conche/Conche)<br>[Ice](https://github.com/jakeheis/Ice)<br>[Mint](https://github.com/yonaskolb/Mint)<br>[Swiftbrew](https://github.com/swiftbrew/Swiftbrew)<br>[Swift Package Manager](https://github.com/apple/swift-package-manager) |
+| Swift | [Beak](https://github.com/yonaskolb/Beak)<br>[Conche](https://github.com/Conche/Conche)<br>[Ice](https://github.com/jakeheis/Ice)<br>[Mint](https://github.com/yonaskolb/Mint)<br>[Swiftbrew](https://github.com/swiftbrew/Swiftbrew)<br>[Swift Package Manager](https://github.com/apple/swift-package-manager) |
 
 ## T
 
@@ -414,6 +418,8 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 
 | Language | Package Manager |
 |:---:|---|
+| Unknown | [opm (OpenResty PM)](https://github.com/openresty/opm) |
+| Unity | [Git Dependency Resolver](https://github.com/mob-sakai/GitDependencyResolverForUnity)<br>[Projeny](https://github.com/modesttree/Projeny) |
 | Ur/Web | |
 
 ## V

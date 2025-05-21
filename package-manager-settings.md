@@ -64,6 +64,7 @@ If no information is provided in the `Proxy Instructions` or `Certificate Instru
 | pear | PEAR (PHP) | Alpine<br>Debian | php:alpine<br>php:latest | 40MB<br>178MB | <pre><code class="language-bash">pear config-set http_proxy "$HTTP_PROXY"&#13;pear config-set https_proxy "$HTTPS_PROXY"</code>[^pear]</pre> | |
 | pip<a name="pip"></a> | pip (python) | Alpine<br>Debian | python:alpine<br>python:slim | 16MB<br>42MB | | <pre><code class="language-bash">export CURL_CA_BUNDLE="$SSL_CA_CERT"&#13;export PIP_CERT="SSL_CERT_FILE"&#13;export REQUESTS_CA_BUNDLE="SSL_CERT_FILE"</code>[^pip_cert]</pre> |
 | pipenv | Pipenv (python) | Alpine | fsfe/pipenv:alpine-3.13 | 36MB | | See [pip](#pip). |
+| pixi | pixi | Debian | ghcr.io/prefix-dev/pixi:latest | 133MB | | See [pip](#pip). |
 | pkg | | FreeBSD | | | | |
 | pkgadd<br>ports | pkgutils | Crux | crux:latest | 152MB | <pre><code class="language-bash">echo "ROOT_DIR=/usr/ports/core" > /etc/ports/core.httpup&#13;echo "URL=http://crux.nu/ports/crux-3.8/core" >> "/etc/ports/core.httpup"&#13;mv "/etc/ports/core.rsync" "/etc/ports/core.rsync.inactive"&#13;&#13;echo "ROOT_DIR=/usr/ports/opt" > "/etc/ports/opt.httpup"&#13;echo "URL=http://crux.nu/ports/crux-3.8/opt" >> "/etc/ports/opt.httpup"&#13;mv "/etc/ports/opt.rsync" "/etc/ports/opt.rsync.inactive"&#13;&#13;echo "ROOT_DIR=/usr/ports/xorg" > "/etc/ports/xorg.httpup"&#13;echo "URL=http://crux.nu/ports/crux-3.8/xorg" >> "/etc/ports/xorg.httpup"&#13;mv "/etc/ports/xorg.rsync" "/etc/ports/xorg.rsync.inactive"</code></pre> | <code class="language-bash">install -Dm 644 cacert.pem "/etc/ssl/cert.pem"</code> |
 | pkg_add<br>pkgin | pkgsrc | NetBSD | | | | |
@@ -103,7 +104,6 @@ These are known package managers but require more research and testing before be
 | lin | Lunar | Sorcerer | esselfe/lunar-linux:latest | 786MB | | |
 | n | n (node) | | **NEED IMAGE** | | See [npm](#npm). | See [npm](#npm). |
 | openupm<a name="openupm"></a> | OpenUPM | | | | <code class="language-bash">export UNITY_NOPROXY="$NO_PROXY"</code>[^unity_proxy]<br>See also [npm](#npm). | |
-| pixi | pixi | Debian | ghcr.io/prefix-dev/pixi:latest | 118MB | | (Python) See [pip](#pip). |
 | pkgm[^pkgm] | | Debian | pkgxdev/pkgx:latest | 66MB | | |
 | qpkg | QPKG | Debian | owncloudci/qnap-qpkg-builder:latest | 197MB | | |
 | swift | Swift Package Manager | Debian | swift:latest | 921MB | | |
@@ -143,7 +143,6 @@ See the list [here](deprecated-package-manager-settings.md).
 [^pkgm]: https://github.com/pkgxdev/pkgm
 [^sbt]: https://www.scala-sbt.org/1.x/docs/Command-Line-Reference.html#sbt+JVM+options+and+system+properties
 [^twine]: https://twine.readthedocs.io/en/stable/#environment-variables
-[^ubi]: Red Hat UBI images require a subscription to use.
 [^unity_proxy]: https://discussions.unity.com/t/difficulties-in-proxy-environment/774349
 [^winget]: https://learn.microsoft.com/en-us/windows/package-manager/
 [^yarn]: `caFilePath` was changed to `httpsCaFilePath` in Yarn [Version 4.0](https://yarnpkg.com/advanced/changelog#major-changes).

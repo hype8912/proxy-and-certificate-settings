@@ -5,6 +5,7 @@ This is a generic list of package managers that need testing beyond making the l
 | Name | Notes |
 | :---:|---|
 | 0install | Zero Install[^0install] |
+| aura | Aura[^aura]  - Arch Linux |
 | cobolget | COBOL Package Manager[^cobolget] |
 | fink | Darwin[^fink] |
 | flox | Flox[^flox] - Universal |
@@ -17,10 +18,12 @@ This is a generic list of package managers that need testing beyond making the l
 | petget | PETget - Puppy Linux |
 | rzget | RuckZuck[^ruckzuck] - Windows |
 | scoop | Scoop[^scoop_proxy] - Windows |
+| sps | SPS[^sps] - Darwin |
 | unearth | Unearth[^unearth] - Python. Used by uv to download packages. |
 | wpkg<a name="wpkg"></a> | WPKG[^wpkg] - Windows |
 
 [^0install]: https://0install.net
+[*aura]: https://github.com/fosskers/aura
 [^cobolget]: https://github.com/OlegKunitsyn/cobolget
 [^fink]: https://www.finkproject.org/doc/users-guide/usage.php
 [^flox]: https://flox.dev
@@ -31,5 +34,6 @@ This is a generic list of package managers that need testing beyond making the l
 [^opkg]: https://git.yoctoproject.org/opkg/about/#opkg-package-manager
 [^ruckzuck]: https://ruckzuck.tools
 [^scoop_proxy]: https://github.com/ScoopInstaller/Scoop/wiki/Using-Scoop-behind-a-proxy
+[^sps]: https://github.com/alexykn/sps
 [^unearth]: https://unearth.readthedocs.io/en/latest/
 [^wpkg]: https://wpkg.org

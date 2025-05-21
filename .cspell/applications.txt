@@ -1,8 +1,10 @@
 boto
 certutil
+clamav
 enablehrefrewrite
 findutils
 fonts-dejavu-core
+freshclam
 githubcli
 kaniko
 karaf
