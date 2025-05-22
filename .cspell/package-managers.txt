@@ -68,6 +68,7 @@ ninite
 novus
 npackd
 nyssa
+ohpm
 opam
 openpkg
 openupm

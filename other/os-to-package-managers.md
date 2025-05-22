@@ -52,6 +52,8 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 |:---:|---|
 | CentOS | See [Red Hat](#r) |
 | Chrome OS | [Chromebrew](https://github.com/chromebrew/chromebrew) |
+| Clear Linux | [swupd]() |
+| Crux | [pkgutils](http://crux.nu/ports) |
 | Crystal Linux | [Amethyst (dead)](https://github.com/crystal-linux/amethyst) |
 
 ## D
@@ -66,6 +68,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 
 | OS/Distro | Package Manager |
 |:---:|---|
+| Embedded Linux | [opkg](https://git.yoctoproject.org/opkg/about/) |
 
 ## F
 
@@ -118,31 +121,36 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 |:---:|---|
 | Mac OS | [fink](https://www.finkproject.org)<br>[MacPorts](https://github.com/macports/macports-base)<br>[sps](https://github.com/alexykn/sps) |
 | Mageia Linux | [urpmi]() |
-| Manjaro Linux | [pacmac](https://github.com/manjaro/pamac)<br>[Zap](https://github.com/srevinsaju/zap) |
+| Manjaro Linux | [pacmac](https://github.com/manjaro/pamac)<br>[Snap]()<br>[Zap](https://github.com/srevinsaju/zap) |
 
 ## N
 
 | OS/Distro | Package Manager |
 |:---:|---|
+| NetBSD | [pkgsrc]() |
 | NixOS | [nix](https://github.com/NixOS/nix) |
+| NuTyZ Linux | [cards](https://github.com/NuTyX/cards) |
 
 ## O
 
 | OS/Distro | Package Manager |
 |:---:|---|
 | Oasis Linux | [nix](https://github.com/NixOS/nix)<br>[pkgsrc](https://www.pkgsrc.org)
+| OpenHarmony OS | [ohpm]()
 | OpenSUSE | [Zap](https://github.com/srevinsaju/zap)<br>[zypper]() |
+| OpenWrt | [opkg](https://openwrt.org/docs/guide-user/additional-software/opkg) |
 
 ## P
 
 | OS/Distro | Package Manager |
 |:---:|---|
+| Puppy Linux | [PETget]() |
 
 ## Q
 
 | OS/Distro | Package Manager |
 |:---:|---|
-| QNAP NAS OS | [sherpa](https://github.com/OneCDOnly/sherpa) |
+| QNAP NAS OS | [QPKG]()<br>[sherpa](https://github.com/OneCDOnly/sherpa) |
 
 ## R
 
@@ -154,12 +162,16 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 
 | OS/Distro | Package Manager |
 |:---:|---|
+| Sailfish OS | [RPM](https://github.com/rpm-software-management/rpm) |
+| Slackware Linux | [pkgtool]()<br>[slackpkg]()<br>[slapt-get]() |
+| Source Mage GNU/Linux | [cast](https://sourcemage.org/Sorcery/Commands/Cast) |
 | SUSE | See [OpenSUSE](#o) |
 
 ## T
 
 | OS/Distro | Package Manager |
 |:---:|---|
+| Tizen | [RPM](https://github.com/rpm-software-management/rpm) |
 
 ## U
 
@@ -200,6 +212,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 |:---:|---|
 | [dbin](https://github.com/xplshn/dbin) | Linux |
 | [Pearl](https://github.com/pearl-core/pearl) | Linux<br>Mac OS |
+| [Spack](https://github.com/spack/spack) | Linux<br>MacOS<br>Windows<br>Supercomputers |
 
 ## References
 

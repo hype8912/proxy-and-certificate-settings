@@ -54,7 +54,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | AmigaE | :grey_question: |
 | AngelScript | :grey_question: |
 | Apex | :grey_question: |
-| <a name="apl"></a>APL | [Tatin](https://github.com/aplteam/Tatin)<br>[Dado](https://github.com/the-carlisle-group/Dado) |
+| APL<a name="apl"></a> | [Tatin](https://github.com/aplteam/Tatin)<br>[Dado](https://github.com/the-carlisle-group/Dado) |
 | APLX | See [APL](#apl) |
 | Arc | [quarry](https://github.com/quarryarc/quarry) |
 | ARexx | :grey_question: |
@@ -176,7 +176,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Elixir | See [Erlang](#erlang) |
 | Elm | [Elm Install](https://github.com/gdotdesign/elm-github-install) |
 | Epigram | :grey_question: |
-| <a name="erlang"></a>Erlang | [agner](https://github.com/agner/agner)<br>[epax](https://github.com/erlware/epax)<br>[Hex](https://hex.pm)<br>[PARN](https://github.com/imerkle/parn) |
+| Erlang<a name="erlang"></a> | [agner](https://github.com/agner/agner)<br>[epax](https://github.com/erlware/epax)<br>[Hex](https://hex.pm)<br>[PARN](https://github.com/imerkle/parn) |
 | Euphoria | [eudrop (dead)](https://github.com/xecronix/eudrop) |
 
 ## F
@@ -419,7 +419,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Language | Package Manager |
 |:---:|---|
 | Unknown | [opm (OpenResty PM)](https://github.com/openresty/opm) |
-| Unity | [Git Dependency Resolver](https://github.com/mob-sakai/GitDependencyResolverForUnity)<br>[Projeny](https://github.com/modesttree/Projeny) |
+| Unity | [Git Dependency Resolver](https://github.com/mob-sakai/GitDependencyResolverForUnity)<br>[OpenUPM](https://openupm.com)<br>[Projeny](https://github.com/modesttree/Projeny)<br>[Unity Package Manager CLI (dead)](https://github.com/upm-packages/upm-cli) |
 | Ur/Web | |
 
 ## V
