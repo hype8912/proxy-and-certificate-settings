@@ -1,6 +1,9 @@
 FROM node:slim
 
-RUN apt update && apt upgrade -y
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get clean && \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN npm install -g openupm-cli
 

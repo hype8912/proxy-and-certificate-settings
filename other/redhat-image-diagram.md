@@ -5,6 +5,8 @@
 title: Red Hat Linux
 ---
 flowchart LR
+  fedora:20 ---> centos7:latest
+  fedora:20 --> fedora:28
   fedora:28 ---> centos8:latest
   fedora:28 --> fedora:29
   fedora:29 --> fedora:30
@@ -66,3 +68,7 @@ This diagram is meant for general information to show the upstreams from various
 
 - Release: 3 years
 - Active: 10 years
+
+## Other information
+
+DNF became the default package manager in Fedora 22, CentOS 8, and RHEL 8.
