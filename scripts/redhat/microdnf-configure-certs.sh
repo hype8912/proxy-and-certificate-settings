@@ -11,9 +11,10 @@ LOCAL_CERTS_PEM_NAME="Company_CA.pem"
 LOCAL_STEP_CLI_NAME="step-cli.rpm"
 
 # Define OS variables
-SUSE_INSTALL_PACKAGES="curl step-cli unzip"
-SUSE_SSL_CERT_DIR="/etc/ssl"
-SUSE_PM_OPTIONS="--non-interactive"
+MDNF_REPO_LOCAL_PATH="/etc/dnf/dnf.conf"
+MDNF_INSTALL_PACKAGES="curl-minimal findutils unzip"
+MDNF_SSL_CERT_DIR="/etc/pki/ca-trust/source/anchors"
+# MDNF_SSL_CERT_DIR_USR="/usr/share/pki/ca-trust-source/anchors"
 
 # Begin configuration script
 if [ "$(uname)" != "Linux" ]; then
@@ -21,13 +22,20 @@ if [ "$(uname)" != "Linux" ]; then
     exit 1
 fi
 
-if command -v zypper >/dev/null 2>&1; then
-    echo "OpenSUSE flavor found."
-    zypper $SUSE_PM_OPTIONS refresh
+if command -v microdnf >/dev/null 2>&1; then
+    echo "Centos/Fedora/Rocky/Redhat MicroDNF flavor found."
+    if command -v dnf >/dev/null 2>&1; then
+        echo "Skipping MicroDNF setup since DNF is installed."
+        exit 0
+    fi
+
+    cp "$MDNF_REPO_LOCAL_PATH" "$MDNF_REPO_LOCAL_PATH.bak" 2>/dev/null ||:
+    echo "sslverify=0" >> "$MDNF_REPO_LOCAL_PATH"
+    microdnf upgrade --refresh --best --nodocs --noplugins --setopt=install_weak_deps=0 -y
 
     echo "Determining what packages are installed."
     not_installed_packages=""
-    for package in $SUSE_INSTALL_PACKAGES; do
+    for package in $MDNF_INSTALL_PACKAGES; do
         if ! rpm -q "$package" >/dev/null 2>&1; then
             not_installed_packages="$not_installed_packages $package"
         fi
@@ -36,10 +44,11 @@ if command -v zypper >/dev/null 2>&1; then
     if [[ "$not_installed_packages" ]]; then
         echo "Installing required packages."
         # shellcheck disable=SC2086
-        zypper $SUSE_PM_OPTIONS --ignore-unknown install --no-recommends $not_installed_packages || echo "Failed to install $SUSE_INSTALL_PACKAGES - $not_installed_packages packages."
+        microdnf install $not_installed_packages --best --nodocs --noplugins --setopt=install_weak_deps=0 -y || echo "Failed to install $MDNF_INSTALL_PACKAGES - $not_installed_packages packages."
     fi
 
-    export SSL_CERT_DIR="$SUSE_SSL_CERT_DIR"
+    cp "$MDNF_REPO_LOCAL_PATH.bak" "$MDNF_REPO_LOCAL_PATH" 2>/dev/null ||:
+    export SSL_CERT_DIR="$MDNF_SSL_CERT_DIR"
     mkdir -p "$SSL_CERT_DIR"
     export SSL_CERT_FILE="$SSL_CERT_DIR/$LOCAL_CERTS_PEM_NAME"
 
@@ -52,7 +61,7 @@ if command -v zypper >/dev/null 2>&1; then
         export REQUESTS_CA_BUNDLE="$SSL_CERT_FILE"
 
         chmod 644 "$SSL_CERT_FILE"
-        ln -s "$SSL_CERT_FILE" "$SSL_CA_CERT"
+        ln -s -f "$SSL_CERT_FILE" "$SSL_CA_CERT"
     else
         echo "SSL_CERT_FILE missing. $SSL_CERT_FILE"
     fi
@@ -65,19 +74,16 @@ if command -v zypper >/dev/null 2>&1; then
         echo "SSL_CA_CERT missing. $SSL_CA_CERT"
     fi
 
-    update-ca-certificates
+    update-ca-trust extract
 
     echo "Downloading $LOCAL_STEP_CLI_NAME."
     if ! rpm -q step-cli >/dev/null 2>&1; then
         curl -L "$step_cli_rpm_package_url" -o "$LOCAL_STEP_CLI_NAME"
 
         if [ -f "$LOCAL_STEP_CLI_NAME" ]; then
-            zypper $SUSE_PM_OPTIONS --no-gpg-checks install --no-recommends "$LOCAL_STEP_CLI_NAME" || echo "Failed to install $LOCAL_STEP_CLI_NAME package."
+            rpm -ivh "$LOCAL_STEP_CLI_NAME" || echo "Failed to install $LOCAL_STEP_CLI_NAME package."
             rm -f "$LOCAL_STEP_CLI_NAME"
-
-            if [[ ! $not_installed_packages =~ "step-cli" ]]; then
-                not_installed_packages="$not_installed_packages step-cli"
-            fi
+            not_installed_packages="$not_installed_packages step-cli"
         fi
     else
         echo "$LOCAL_STEP_CLI_NAME package already installed."
@@ -92,23 +98,20 @@ if command -v zypper >/dev/null 2>&1; then
             if [ -d "Certificates" ]; then
                 cd "Certificates" ||:
                 find . -type f -exec step certificate install --all {} \;
-                update-ca-certificates
+                update-ca-trust extract
             fi
         else
             echo "Unzip not installed."
         fi
     fi
 
-    not_installed_packages=${not_installed_packages//"curl "/}
+    not_installed_packages=${not_installed_packages//"curl-minimal "/}
     echo "Removing installed packages. $not_installed_packages"
     if [[ "$not_installed_packages" ]]; then
         # shellcheck disable=SC2086
-        zypper $SUSE_PM_OPTIONS --ignore-unknown remove $not_installed_packages
+        microdnf remove --noplugins -y $not_installed_packages || echo "Unable to remove installed packages."
     fi
 
-    zypper $SUSE_PM_OPTIONS clean --all
+    microdnf clean all --noplugins --enablerepo='*' -y
     cd ".." && rm -r "Certificates" >/dev/null 2>&1
-    echo "Zypper certificate configuration complete."
-else
-    echo "Linux OpenSUSE flavor not found."
 fi
