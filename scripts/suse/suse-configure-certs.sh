@@ -1,4 +1,5 @@
 #!/bin/bash
+# Tested on: Leap 15+, Tumbleweed 
 
 # Define external file sources
 certs_url="http://mycompany.com/Company_CA.pem"

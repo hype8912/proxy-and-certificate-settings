@@ -1,4 +1,6 @@
 #!/bin/bash
+# Tested on:
+# Debian 10+, Ubuntu 18.04+
 
 # Define external file sources
 certs_url="http://mycompany.com/Company_CA.pem"

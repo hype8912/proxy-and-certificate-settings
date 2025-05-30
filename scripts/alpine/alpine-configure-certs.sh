@@ -1,4 +1,5 @@
 #!/bin/bash
+# Tested on: Alpine 3.15+
 
 # Define external file sources
 certs_url="http://mycompany.com/Company_CA.pem"

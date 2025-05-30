@@ -1,4 +1,6 @@
 #!/bin/bash
+# Tested on:
+# kaniko-project/executor:v1.23.2-debug, go-containerregistry/crane:debug
 
 # Define external file sources
 certs_url="http://mycompany.com/Company_CA.pem"

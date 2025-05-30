@@ -1,4 +1,5 @@
 #!/bin/bash
+# Tested on: kaniko-project/executor:v1.23.2-debug
 
 # Define basic variables
 # KANIKO_SSL_CERT_DIR="/kaniko/ssl/certs"

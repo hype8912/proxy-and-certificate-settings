@@ -1,4 +1,6 @@
 #!/bin/bash
+# Tested on:
+# Fedora 40+, CentOS 6+, Red Hat 7+, OracleLinux 6+, Rocky Linux 8+, Alma Linux 9+, UBI 8+, Amazon Linux 2023
 
 # Define external file sources
 certs_url="http://mycompany.com/Company_CA.pem"
@@ -58,7 +60,7 @@ if command -v yum >/dev/null 2>&1; then
             if [[ "$not_installed_packages" ]]; then
                 echo "Installing required packages."
                 # shellcheck disable=SC2086
-                yum --setopt=sslverify=false --setopt=tsflags=nodocsy --noplugins install $not_installed_packages --skip-broken -y || echo "Failed to install $YUM_INSTALL_PACKAGES - $not_installed_packages packages."
+                yum --setopt=sslverify=false --setopt=tsflags=nodocs --noplugins install $not_installed_packages --skip-broken -y || echo "Failed to install $YUM_INSTALL_PACKAGES - $not_installed_packages packages."
             fi
 
             export SSL_CERT_DIR="$YUM_SSL_CERT_DIR"

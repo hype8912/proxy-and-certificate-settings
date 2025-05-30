@@ -11,10 +11,10 @@ LOCAL_CERTS_PEM_NAME="Company_CA.pem"
 LOCAL_STEP_CLI_NAME="step-cli.rpm"
 
 # Define OS variables
-MDNF_REPO_LOCAL_PATH="/etc/dnf/dnf.conf"
-MDNF_INSTALL_PACKAGES="curl-minimal findutils unzip"
-MDNF_SSL_CERT_DIR="/etc/pki/ca-trust/source/anchors"
-# MDNF_SSL_CERT_DIR_USR="/usr/share/pki/ca-trust-source/anchors"
+MICRODNF_REPO_LOCAL_PATH="/etc/dnf/dnf.conf"
+MICRODNF_INSTALL_PACKAGES="curl-minimal findutils unzip"
+MICRODNF_SSL_CERT_DIR="/etc/pki/ca-trust/source/anchors"
+# MICRODNF_SSL_CERT_DIR_USR="/usr/share/pki/ca-trust-source/anchors"
 
 # Begin configuration script
 if [ "$(uname)" != "Linux" ]; then
@@ -29,13 +29,13 @@ if command -v microdnf >/dev/null 2>&1; then
         exit 0
     fi
 
-    cp "$MDNF_REPO_LOCAL_PATH" "$MDNF_REPO_LOCAL_PATH.bak" 2>/dev/null ||:
-    echo "sslverify=0" >> "$MDNF_REPO_LOCAL_PATH"
+    cp "$MICRODNF_REPO_LOCAL_PATH" "$MICRODNF_REPO_LOCAL_PATH.bak" 2>/dev/null ||:
+    echo "sslverify=0" >> "$MICRODNF_REPO_LOCAL_PATH"
     microdnf upgrade --refresh --best --nodocs --noplugins --setopt=install_weak_deps=0 -y
 
     echo "Determining what packages are installed."
     not_installed_packages=""
-    for package in $MDNF_INSTALL_PACKAGES; do
+    for package in $MICRODNF_INSTALL_PACKAGES; do
         if ! rpm -q "$package" >/dev/null 2>&1; then
             not_installed_packages="$not_installed_packages $package"
         fi
@@ -44,11 +44,11 @@ if command -v microdnf >/dev/null 2>&1; then
     if [[ "$not_installed_packages" ]]; then
         echo "Installing required packages."
         # shellcheck disable=SC2086
-        microdnf install $not_installed_packages --best --nodocs --noplugins --setopt=install_weak_deps=0 -y || echo "Failed to install $MDNF_INSTALL_PACKAGES - $not_installed_packages packages."
+        microdnf install $not_installed_packages --best --nodocs --noplugins --setopt=install_weak_deps=0 -y || echo "Failed to install $MICRODNF_INSTALL_PACKAGES - $not_installed_packages packages."
     fi
 
-    cp "$MDNF_REPO_LOCAL_PATH.bak" "$MDNF_REPO_LOCAL_PATH" 2>/dev/null ||:
-    export SSL_CERT_DIR="$MDNF_SSL_CERT_DIR"
+    cp "$MICRODNF_REPO_LOCAL_PATH.bak" "$MICRODNF_REPO_LOCAL_PATH" 2>/dev/null ||:
+    export SSL_CERT_DIR="$MICRODNF_SSL_CERT_DIR"
     mkdir -p "$SSL_CERT_DIR"
     export SSL_CERT_FILE="$SSL_CERT_DIR/$LOCAL_CERTS_PEM_NAME"
 

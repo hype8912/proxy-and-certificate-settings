@@ -1,4 +1,5 @@
 #!/bin/sh
+# Tested on: macOS 13+
 
 # Define external file sources
 certs_url="http://mycompany.com/Company_CA.pem"
