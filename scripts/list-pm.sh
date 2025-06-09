@@ -1,8 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 
-green='\e[0;32m'
-reset='\e[0m'
+green='\033[0;32m'
+reset='\033[0m'
 
+# Package manager lists (broken into multiple variables for readability)
 pkmA="agner ahkpm airship alr apk apm apt apt-get apx aris au3pm aura"
 pkmB="bal bingo boss bower bpkg brew bun bundle"
 pkmC="cabal cards cargo carthage cast cfpm choco ck clib cobolget composer compote conan conche conda corepack corral cotton cpan cran crew cspkg ctan curd"
@@ -30,14 +31,27 @@ pkmX="xbps"
 pkmY="yarn yum"
 pkmZ="zap zig zkg zpm zypper"
 
+# Combine all package managers
 package_managers="$pkmA $pkmB $pkmC $pkmD $pkmE $pkmF $pkmG $pkmH $pkmI $pkmJ $pkmK $pkmL $pkmM $pkmN $pkmO $pkmP $pkmQ $pkmR $pkmS $pkmT $pkmU $pkmV $pkmW $pkmX $pkmY $pkmZ"
-echo "Package managers- '$package_managers'"
-echo "Checking for installed package managers..."
+printf "Package managers- '%s'\n" "$package_managers"
+printf "Checking for installed package managers...\n"
 
+# Check if printf supports -e flag, fallback to echo if not
+if printf '\033[0m' >/dev/null 2>&1; then
+    use_printf=1
+else
+    use_printf=0
+fi
+
+# Process each package manager
 for manager in $package_managers; do
 	if command -v "$manager" >/dev/null 2>&1; then
-		echo -e "${green}$manager is installed.${reset}"
+		if [ "$use_printf" = 1 ]; then
+            printf "${green}%s is installed.${reset}\n" "$manager"
+        else
+            echo "${manager} is installed."
+        fi
 	else
-		echo "$manager not found."
+		printf "%s not found.\n" "$manager"
 	fi
 done
