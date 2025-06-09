@@ -48,3 +48,12 @@
 | sl:7                                   |  68MB | RPM, Yum |
 
 Note: Scientific Linux need to convert repo path from 7x to obsolete/7x
+
+## Archived Package Repositories
+
+Below are archived mirrors of packages for deprecated versions.
+
+- [CentOS Vault Mirror (USA)](https://vault.centos.org)
+- [Linux Kernel Archives (USA)](http://archive.kernel.org)
+- [Linux @ CERN (Switzerland)](https://linuxsoft.cern.ch)
+- [National Supercomputer Centre (Sweden)](https://mirror.nsc.liu.se)
