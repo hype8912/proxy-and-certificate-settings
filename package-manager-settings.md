@@ -23,7 +23,7 @@ If no information is provided in the `Proxy Instructions` or `Certificate Instru
 | cast | | Sorcerer | sourcemage:latest | 251MB | | |
 | choco | Chocolatey | Debian | chocolatey/choco:latest | 249MB | | |
 | ck | Collective Knowledge | Debian | ctuning/ck-web-server:latest | 135MB | | |
-| composer<a name="composer"></a> | Composer (PHP) | Alpine | composer:latest | 71MB | <code class="language-bash">export CGI_HTTP_PROXY="HTTP_PROXY"</code>[^composer_proxy] | <code class="language-bash">export COMPOSER_CAFILE="$SSL_CERT_FILE"</code>[^composer_cert] |
+| composer<a name="composer"></a> | Composer (PHP) | Alpine | composer:latest | 71MB | <code class="language-bash">export CGI_HTTP_PROXY="$HTTP_PROXY"</code>[^composer_proxy] | <code class="language-bash">export COMPOSER_CAFILE="$SSL_CERT_FILE"</code>[^composer_cert] |
 | conan<a name="conan"></a> | Conan | Debian | conanio/gcc9:2.9.1 | 306MB | | <code class="language-bash">export CONAN_CACERT_PATH="$SSL_CERT_FILE"</code>[^conan_cert] |
 | conda<a name="conda"></a> | Conda | Debian | continuumio/miniconda3:latest | 198MB | <pre><code class="language-bash">conda config --set proxy_servers.http "$HTTP_PROXY"&#13;conda config --set proxy_servers.https "$HTTPS_PROXY"</code></pre> | <code class="language-bash">conda config --set ssl_verify "$SSL_CERT_FILE"</code> |
 | corepack | Corepack (node) | Alpine<br>Debian | node:current-alpine<br>node:slim | 54MB<br>76MB | See [npm](#npm). | See [npm](#npm). |
@@ -50,9 +50,9 @@ If no information is provided in the `Proxy Instructions` or `Certificate Instru
 | hpm | HarmonyOS Package Manager | | | | <pre><code class="language-bash">hpm config set http_proxy $HTTP_PROXY&#13;hpm config set https_proxy $HTTPS_PROXY</code></pre> | |
 | lein<a name="lein"></a> | Leiningen | Debian | clojure:latest | 287MB | | See [java](application-proxy-settings.md#java). |
 | luarocks | LuaRocks | Alpine<br>Debian | nickblah/lua:5-luarocks-alpine3<br>nickblah/lua:latest | 7MB<br>47MB | | |
-| mamba | Mamba | Debian | condaforge/miniforge3:latest | 141MB | | <pre><code class="language-bash">export CURL_CA_BUNDLE="$SSL_CA_CERT"&#13;export REQUESTS_CA_BUNDLE="SSL_CERT_FILE"</code></pre>See also [conda](#conda). |
+| mamba | Mamba | Debian | condaforge/miniforge3:latest | 141MB | | <pre><code class="language-bash">export CURL_CA_BUNDLE="$SSL_CA_CERT"&#13;export REQUESTS_CA_BUNDLE="$SSL_CERT_FILE"</code></pre>See also [conda](#conda). |
 | microdnf | MicroDNF | Red Hat | See [Red Hat Image Distros](other/redhat-image-distros.md) | | See [dnf](#dnf) | |
-| micromamba | Micromamba | Debian | mambaorg/micromamba:latest | 33MB | | <pre><code class="language-bash">export CURL_CA_BUNDLE="$SSL_CA_CERT"&#13;export REQUESTS_CA_BUNDLE="SSL_CERT_FILE"&#13;micromamba config set ssl_verify "$SSL_CERT_FILE"</code></pre> |
+| micromamba | Micromamba | Debian | mambaorg/micromamba:latest | 33MB | | <pre><code class="language-bash">export CURL_CA_BUNDLE="$SSL_CA_CERT"&#13;export REQUESTS_CA_BUNDLE="$SSL_CERT_FILE"&#13;micromamba config set ssl_verify "$SSL_CERT_FILE"</code></pre> |
 | mvn<a name="mvn"></a> | Maven | Debian | maven:latest | 231MB | <pre><code class="language-bash">mvn -DproxySet=true -D proxyHost=$HTTP_PROXY_HOST \ &#13; -DproxyPort=$HTTP_PROXY_PORT \ &#13; -DproxyProtocol=http \ &#13; -DproxyId=http \ &#13; -DproxyNonProxyHosts=$NO_PROXY&#13;mvn -D proxyHost=$HTTPS_PROXY_HOST \ &#13; -DproxyPort=$HTTPS_PROXY_PORT \ &#13; -DproxyProtocol=https \ &#13; -DproxyId=https \ &#13; -DproxyNonProxyHosts=$NO_PROXY</code></pre> | See also [java](application-proxy-settings.md#java).<pre><code class="language-bash" style="white-space: pre-wrap;">export MAVEN_OPTS="-Djavax.net.ssl.trustStore=$SSL_KEYSTORE_FILE -Djavax.net.ssl.trustStorePassword={Password}"</code>[^maven_cert]</pre> |
 | nix<a name="nix"></a> | Nix Package Manager | NixOS | nixos/nix:latest | 213MB | | <code class="language-bash">export NIX_SSL_CERT_FILE="$SSL_CERT_FILE"</code>[^nix_cert] |
 | npm<a name="npm"></a> | Node Package Manager | Alpine<br>Debian | node:current-alpine<br>node:slim | 54MB<br>76MB | <pre><code class="language-bash">npm config set proxy "$HTTP_PROXY"&#13;npm config set https-proxy "$HTTPS_PROXY"&#13;npm config set noproxy "$NO_PROXY"</code></pre>Electron:<br><code class="language-bash">export ELECTRON_GET_USE_PROXY=true</code> | <pre><code class="language-bash">export NODE_EXTRA_CA_CERTS="$SSL_CERT_FILE"&#13;export NODE_TLS_REJECT_UNAUTHORIZED=1</code>[^node_certs]</pre> |
@@ -62,7 +62,7 @@ If no information is provided in the `Proxy Instructions` or `Certificate Instru
 | paket | | Debian | nojaf/fable:latest | 284MB | | |
 | pdm | pdm (python) | Debian | frostming/pdm:latest | 47MB | | See [pip](#pip). |
 | pear | PEAR (PHP) | Alpine<br>Debian | php:alpine<br>php:latest | 40MB<br>178MB | <pre><code class="language-bash">pear config-set http_proxy "$HTTP_PROXY"&#13;pear config-set https_proxy "$HTTPS_PROXY"</code>[^pear]</pre> | |
-| pip<a name="pip"></a> | pip (python) | Alpine<br>Debian | python:alpine<br>python:slim | 16MB<br>42MB | | <pre><code class="language-bash">export CURL_CA_BUNDLE="$SSL_CA_CERT"&#13;export PIP_CERT="SSL_CERT_FILE"&#13;export REQUESTS_CA_BUNDLE="SSL_CERT_FILE"</code>[^pip_cert]</pre> |
+| pip<a name="pip"></a> | pip (python) | Alpine<br>Debian | python:alpine<br>python:slim | 16MB<br>42MB | | <pre><code class="language-bash">export CURL_CA_BUNDLE="$SSL_CA_CERT"&#13;export PIP_CERT="$SSL_CERT_FILE"&#13;export REQUESTS_CA_BUNDLE="$SSL_CERT_FILE"</code>[^pip_cert]</pre> |
 | pipenv | Pipenv (python) | Alpine | fsfe/pipenv:alpine-3.13 | 36MB | | See [pip](#pip). |
 | pixi | pixi | Debian | ghcr.io/prefix-dev/pixi:latest | 133MB | | See [pip](#pip). |
 | pkg | | FreeBSD | | | | |
