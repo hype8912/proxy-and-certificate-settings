@@ -47,7 +47,7 @@ See also applicable [Proxy](proxy-environment-variables.md) environment variable
 | SSL_KEYSTORE_FILE | Custom | $SSL_CERT_DIR/myjks.keystore | %SSL_CERT_DIR%\myjks.keystore |
 
 [^gitlab_dps]: https://docs.gitlab.com/ee/user/application_security/dependency_scanning/#global-analyzer-settings
-[^suse]: https://documentation.suse.com/suma/4.3/en/suse-manager/administration/ssl-certs-mported.html#_import_certificates_for_new_installations
+[^suse]: https://documentation.suse.com/suma/4.3/en/suse-manager/administration/ssl-certs-imported.html#_import_certificates_for_new_installations
 [^curl]: https://curl.se/docs/sslcerts.html
 [^elasticsearch]: https://www.elastic.co/guide/en/fleet/7.17/agent-environment-variables.html
 [^libcloud]: https://libcloud.readthedocs.io/en/latest/other/ssl-certificate-validation.html#using-a-custom-ca-certificate
