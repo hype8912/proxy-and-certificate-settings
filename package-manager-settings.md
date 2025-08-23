@@ -36,7 +36,7 @@ If no information is provided in the `Proxy Instructions` or `Certificate Instru
 | dotnet nuget | NuGet | Debian | mcr.microsoft.com/dotnet/sdk:8.0 | 836MB | | |
 | dpkg | Debian Package | Debian | debian:stable-slim<br>ubuntu:latest | 27MB<br>28MB | See [apt](#apt). | |
 | dub | DUB | Debian | dlanguage/ldc:latest | 304MB | | |
-| emerge | Portage | Gentoo | gentoo/stage3:musl<br>gentoo/python:latest | 290MB<br>611MB | | |
+| emerge | Portage | Gentoo | gentoo/stage3:musl<br>gentoo/python:latest | 290MB<br>611MB | <code class="language-bash">export RSYNC_PROXY="$HTTP_PROXY"</code> | |
 | eopkg | | Solus (Evolve OS) | silkeh/solus:slim | 268MB | | |
 | fink | Fink | MacOS | | | | |
 | flatpak | Flatpak | Debian<br>Red Hat | flatpak/flatpak-builder:base<br>freedesktopsdk/flatpak:latest | 295MB<br>611MB | | |

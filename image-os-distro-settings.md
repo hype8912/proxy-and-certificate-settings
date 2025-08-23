@@ -13,7 +13,7 @@
 | Darwin | Unix | | | | `/Library/Keychains/System.keychain` | <pre style="white-space:pre-wrap;"><code class="language-bash" style="white-space:pre-wrap;">security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain "$SSL_CA_CERT"&#13;cp /etc/ssl/cert.pem "$SSL_CERT_FILE"</code>[^windows_mac]</pre> |
 | Debian Linux | Debian | debian:stable-slim<br>ubuntu:latest | 27MB<br>28MB | ca-certificates, curl, unzip | `/usr/local/share/ca-certificates/` | <code class="language-bash">update-ca-certificates</code> |
 | FreeBSD | Unix | | | | `/usr/local/share/certs/` | |
-| Gentoo Linux | Gentoo | gentoo/python:latest | 611MB | | `/usr/local/share/ca-certificates/` | <code class="language-bash">update-ca-certificates</code> |
+| Gentoo Linux[^gentoo] | Gentoo | gentoo/python:latest | 611MB | | `/usr/local/share/ca-certificates/` | <code class="language-bash">update-ca-certificates</code> |
 | Guix System | NixOS | metacall/guix:latest | 992MB | nss-certs | `/etc/ssl/certs/` | |
 | Linux From Scratch | LFS | sundev79/nutyx-images:nutyx | 130MB | | `/etc/ssl/local/` | <code class="language-bash">make-ca -g --force</code> |
 | NetBSD | Unix | | | | `/etc/openssl/certs/` | |
@@ -37,6 +37,7 @@
 + [Ubuntu Release Names](https://wiki.ubuntu.com/Releases)
 
 [^coreos]: https://github.com/endocode/coreos-docs/blob/master/os/adding-certificate-authorities.md
+[^gentoo]: https://wiki.gentoo.org/wiki/Certificates#OpenSSL-compatible_ca-certificates
 [^nix_cert]: https://nix.dev/manual/nix/2.24/installation/env-variables.html#nix_ssl_cert_file
 [^redhat_certs]: https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/security_guide/sec-shared-system-certificates
 [^test_image]: [Test Image Disclaimer](README.md#test-image)
