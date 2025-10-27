@@ -38,14 +38,15 @@ flowchart LR
   centos:stream9 ----> centos:stream10
   fedora:40 --> centos:stream10
   fedora:40 --> fedora:41
-  fedora:41 --> fedora:42["`fedora:42
-  (latest)`"]
+  fedora:41 --> fedora:42
   fedora:42 --> fedora:43["`fedora:43
-  (rawhide)`"]
-  centos:stream10 --> almalinux:10-kitten
+  (latest)`"]
+  centos:stream10 --> almalinux:10
+  centos:stream10 --> rockylinux:10
   centos:stream10 --> redhat/ubi:10
+  centos:stream10 --> oraclelinux:10
   fedora:43 --> fedora:44["`fedora:44
-  (8-12-2025)`"]
+  (4-2026)`"]
 ```
 
 ## Disclaimer
@@ -67,6 +68,16 @@ This diagram is meant for general information to show the upstreams from various
 ### Red Hat Enterprise Linux
 
 - Release: 3 years
+- Active: 10 years
+
+### RockyLinux
+
+- Release: 6 months for 5 years, then 5 years support
+- Active: 10 years
+
+### AlmaLinux
+
+- Release: 6 months for 5 years, then 5 years support
 - Active: 10 years
 
 ## Other information
