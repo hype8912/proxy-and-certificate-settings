@@ -46,7 +46,7 @@ flowchart LR
   centos:stream10 --> redhat/ubi:10
   centos:stream10 --> oraclelinux:10
   fedora:43 --> fedora:44["`fedora:44
-  (4-2026)`"]
+  (rawhide)`"]
 ```
 
 ## Disclaimer
