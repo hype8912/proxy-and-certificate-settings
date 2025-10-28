@@ -98,6 +98,7 @@ pkgutils
 pkgx
 pkgxdev
 projeny
+pyenv
 pypm
 qnap-qpkg-builder
 qpkg
@@ -119,6 +120,7 @@ spago
 sqlpkg
 swupd
 tatin
+tdnf
 teaport
 tinc
 tpkg
@@ -133,6 +135,7 @@ wapm-cli
 winget
 wpkg
 xbps
+yast
 yellowdog
 ziglang
 zypp
