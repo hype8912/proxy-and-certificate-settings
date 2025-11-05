@@ -6,8 +6,8 @@
 | almalinux:8                            |  69MB | DNF, RPM, Yum |
 | almalinux:9-minimal                    |  34MB | MicroDNF, RPM |
 | almalinux:9                            |  67MB | DNF, RPM, Yum |
-| almalinux:10-kitten-minimal            |  29MB | MicroDNF, RPM |
-| almalinux:10-kitten                    |  64MB | DNF, RPM, Yum |
+| almalinux:10-minimal                   |  29MB | MicroDNF, RPM |
+| almalinux:10                           |  64MB | DNF, RPM, Yum |
 | amazonlinux:1                          |  60MB | RPM, Yum |
 | amazonlinux:2                          |  60MB | RPM, Yum |
 | amazonlinux:2022                       |  55MB | DNF, RPM, Yum |
@@ -27,8 +27,8 @@
 | eurolinux/eurolinux-9:latest           |  61MB | DNF, RPM, Yum |
 | fedora:40                              |  78MB | DNF, RPM, Yum |
 | fedora:41                              |  57MB | DNF, MicroDNF, RPM, Yum |
-| fedora:42                              |  58MB | DNF, MicroDNF, RPM, Yum |
-| fedora:43 (latest)                     |  64MB | DNF, MicroDNF, RPM, Yum |
+| fedora:42 (latest)                     |  58MB | DNF, MicroDNF, RPM, Yum |
+| fedora:43                              |  64MB | DNF, MicroDNF, RPM, Yum |
 | fedora:44 (rawhide)                    |  64MB | DNF, MicroDNF, RPM, Yum |
 | oraclelinux:6                          |  67MB | RPM, Yum |
 | oraclelinux:7-slim                     |  48MB | RPM, Yum |
