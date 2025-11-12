@@ -24,7 +24,7 @@
 | eurolinux/eurolinux-7:latest           |  60MB | RPM, Yum |
 | eurolinux/eurolinux-8:latest           |  79MB | DNF, RPM, Yum |
 | eurolinux/eurolinux-9-minimal:latest   |  37MB | MicroDNF, RPM |
-| eurolinux/eurolinux-9:latest           |  61MB | DNF, RPM, Yum |
+| eurolinux/eurolinux-9:latest[^el-eol]  |  61MB | DNF, RPM, Yum |
 | fedora:40                              |  78MB | DNF, RPM, Yum |
 | fedora:41                              |  57MB | DNF, MicroDNF, RPM, Yum |
 | fedora:42 (latest)                     |  58MB | DNF, MicroDNF, RPM, Yum |
@@ -52,15 +52,19 @@
 | redhat/ubi10-minimal:latest            |  32MB | MicroDNF, RPM |
 | redhat/ubi10:latest                    |  75MB | DNF, RPM, Yum |
 | sl:6 (Scientific Linux)                |  47MB | RPM, Yum |
-| sl:7                                   |  68MB | RPM, Yum |
+| sl:7[^sc-eol]                          |  68MB | RPM, Yum |
 
-Note: Scientific Linux need to convert repo path from 7x to obsolete/7x
+Note: Scientific Linux and EuroLinux projects have reached end-of-life.
 
 ## Archived Package Repositories
 
 Below are archived mirrors of packages for deprecated versions.
 
 - [CentOS Vault Mirror (USA)](https://vault.centos.org)
+- [Fedora Archive Mirror (USA)](https://archives.fedoraproject.org/pub)
 - [Linux Kernel Archives (USA)](http://archive.kernel.org)
 - [Linux @ CERN (Switzerland)](https://linuxsoft.cern.ch)
 - [National Supercomputer Centre (Sweden)](https://mirror.nsc.liu.se)
+
+[^el-eol]: https://endoflife.date/eurolinux
+[^sc-eol]: https://scientificlinux.org/category/uncategorized/scientific-linux-end-of-life/
