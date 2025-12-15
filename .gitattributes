@@ -56,7 +56,7 @@ SUPPORT          text diff=markdown
 *.eps      binary
 
 # Configs
-*.json     text
+*.json     text eol=lf
 *.lock     text -diff
 *.toml     text diff=toml
 *.xml      text

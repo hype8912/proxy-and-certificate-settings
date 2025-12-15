@@ -38,9 +38,9 @@ flowchart LR
   centos:stream9 ----> centos:stream10
   fedora:40 --> centos:stream10
   fedora:40 --> fedora:41
-  fedora:41 --> fedora:42
-  fedora:42 --> fedora:43["`fedora:43
+  fedora:41 --> fedora:42["`fedora:42
   (latest)`"]
+  fedora:42 --> fedora:43
   centos:stream10 --> almalinux:10
   centos:stream10 --> rockylinux:10
   centos:stream10 --> redhat/ubi:10

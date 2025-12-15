@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 green='\033[0;32m'
 reset='\033[0m'
@@ -46,12 +46,16 @@ fi
 # Process each package manager
 for manager in ${package_managers}; do
 	if command -v "${manager}" >/dev/null 2>&1; then
-		if [ "${use_printf}" = 1 ]; then
+		if [[ "${use_printf}" = 1 ]]; then
             printf "${green}%s is installed.${reset}\n" "${manager}"
         else
-            echo "${manager} is installed."
+            echo -e "${green}${manager} is installed.${reset}"
         fi
 	else
-		printf "%s not found.\n" "${manager}"
+        if [[ "${use_printf}" = 1 ]]; then
+            printf "%s not found." "${manager}"
+        else
+            echo "${manager} not found."
+        fi
 	fi
 done
