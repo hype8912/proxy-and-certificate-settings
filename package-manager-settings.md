@@ -10,7 +10,7 @@ If no information is provided in the `Proxy Instructions` or `Certificate Instru
 |:---:|:---:|:---:|---|:---:|---|---|
 | alr | Alire | Debian | esolang/ada:latest | 286MB | | |
 | apk | Alpine Package | Alpine | alpine:latest | 3.5MB | | |
-| apt<a name="apt"></a> | Advanced Package Tool | Debian | debian:stable-slim<br>ubuntu:latest | 27MB<br>28MB | <pre language="bash">echo 'Acquire::http::Proxy "$HTTP_PROXY";' > /etc/apt/apt.conf.d/00proxy&#13;echo 'Acquire::https::Proxy "$HTTPS_PROXY";' >> /etc/apt/apt.conf.d/00proxy</pre> | |
+| apt<a name="apt"></a> | Advanced Package Tool | Debian | debian:stable-slim<br>ubuntu:latest | 27MB<br>28MB | <pre language="bash">echo 'Acquire::http::Proxy "$HTTP_PROXY";' > /etc/apt/apt.conf.d/00proxy&#13;echo 'Acquire::https::Proxy "$HTTPS_PROXY";' >> /etc/apt/apt.conf.d/00proxy&#13;echo 'Acquire::ftp::Proxy "$FTP_PROXY";' >> /etc/apt/apt.conf.d/00proxy</pre> | |
 | apt-get | | Debian | debian:stable-slim<br>ubuntu:latest | 27MB<br>28MB | See [apt](#apt). | |
 | apx | | Debian | ghcr.io/vanilla-os/desktop:v1.1.3 | 3.2GB | | |
 | bower | Bower (node)[^bower] | Debian | danlynn/ember-cli:latest | 717MB | <pre><code class="language-bash">export bower_proxy="$HTTP_PROXY"&#13;export bower_https_proxy="$HTTPS_PROXY"</code></pre>See also [npm](#npm). | <code class="language-bash">export bower_ca="$SSL_CERT_FILE"</code><br>See also [npm](#npm). |
