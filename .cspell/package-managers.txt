@@ -13,6 +13,7 @@ choco
 chromebrew
 clib
 cljr
+cnpm
 cobolget
 cocoapods
 coldfusion
@@ -21,6 +22,7 @@ conche
 condaforge
 continuumio
 cpan
+cpanm
 cran
 crewbuild
 cspkg
@@ -32,6 +34,7 @@ dlanguage
 dpkg
 elisp-cask
 eopkg
+equo
 eudrop
 fext
 flix
@@ -40,6 +43,7 @@ fppkg
 fundle
 gerap
 glasskube
+godep
 gradlew
 guix
 hacs
@@ -55,12 +59,14 @@ kustomizer
 lein
 leiningen
 ligo
+lmod
 luarocks
 maximus
 mambaorg
 microdnf
 micromamba
 miniforge
+minpac
 necro
 netpkg
 nickblah
@@ -83,6 +89,7 @@ pacman
 pacstall
 paket
 parn
+paru
 petget
 pipenv
 pipflow
@@ -103,9 +110,11 @@ pypm
 qnap-qpkg-builder
 qpkg
 raco
+rebar
 rectx
 rlang
 rpkg
+rpm-ostree
 ruckzuck
 rustup
 rzget
@@ -119,10 +128,12 @@ spack
 spago
 sqlpkg
 swupd
+talosctl
 tatin
 tdnf
 teaport
 tinc
+tlmgr
 tpkg
 urpmi
 valapkg
@@ -131,6 +142,7 @@ vcpkg
 vite
 vōlt
 vpkg
+wapm
 wapm-cli
 winget
 wpkg

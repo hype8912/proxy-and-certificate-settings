@@ -23,7 +23,7 @@
 | | Netbeans IDE | | | 1. Open Netbeans, go to **Tools** then **Options** menu item.<br>2. Click the **General** tab.<br>3. Select **Manual Proxy Settings**.<br>4. Set **Address** to "$HTTP_PROXY_HOST" and **Port** to "$HTTP_PROXY_PORT".| |
 | | Periscope Authenticator | | | <pre><code class="language-bash" style="white-space:pre-wrap;">git config --global lfs.transfer.enablehrefrewrite true&#13;&#13;git config --global url."http://localhost:[Local Port]".insteadOf"[Git Host URL]"</code></pre> | |
 | pio | PlatformIO Core | | | | <code class="language-bash">export REQUESTS_CA_BUNDLE="$SSL_CERT_FILE"</code>[^platformio_cert] |
-| pycharm | PyCharm | | | See [conda](package-manager-settings.md#conda) | See [conda](package-manager-settings.md#conda) |
+| pycharm | PyCharm | | | 1. Open PyCharm, go to **File** then **Settings** menu item.<br>2. Navigate to **Appearance & Behavior** > **System Settings** > **HTTP Proxy**.<br>3. Set **Host name** to "$HTTP_PROXY_HOST" and **Port number** to "$HTTP_PROXY_PORT".<br>4. Set **No proxy for** to "$NO_PROXY". [^pycharm_proxy] | 1. Open PyCharm, go to **File** then **Settings** menu item.<br>2. Navigate to **Appearance & Behavior** > **System Settings** > **Server Certificates**.<br>3. Select the **+** and choose the "$SSL_CERT_FILE". [^pycharm_certs] |
 | subscription-manager | RHEL Subscription Manager | redhat/ubi9:latest | 84MB | <code class="language-bash" style="white-space:pre-wrap;">subscription-manager config --server.proxy_hostname "$HTTP_PROXY_HOST" --server.proxy_port "$HTTP_PROXY_PORT" --server.no_proxy "$NO_PROXY"</code> | |
 | svn | Subversion | elleflorio/svn-server:latest | 18MB | `~/.subversion/servers` or `%APPDATA%\Subversion\servers`[^svn]<pre><code class="language-ini">[global]&#13;http-proxy-host=$HTTP_PROXY_HOST&#13;http-proxy-port=$HTTP_PROXY_PORT</code></pre> | `~/.subversion/servers` or `%APPDATA%\Subversion\servers`<pre><code class="language-ini">[global]&#13;ssl-trust-default-ca=no&#13;ssl-authority-files=$SSL_CERT_FILE</code></pre> |
 | <a name="supervisely"></a> | Supervisely | | | | <pre><code class="language-bash">export REQUESTS_CA_BUNDLE="$SSL_CERT_FILE"&#13;export SLY_EXTRA_CA_CERTS="$SSL_CERT_FILE"</code>[^supervisely]</pre> |
@@ -58,6 +58,8 @@
 [^minikube_cert]: https://minikube.sigs.k8s.io/docs/handbook/vpn_and_proxy/#x509-certificate-signed-by-unknown-authority
 [^net_framework_proxy]: https://learn.microsoft.com/en-us/dotnet/framework/configure-apps/file-schema/network/proxy-element-network-settings
 [^platformio_cert]: https://docs.platformio.org/en/latest/core/installation/proxy-configuration.html
+[^pycharm_proxy]: https://www.jetbrains.com/help/pycharm/settings-http-proxy.html
+[^pycharm_certs]: https://www.jetbrains.com/help/pycharm/settings-tools-server-certificates.html
 [^supervisely]: https://developer.supervisely.com/app-development/advanced/custom-configuration/fixing-ssl-certificate-errors-in-supervisely
 [^svn]: https://subversion.apache.org/faq.html#proxy
 [^terrateamio]: https://docs.terrateam.io/security-and-compliance/self-signed-certificates/

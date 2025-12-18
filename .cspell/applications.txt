@@ -11,6 +11,7 @@ hoppr
 kaniko
 karaf
 keytool
+kubepods
 libcloud
 localedef
 netbase
