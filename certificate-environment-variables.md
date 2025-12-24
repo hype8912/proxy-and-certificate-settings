@@ -3,7 +3,7 @@ See also applicable [Proxy](proxy-environment-variables.md) environment variable
 # Certificate Environment Variables
 
 | Variable name | Use | Linux Settings | Windows Settings |
-|---|:---:|---|---|
+| --- | :---: | --- | --- |
 | ADDITIONAL_CA_CERT_BUNDLE[^gitlab_dps] | GitLab Dependency Scanning | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 | AWS_CA_BUNDLE | [AWS CLI](application-proxy-settings.md#aws_cli) | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 | BC_CA_BUNDLE | [checkov](application-proxy-settings.md#checkov) | $SSL_CERT_FILE | %SSL_CERT_FILE% |
@@ -43,7 +43,7 @@ See also applicable [Proxy](proxy-environment-variables.md) environment variable
 # Optional Suggested
 
 | Variable name | Use | Linux Settings | Windows Settings |
-|---|:---:|---|---|
+| --- | :---: | --- | --- |
 | SSL_KEYSTORE_FILE | Custom | $SSL_CERT_DIR/myjks.keystore | %SSL_CERT_DIR%\myjks.keystore |
 
 [^gitlab_dps]: https://docs.gitlab.com/ee/user/application_security/dependency_scanning/#global-analyzer-settings

@@ -3,7 +3,7 @@
 Meta package managers are package managers that sit on top as a layer to interact with a collection of standard package managers to create a unified interface.
 
 | Name | Supported Managers |
-|:---:|---|
+| :---: | --- |
 | [Lure](https://github.com/lure-sh/lure) | apk<br>apt<br>dnf<br>pacman<br>yum<br>zypper |
 | [mpm](https://github.com/kdeldycke/meta-package-manager) | See [managers](https://github.com/kdeldycke/meta-package-manager?tab=readme-ov-file#metadata-and-operations) |
 | [ni](https://github.com/antfu-collective/ni) | bun<br>deno<br>npm<br>pnpm<br>yarn |

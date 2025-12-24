@@ -7,7 +7,7 @@ Set the applicable [Proxy](proxy-environment-variables.md), [Certificate](certif
 If no information is provided in the `Proxy Instructions` or `Certificate Instructions` means they use the typical OS or Distro environment values and will work by setting those value(s).
 
 | Package manager | Name | Image Base | Test Image[^test_image] | Test Image Size[^test_image] | Proxy Instructions | Certificate Instructions |
-|:---:|:---:|:---:|---|:---:|---|---|
+| :---: | :---: | :---: | --- | :---: | --- | --- |
 | alr | Alire | Debian | esolang/ada:latest | 286MB | | |
 | apk | Alpine Package | Alpine | alpine:latest | 3.5MB | | |
 | apt<a name="apt"></a> | Advanced Package Tool | Debian | debian:stable-slim<br>ubuntu:latest | 27MB<br>28MB | <pre language="bash">echo 'Acquire::http::Proxy "$HTTP_PROXY";' > /etc/apt/apt.conf.d/00proxy&#13;echo 'Acquire::https::Proxy "$HTTPS_PROXY";' >> /etc/apt/apt.conf.d/00proxy&#13;echo 'Acquire::ftp::Proxy "$FTP_PROXY";' >> /etc/apt/apt.conf.d/00proxy</pre> | |
@@ -97,7 +97,7 @@ If no information is provided in the `Proxy Instructions` or `Certificate Instru
 These are known package managers but require more research and testing before being moved to the above table.
 
 | Package manager | Name | Image Base | Test Image[^test_image] | Test Image Size[^test_size] | Proxy Instructions | Certificate Instructions |
-|:---:|:---:|:---:|---|:---:|---|---|
+| :---: |:---:| :---: | --- :---:| --- --- |
 | bal | Ballerina[^ballerina] | Alpine | ballerina/ballerina:1.2.57 | 357MB | `$HOME/.ballerina/Settings.toml`<pre><code class="language-toml">[proxy]&#13;host = "$HTTP_PROXY_HOST"&#13;port = "$HTTP_PROXY_PORT"</code></pre> | <pre><code class="language-bash">export BALLERINA_CA_BUNDLE="$SSL_CERT_FILE"&#13;export BALLERINA_CA_CERT="$SSL_CA_CERT"</code></pre> |
 | cfpm | ColdFusion Package Manager | Debian | adobecoldfusion/coldfusion:latest | 222MB | | |
 | crew | ChromeBrew[^crew] | Debian | satmandu/crewbuild:latest | 2.7GB | | |

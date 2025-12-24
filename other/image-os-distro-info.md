@@ -3,7 +3,7 @@
 This is a list of ways to determine what image/distro/os you are possibly dealing with.
 
 | OS/Distro | Image Base | Test Image[^test_image] | Test Image Size[^test_image] | Commands |
-|---|:---:|---|:---:|---|
+| --- | :---: | --- | :---: | --- |
 | Linux | | | | <code class="language-bash">cat /etc/*elease</code> |
 | Linux | | | | <code class="language-bash">cat /etc/*version</code> |
 | Linux | | | | <code class="language-bash">cat /proc/version</code> |

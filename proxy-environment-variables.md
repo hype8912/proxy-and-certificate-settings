@@ -3,7 +3,7 @@
 See also applicable [Certificate](certificate-environment-variables.md) environment variables.
 
 | Variable name | Use | Linux Settings | Windows Settings |
-|---|:---:|---|---|
+| --- | :---: | --- | --- |
 | ALL_PROXY | standard | | |
 | all_proxy | standard | $ALL_PROXY | %ALL_PROXY% |
 | BASH_IT_HTTP_PROXY | [Bash-It](application-proxy-settings.md#bash_it) | $HTTP_PROXY | %HTTP_PROXY% |
@@ -43,7 +43,7 @@ See also applicable [Certificate](certificate-environment-variables.md) environm
 Using the below variables will make it easier when having to set the values for java based applications as shown above.
 
 | Variable name | Use | Linux Settings | Windows Settings |
-|---|:---:|---|---|
+| --- | :---: | --- | --- |
 | HTTP_PROXY_AUTH | | $HTTP_PROXY_USER:$HTTP_PROXY_PASSWORD | %HTTP_PROXY_USER%:%HTTP_PROXY_PASSWORD% |
 | HTTP_PROXY_HOST | Custom | | |
 | HTTP_PROXY_PASSWORD | | | |

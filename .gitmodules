@@ -1,0 +1,3 @@
+[submodule ".cspell"]
+	path = .cspell
+	url = https://github.com/hype8912/cspell-dictionaries.git

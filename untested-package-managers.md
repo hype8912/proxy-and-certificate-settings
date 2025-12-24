@@ -3,7 +3,7 @@
 This is a generic list of package managers that need testing beyond making the list in the [Package Manager Settings](package-manager-settings.md) file forever longer.
 
 | Name | Notes |
-| :---:|---|
+| :---: | --- |
 | 0install | Zero Install[^0install] |
 | aura | Aura[^aura]  - Arch Linux |
 | cobolget | COBOL Package Manager[^cobolget] |

@@ -1,9 +1,9 @@
 # Deprecated Package Managers
 
-If no information is provide in the `Proxy Instructions` or `Certificate Instructions` means they use the typical OS or Distro environment values and will work just by setting those value.
+If no information is provided in the `Proxy Instructions` or `Certificate Instructions` means they use the typical OS or Distro environment values and will work just by setting those value(s).
 
 | Package manager | Name | Image Base | Test Image[^test_image] | Test Image Size[^test_image] | Proxy Instructions | Certificate Instructions | Alternative |
-|:---:|:---:|:---:|---|:---:|---|---|---|
+| :---: | :---: | :---: | --- | :---: | --- | --- | --- |
 | apm | Atom Package Manager[^apm] | | | | <code class="language-bash">apm config set https-proxy "$HTTPS_PROXY"</code>[^apm_proxy] | | |
 | appget | AppGet[^appget] | | | | | | [winget](package-manager-settings.md#winget) |
 | apt-rpm | APT-RPM[^apt4rpm] | | | | | | [smart](#smart) |
