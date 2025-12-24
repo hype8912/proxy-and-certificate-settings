@@ -1,6 +1,6 @@
-See also applicable [Proxy](proxy-environment-variables.md) environment variables.
-
 # Certificate Environment Variables
+
+See also applicable [Proxy](proxy-environment-variables.md) environment variables.
 
 | Variable name | Use | Linux Settings | Windows Settings |
 | --- | :---: | --- | --- |
@@ -40,7 +40,7 @@ See also applicable [Proxy](proxy-environment-variables.md) environment variable
 | TLS_CA_FILE[^mongo] | MongoDB | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 | TWINE_CERT | [Twine](package-manager-settings.md#twine) | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 
-# Optional Suggested
+## Optional Suggested
 
 | Variable name | Use | Linux Settings | Windows Settings |
 | --- | :---: | --- | --- |

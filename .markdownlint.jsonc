@@ -1,6 +1,5 @@
 {
   "$schema": "https://raw.githubusercontent.com/DavidAnson/markdownlint/v0.40.0/schema/markdownlint-config-schema.json",
-  "ignores": ["!LICENSE"],
   "MD013": false,
   "MD033": {
     "allowed_elements": ["a", "br", "code", "pre"]

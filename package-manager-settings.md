@@ -29,7 +29,7 @@ If no information is provided in the `Proxy Instructions` or `Certificate Instru
 | corepack | Corepack (node) | Alpine<br>Debian | node:current-alpine<br>node:slim | 54MB<br>76MB | See [npm](#npm). | See [npm](#npm). |
 | cpan | CPAN | Debian | perl:stable-slim | 56MB | | |
 | cran | CRAN | Debian | r-base:latest | 343MB | | |
-| ctan | CTAN | Debian | esolang/tex:latest | 245MB | |
+| ctan | CTAN | Debian | esolang/tex:latest | 245MB | | |
 | dart | Dart Pub | Debian | dart:stable | 291MB | | |
 | deno<a name="deno"></a> | Deno (node) | Alpine<br>Debian | denoland/deno:alpine<br>denoland/deno:latest | 50MB<br>71MB | See [npm](#npm). | <pre><code class="language-bash">export DENO_CERT="$SSL_CERT_FILE"&#13;export DENO_TLS_CA_STORE=system</code>[^deno_cert]</pre>See also [npm](#npm). |
 | dnf<a name="dnf"></a> | DNF | Red Hat | See [Red Hat Image Distros](other/redhat-image-distros.md) | | <code class="language-bash">echo "proxy=$HTTP_PROXY" >> "/etc/dnf/dnf.conf"</code> | |
@@ -115,7 +115,7 @@ These are known package managers but require more research and testing before be
 
 ## Deprecated Package Managers
 
-See the list [here](deprecated-package-manager-settings.md).
+See the list of [Deprecated Package Managers](deprecated-package-manager-settings.md).
 
 ## See also
 
@@ -139,7 +139,7 @@ See the list [here](deprecated-package-manager-settings.md).
 [^maven_cert]: https://maven.apache.org/guides/mini/guide-repository-ssl.html
 [^nix_cert]: https://wiki.nixos.org/wiki/Enterprise
 [^node_certs]: https://nodejs.org/docs/latest/api/cli.html#node_extra_ca_certsfile
-[^pear]: Requires the installation of [Crypt_GPG-1.4.2](https://pear.php.net/package/Crypt_GPG/download) before you can set the 'https_proxy'. See [link](https://www.reddit.com/r/PHP/comments/4phpz2/errors_installing_crypt_gpg/) for more information.
+[^pear]: Requires the installation of [Crypt_GPG-1.4.2](https://pear.php.net/package/Crypt_GPG/download) before you can set the 'https_proxy'. See [info link](https://www.reddit.com/r/PHP/comments/4phpz2/errors_installing_crypt_gpg/) for more information.
 [^pip_cert]: https://pip.pypa.io/en/latest/topics/https-certificates/
 [^pkgm]: https://github.com/pkgxdev/pkgm
 [^sbt]: https://www.scala-sbt.org/1.x/docs/Command-Line-Reference.html#sbt+JVM+options+and+system+properties
