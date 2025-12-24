@@ -1,7 +1,7 @@
 # Application Specific Proxy and Certificate Settings
 
 | Application | Name | Test Image[^test_image] | Test Image Size[^test_image] | Proxy Instructions | Certificate Instructions |
-|:---:|:---:|---|:---:|---|---|
+| :---: | :---: | --- | :---: | --- | --- |
 | | Apache Karaf | apache/karaf:latest | 121MB | | <code class="language-bash" style="white-space:pre-wrap;">export EXTRA_JAVA_OPTS="-Djavax.net.ssl.trustStore=$SSL_KEYSTORE_FILE -Djavax.net.ssl.trustStorePassword={Password}"</code> |
 | aws<a name="aws_cli"></a> | AWS CLI | amazon/aws-cli:latest | 127MB | | <code class="language-bash">export AWS_CA_BUNDLE="$SSL_CERT_FILE"</code>[^aws_cli] |
 | | Bash-It<a name="bash_it"></a> | ellerbrock/bash-it:latest | 19MB | <pre><code class="language-bash">export BASH_IT_HTTP_PROXY="$HTTP_PROXY"&#13;export BASH_IT_HTTPS_PROXY="$HTTPS_PROXY"&#13;export BASH_IT_NO_PROXY="$NO_PROXY"</code>[^bash_it]</pre> | |

@@ -57,6 +57,7 @@ SUPPORT          text diff=markdown
 
 # Configs
 *.json     text eol=lf
+*.jsonc    text eol=lf
 *.lock     text -diff
 *.toml     text diff=toml
 *.xml      text
