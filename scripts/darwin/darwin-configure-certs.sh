@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Tested on: macOS 13+
 
 # Define external file sources

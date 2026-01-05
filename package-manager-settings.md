@@ -47,7 +47,7 @@ If no information is provided in the `Proxy Instructions` or `Certificate Instru
 | guix | GNU Guix | NixOS | metacall/guix:latest | 992MB | | |
 | hatch | Hatchling (python) | | | | | See [pip](#pip). |
 | hex<a name="hex"></a> | | Debian | erlang:slim | 119MB | | <code class="language-bash">export HEX_CACERTS_PATH="$SSL_CERT_FILE"</code>[^hex] |
-| hpm | HarmonyOS Package Manager | | | | <pre><code class="language-bash">hpm config set http_proxy $HTTP_PROXY&#13;hpm config set https_proxy $HTTPS_PROXY</code></pre> | |
+| hpm | HarmonyOS Package Manager[^hpm] | | | | <pre><code class="language-bash">hpm config set http_proxy $HTTP_PROXY&#13;hpm config set https_proxy $HTTPS_PROXY</code></pre> | |
 | lein<a name="lein"></a> | Leiningen | Debian | clojure:latest | 287MB | | See [java](application-proxy-settings.md#java). |
 | luarocks | LuaRocks | Alpine<br>Debian | nickblah/lua:5-luarocks-alpine3<br>nickblah/lua:latest | 7MB<br>47MB | | |
 | mamba | Mamba | Debian | condaforge/miniforge3:latest | 141MB | | <pre><code class="language-bash">export CURL_CA_BUNDLE="$SSL_CA_CERT"&#13;export REQUESTS_CA_BUNDLE="$SSL_CERT_FILE"</code></pre>See also [conda](#conda). |
@@ -136,6 +136,7 @@ See the list of [Deprecated Package Managers](deprecated-package-manager-setting
 [^gradle]: Gradle requires a `gradle.properties` file before being able to set the proxy.
 [^haskell_stack]: https://github.com/commercialhaskell/stack/blob/123622ab2a2b90d80fc617791b57e486aef725a1/doc/faq.md?plain=1#L218
 [^hex]: https://hexdocs.pm/hex/Mix.Tasks.Hex.Config.html#module-config-keys
+[^hpm]: https://gitee.com/openharmony/docs/blob/master/en/device-dev/hpm-part/hpm-part-development.md
 [^maven_cert]: https://maven.apache.org/guides/mini/guide-repository-ssl.html
 [^nix_cert]: https://wiki.nixos.org/wiki/Enterprise
 [^node_certs]: https://nodejs.org/docs/latest/api/cli.html#node_extra_ca_certsfile

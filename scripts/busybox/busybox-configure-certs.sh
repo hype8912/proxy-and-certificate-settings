@@ -18,7 +18,7 @@ if [ "$(uname)" != "Linux" ]; then
     exit 1
 fi
 
-if [ "$(command -v sh)" == "/busybox/sh" ]; then
+if [ "$(command -v sh)" = "/busybox/sh" ]; then
     echo "Generic Busybox flavor found."
     export SSL_CERT_DIR="$BUSYBOX_SSL_CERT_DIR"
     mkdir -p "$SSL_CERT_DIR"

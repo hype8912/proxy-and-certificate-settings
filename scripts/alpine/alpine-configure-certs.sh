@@ -11,7 +11,7 @@ LOCAL_CERTS_PEM_NAME="Company_CA.pem"
 LOCAL_CERTS_TAR_NAME="Company_certs.tar"
 
 # Define OS variables
-ALPINE_REPO_STABLE="https://dl-cdn.alpinelinux.org/alpine/latest-stable/main"
+# ALPINE_REPO_STABLE="https://dl-cdn.alpinelinux.org/alpine/latest-stable/main"
 ALPINE_REPO_LOCAL_PATH="/etc/apk/repositories"
 ALPINE_INSTALL_PACKAGES="ca-certificates step-cli"
 ALPINE_SSL_CERT_DIR="/usr/local/share/ca-certificates"
