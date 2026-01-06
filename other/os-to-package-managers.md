@@ -54,9 +54,9 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 
 | OS/Distro | Package Manager |
 | :---: | --- |
-| Ballerina | [bal](https://ballerina.io) |
 | BlackArch | See [Arch Linux](#a) |
 | Bluestar | See [Arch Linux](#a) |
+| BusyBox | [opkg](https://openwrt.org/docs/guide-user/additional-software/opkg) |
 
 ## C
 
@@ -88,7 +88,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | :---: | --- |
 | Elementary OS | [AppCenter](https://github.com/elementary/appcenter)<br>See [Debian](#d) |
 | Embedded Linux | [opkg](https://git.yoctoproject.org/opkg/about/) |
-| EndeavourOS | See [Arch Linux](#a) |
+| EndeavorOS | See [Arch Linux](#a) |
 | Euro Linux | See [Red Hat](#r) |
 
 ## F
