@@ -1,6 +1,6 @@
 #!/bin/bash
 # Tested on:
-# Fedora 40+, CentOS 6+, Red Hat 7+, OracleLinux 6+, Rocky Linux 8+, Alma Linux 9+, UBI 8+, Amazon Linux 2023
+# Fedora 40+, CentOS 6+, Red Hat 7+, OracleLinux 6+, Rocky Linux 8+, Alma Linux 8+, UBI 8+, Amazon Linux 2+
 
 # Define external file sources
 certs_url="http://mycompany.com/Company_CA.pem"

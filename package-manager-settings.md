@@ -121,15 +121,14 @@ See the list of [Deprecated Package Managers](deprecated-package-manager-setting
 
 + [Package URL Type definitions](https://github.com/package-url/purl-spec/blob/346589846130317464b677bc4eab30bf5040183a/PURL-TYPES.rst)
 
-[^test_image]: [Test Image Disclaimer](README.md#test-image)
 [^ballerina]: https://ballerina.io/learn/configure-a-network-proxy/
 [^bower]: Bower is deprecated and suggested to move to [yarn](#yarn) or [vite](#vite).
 [^brew]: The homebrew image can be made significantly smaller by updating the `Dockerfile` to `git clone --depth 1` instead of the whole `homebrew-core` repo.
-[^cargo]: https://doc.rust-lang.org/cargo/reference/config.html#httpproxy
 [^cargo_cert]: https://doc.rust-lang.org/cargo/reference/config.html#httpcainfo
+[^cargo]: https://doc.rust-lang.org/cargo/reference/config.html#httpproxy
 [^choco_proxy]: https://docs.chocolatey.org/en-us/guides/usage/proxy-settings-for-chocolatey/
-[^composer_proxy]: PHP Versions 5.6+ are more likely to be able to automatically detect the system's default CA file. https://getcomposer.org/doc/faqs/how-to-use-composer-behind-a-proxy.md
 [^composer_cert]: https://getcomposer.org/doc/03-cli.md#composer-cafile
+[^composer_proxy]: PHP Versions 5.6+ are more likely to be able to automatically detect the system's default CA file. https://getcomposer.org/doc/faqs/how-to-use-composer-behind-a-proxy.md
 [^conan_cert]: https://docs.conan.io/1/reference/env_vars.html#conan-cacert-path
 [^crew]: https://github.com/chromebrew/chromebrew
 [^deno_cert]: https://docs.deno.com/runtime/reference/env_variables/#std%2Fcli
@@ -144,6 +143,7 @@ See the list of [Deprecated Package Managers](deprecated-package-manager-setting
 [^pip_cert]: https://pip.pypa.io/en/latest/topics/https-certificates/
 [^pkgm]: https://github.com/pkgxdev/pkgm
 [^sbt]: https://www.scala-sbt.org/1.x/docs/Command-Line-Reference.html#sbt+JVM+options+and+system+properties
+[^test_image]: [Test Image Disclaimer](README.md#test-image)
 [^twine]: https://twine.readthedocs.io/en/stable/#environment-variables
 [^unity_proxy]: https://discussions.unity.com/t/difficulties-in-proxy-environment/774349
 [^winget]: https://learn.microsoft.com/en-us/windows/package-manager/

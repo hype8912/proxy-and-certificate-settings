@@ -1,17 +1,19 @@
 {
   "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
-  "version": "0.2",
-  "ignorePaths": [".gitattributes"],
-  "import": ["./.cspell/cspell-ext.json"],
   "dictionaries": [
     "applications",
     "applicationsHomebrew",
     "bash",
     "dockerContainers",
     "cpp",
+    "cpp-ext",
+    "cpp-legacy",
     "docker",
+    "dotnet-ext",
     "en",
+    "filetypes-ext",
     "java-ext",
+    "osDistroLinux",
     "osDistroNames",
     "packageManagers",
     "programmingLanguages",
@@ -19,8 +21,11 @@
     "python-ext",
     "softwareApplications",
     "software-tools",
-    "softwareTerms-ext"
+    "softwareTerms-ext",
+    "softwareTerms-slang",
+    "win32-ext"
   ],
-  "words": ["elease", "myjks", "xkcd"],
-  "ignoreWords": []
+  "import": ["./.cspell/cspell-ext.json"],
+  "version": "0.2",
+  "words": ["elease"]
 }

@@ -2,7 +2,7 @@
 
 | Test Image                             | Size  | Package Managers.       |
 | -------------------------------------- | ----- | ----------------------- |
-| almalinux:8-minimal                    |  36MB | MicroDNF, RPM.          |
+| almalinux:8-minimal                    |  36MB | MicroDNF, RPM           |
 | almalinux:8                            |  69MB | DNF, RPM, Yum           |
 | almalinux:9-minimal                    |  34MB | MicroDNF, RPM           |
 | almalinux:9                            |  67MB | DNF, RPM, Yum           |

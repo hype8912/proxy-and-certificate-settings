@@ -23,7 +23,7 @@ This is a generic list of package managers that need testing beyond making the l
 | wpkg<a name="wpkg"></a> | WPKG[^wpkg] - Windows |
 
 [^0install]: https://0install.net
-[*aura]: https://github.com/fosskers/aura
+[^aura]: https://github.com/fosskers/aura
 [^cobolget]: https://github.com/OlegKunitsyn/cobolget
 [^fink]: https://www.finkproject.org/doc/users-guide/usage.php
 [^flox]: https://flox.dev

@@ -16,9 +16,8 @@ If no information is provided in the `Proxy Instructions` or `Certificate Instru
 | smart<a name="smart"></a> | Smart Package Manager[^smart] | | | | | | |
 | upm | Unity Package Manger CLI | | | | | | [openupm](package-manager-settings.md#openupm) |
 
-[^test_image]: [Test Image Disclaimer](README.md#test-image)
-[^apm]: https://github.com/atom/apm
 [^apm_proxy]: https://github.com/atom/apm?tab=readme-ov-file#using-a-proxy
+[^apm]: https://github.com/atom/apm
 [^appget]: https://github.com/appget/appget
 [^apt4rpm]: https://apt4rpm.sourceforge.net
 [^clj]: https://github.com/ghoseb/clj
@@ -28,3 +27,4 @@ If no information is provided in the `Proxy Instructions` or `Certificate Instru
 [^necro]: https://github.com/Avuxo/Necropolis
 [^rye]: https://github.com/astral-sh/rye
 [^smart]: https://github.com/smartpm/smart
+[^test_image]: [Test Image Disclaimer](README.md#test-image)
