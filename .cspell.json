@@ -1,7 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
   "dictionaries": [
-    "applications",
     "applicationsHomebrew",
     "bash",
     "dockerContainers",
@@ -19,7 +18,6 @@
     "programmingLanguages",
     "python",
     "python-ext",
-    "softwareApplications",
     "software-tools",
     "softwareTerms-ext",
     "softwareTerms-slang",

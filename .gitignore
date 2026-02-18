@@ -20,3 +20,13 @@ Gemfile.lock
 
 # Visual Studio cache folder
 .vs/
+
+# General macOS files
+.DS_Store
+__MACOSX/
+.AppleDouble
+.LSOverride
+Icon[]
+
+# Thumbnails
+._*
