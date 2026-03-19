@@ -19,6 +19,7 @@
     "python",
     "python-ext",
     "software-tools",
+    "software-tools-ext",
     "softwareTerms-ext",
     "softwareTerms-slang",
     "win32-ext"

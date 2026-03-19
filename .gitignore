@@ -30,3 +30,6 @@ Icon[]
 
 # Thumbnails
 ._*
+
+# cSpell Submodule
+.cspell/
