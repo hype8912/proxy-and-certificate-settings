@@ -97,7 +97,7 @@ If no information is provided in the `Proxy Instructions` or `Certificate Instru
 These are known package managers but require more research and testing before being moved to the above table.
 
 | Package manager | Name | Image Base | Test Image[^test_image] | Test Image Size[^test_size] | Proxy Instructions | Certificate Instructions |
-| :---: |:---:| :---: | --- :---:| --- --- |
+| :---: |:---:| :---: | --- | :---: | --- | --- |
 | bal | Ballerina[^ballerina] | Alpine | ballerina/ballerina:1.2.57 | 357MB | `$HOME/.ballerina/Settings.toml`<pre><code class="language-toml">[proxy]&#13;host = "$HTTP_PROXY_HOST"&#13;port = "$HTTP_PROXY_PORT"</code></pre> | <pre><code class="language-bash">export BALLERINA_CA_BUNDLE="$SSL_CERT_FILE"&#13;export BALLERINA_CA_CERT="$SSL_CA_CERT"</code></pre> |
 | cfpm | ColdFusion Package Manager | Debian | adobecoldfusion/coldfusion:latest | 222MB | | |
 | crew | ChromeBrew[^crew] | Debian | satmandu/crewbuild:latest | 2.7GB | | |
@@ -108,7 +108,7 @@ These are known package managers but require more research and testing before be
 | pkgm[^pkgm] | | Debian | pkgxdev/pkgx:latest | 66MB | | |
 | qpkg | QPKG | Debian | owncloudci/qnap-qpkg-builder:latest | 197MB | | |
 | swift | Swift Package Manager | Debian | swift:latest | 921MB | | |
-| twine<a name="twine"></a> | Twine (python) | | | |  | <code class="language-bash">export TWINE_CERT="$SSL_CERT_FILE"</code>[^twine]<br>See also [pip](#pip) |
+| twine<a name="twine"></a> | Twine (python) | | | | | <code class="language-bash">export TWINE_CERT="$SSL_CERT_FILE"</code>[^twine]<br>See also [pip](#pip) |
 | vite<a name="vite"></a> | Vite (node) | | | | See [npm](#npm). | See [npm](#npm). |
 | vlt | vōlt (node) | | | | See [npm](#npm). | See [npm](#npm). |
 | winget<a name="winget"></a> | Windows Package Manager[^winget] | | | | | |
