@@ -12,6 +12,7 @@
     "docker",
     "en",
     "java-ext",
+    "osDistroLinux",
     "osDistroNames",
     "packageManagers",
     "programmingLanguages",
@@ -19,8 +20,9 @@
     "python-ext",
     "softwareApplications",
     "software-tools",
-    "softwareTerms-ext"
+    "softwareTerms-ext",
+    "softwareTerms-slang"
   ],
-  "words": ["elease", "myjks", "xkcd"],
+  "words": ["elease", "myjks", "taplo"],
   "ignoreWords": []
 }

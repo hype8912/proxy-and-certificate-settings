@@ -34,6 +34,7 @@ See also applicable [Proxy](proxy-environment-variables.md) environment variable
 | SSL_CERT_DIR[^openssl] | OpenSSL | See [Image Distro Certs](image-os-distro-settings.md) for location. | |
 | SSL_CERT_FILE[^openssl] | OpenSSL | $SSL_CERT_DIR/mycert.pem | %SSL_CERT_DIR%\mycert.pem |
 | SYSTEM_CERTIFICATE_PATH | [Haskell Stack](package-manager-settings.md#stack) | $SSL_CERT_DIR | %SSL_CERT_DIR% |
+| TAPLO_EXTRA_CA_CERTS[^taplo] | Taplo | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 | TEMPORAL_TLS_CA[^temporal] | Temporal | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 | TENSORSTORE_CA_BUNDLE[^tensorstore] | TensorStore | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 | TENSORSTORE_CA_PATH[^tensorstore] | TensorStore | $SSL_CERT_DIR | %SSL_CERT_DIR% |
@@ -57,5 +58,6 @@ See also applicable [Proxy](proxy-environment-variables.md) environment variable
 [^py_requests]: https://requests.readthedocs.io/en/latest/user/advanced/#proxies
 [^openssl]: https://docs.openssl.org/master/man3/SSL_CTX_load_verify_locations/#description
 [^tanzu]: https://github.com/halkyonio/tap
+[^taplo]: https://taplo.tamasfe.dev/configuration/file-selection.html#certificate-authority
 [^temporal]: https://docs.temporal.io/references/web-ui-environment-variables
 [^tensorstore]: https://google.github.io/tensorstore/environment.html#tls-ca-certificates
