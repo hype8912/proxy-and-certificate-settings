@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if command -v twine >/dev/null 2>&1; then
     echo "Updating Twine variable(s)."

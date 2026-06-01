@@ -1,4 +1,6 @@
 #!/bin/bash
+# Tested on:
+# archlinux:latest, artixlinux/artixlinux:latest, athenaos/base:latest
 
 # Define external file sources
 certs_url="http://mycompany.com/Company_CA.pem"

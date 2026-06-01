@@ -1,4 +1,6 @@
 #!/bin/bash
+# Tested on:
+# CentOS Stream 9+, Rocky Linux 8+, OracleLinux 8+, Alma Linux 8+, UBI 8+, EuroLinux 9
 
 # Define external file sources
 certs_url="http://mycompany.com/Company_CA.pem"

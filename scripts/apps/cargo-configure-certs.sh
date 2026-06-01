@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if command -v cargo >/dev/null 2>&1; then
     echo "Updating Cargo variable(s)."

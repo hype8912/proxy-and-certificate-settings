@@ -7,9 +7,10 @@
 | | Bash-It<a name="bash_it"></a> | ellerbrock/bash-it:latest | 19MB | <pre><code class="language-bash">export BASH_IT_HTTP_PROXY="$HTTP_PROXY"&#13;export BASH_IT_HTTPS_PROXY="$HTTPS_PROXY"&#13;export BASH_IT_NO_PROXY="$NO_PROXY"</code>[^bash_it]</pre> | |
 | | Boto | demisto/boto3py3:1.0.0.3609814 | 48MB | | See [AWS CLI](#aws_cli) [^boto] |
 | checkov<a name="checkov"></a> | Checkov[^checkov] | bridgecrew/checkov:latest | 173MB | <pre><code class="language-bash">export PROXY_URL="$HTTP_PROXY"</code></pre> | <pre><code class="language-bash">export BC_CA_BUNDLE="$SSL_CERT_FILE"&#13;export PROXY_CA_PATH="$SSL_CERT_FILE"</code></pre> |
+| | Databricks Cluster | | | | [Import Certs Script][^databricks_certs] |
 | docker | Docker Service[^docker_service] | | | `/etc/systemd/system/docker.service.d/http-proxy.conf`<pre><code class="language-ini">[Service]&#13;Environment="HTTP_PROXY=$HTTP_PROXY"&#13;Environment="HTTPS_PROXY=$HTTPS_PROXY"&#13;Environment="NO_PROXY=$NO_PROXY"</code></pre>`~/.docker/config.json`<pre><code class="language-json">{&#13;  "proxies": {&#13;    "default": {&#13;      "httpProxy": "$HTTP_PROXY",&#13;      "httpsProxy": "$HTTPS_PROXY",&#13;      "noProxy": "$NO_PROXY"&#13;    }&#13;  }&#13;}</code></pre> | |
 | freshclam | ClamAV<a name="clamav"></a> | clamav/clamav:latest | 254MB | `/etc/freshclam.conf`<pre><code class="language-ini">HTTPProxyServer "$HTTPS_PROXY_HOST"&#13;HTTPProxyPort "$HTTPS_PROXY_PORT"</code>[^clamav_proxy]</pre> | <pre><code class="language-bash">export CURL_CA_BUNDLE="$SSL_CA_CERT"</code>[^clamav_certs]</pre> |
-| git<br>git-lfs<a name="git"></a> | | alpine/git:latest | 32MB | | <pre><code class="language-bash">export GIT_SSL_CAINFO="$SSL_CERT_FILE"&#13;export GIT_SSL_CAPATH="$SSL_CERT_DIR"&#13;git config --global http.sslVerify true&#13;git config --global http.sslbackend schannel</code>[^git_cainfo] [^git_capath]</pre>Windows-only:<br><code class="language-batchfile">git config --global credential.helper wincred</code><br><br>Mac-only:<br><code class="language-bash">git config --global credential.helper osxkeychain</code> |
+| git<br>git-lfs<a name="git"></a> | | alpine/git:latest | 32MB | | <pre><code class="language-bash">export GIT_SSL_CAINFO="$SSL_CERT_FILE"&#13;export GIT_SSL_CAPATH="$SSL_CERT_DIR"&#13;git config --global http.sslVerify true</code>[^git_cainfo] [^git_capath]</pre>Windows-only:<br><code class="language-batchfile">git config --global credential.helper wincred&#13; git config --global http.sslbackend schannel</code><br><br>Mac-only:<br><code class="language-bash">git config --global credential.helper osxkeychain</code> |
 | | GitLab Runner Service | gitlab/gitlab-runner:latest | 106MB | `/etc/systemd/system/gitlab-runner.service.d/http-proxy.conf`[^gitlab_runner_proxy_conf]<pre><code class="language-ini" style="white-space:pre-wrap;">[Service]&#13;Environment="HTTP_PROXY=$HTTP_PROXY"&#13;Environment="HTTPS_PROXY=$HTTPS_PROXY"&#13;Environment="NO_PROXY=$NO_PROXY"</code></pre>`/etc/gitlab-runner/config.toml`[^gitlab_runner_proxy_docker]<pre><code class="language-toml" style="white-space:pre-wrap;">[[runners]]&#13;pre_get_sources_script = "git config --global http.proxy $HTTP_PROXY; git config --global https.proxy $HTTPS_PROXY"&#13;environment = ["https_proxy=$HTTPS_PROXY", "http_proxy=$HTTP_PROXY", "HTTPS_PROXY=$HTTPS_PROXY", "HTTP_PROXY=$HTTP_PROXY"]</code></pre> | `/etc/gitlab-runner/config.toml`[^gitlab_runner]<pre><code class="language-toml" style="white-space:pre-wrap;">[[runners]]&#13;tls-ca-file = "$SSL_CERT_FILE"&#13;&#13;[runners.docker]&#13;volumes = ["/path/to-ca-cert-dir/ca.crt:/etc/gitlab-runner/certs/ca.crt:ro"]</code></pre>`.gitlab-ci.yml`<pre><code class="language-yaml">variables:&#13;  ADDITIONAL_CA_CERT_BUNDLE: "$SSL_CERT_FILE"</code></pre> |
 | gcloud<a name="gcloud"></a> | Google Cloud SDK | | | | <code class="language-bash">gcloud config set core/custom_ca_certs_file "$SSL_CERT_FILE"</code>[^gcloud] |
 | grype<a name="grype"></a> | | anchore/grype:latest | 22MB | | <code class="language-bash">export GRYPE_DB_CA_CERT="$SSL_CA_CERT"</code>[^grype] |
@@ -37,14 +38,14 @@
 + [Adding Custom Certificate to an Application-Specific Trust Store](https://help.zscaler.com/zia/adding-custom-certificate-application-specific-trust-store)
 + [Add the certificate to applications](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/user-side-certificates/manual-deployment/#add-the-certificate-to-applications)
 
-[^test_image]: [Test Image Disclaimer](README.md#test-image)
 [^aws_cli]: https://docs.aws.amazon.com/cli/v1/userguide/cli-configure-envvars.html
 [^azure_cli]: https://learn.microsoft.com/en-us/cli/azure/use-azure-cli-successfully-troubleshooting#work-behind-a-proxy
 [^bash_it]: https://bash-it.readthedocs.io/en/latest/proxy_support/
 [^boto]: https://boto3.amazonaws.com/v1/documentation/api/latest/guide/configuration.html
 [^checkov]: https://www.checkov.io/2.Basics/CLI%20Command%20Reference.html#environment-variables
-[^clamav_proxy]: https://docs.clamav.net/manual/Usage/Configuration.html?highlight=proxy#freshclamconf
 [^clamav_certs]: https://docs.clamav.net/faq/faq-freshclam.html?highlight=certificate#problem-with-the-ssl-ca-cert
+[^clamav_proxy]: https://docs.clamav.net/manual/Usage/Configuration.html?highlight=proxy#freshclamconf
+[^databricks_certs]: https://kb.databricks.com/python/import-custom-ca-cert
 [^docker_service]: https://docs.docker.com/engine/daemon/proxy/#systemd-unit-file
 [^gcloud]: https://cloud.google.com/sdk/docs/proxy-settings
 [^git_cainfo]: https://git-scm.com/docs/git-config#Documentation/git-config.txt-httpsslCAInfo
@@ -58,11 +59,12 @@
 [^minikube_cert]: https://minikube.sigs.k8s.io/docs/handbook/vpn_and_proxy/#x509-certificate-signed-by-unknown-authority
 [^net_framework_proxy]: https://learn.microsoft.com/en-us/dotnet/framework/configure-apps/file-schema/network/proxy-element-network-settings
 [^platformio_cert]: https://docs.platformio.org/en/latest/core/installation/proxy-configuration.html
-[^pycharm_proxy]: https://www.jetbrains.com/help/pycharm/settings-http-proxy.html
 [^pycharm_certs]: https://www.jetbrains.com/help/pycharm/settings-tools-server-certificates.html
+[^pycharm_proxy]: https://www.jetbrains.com/help/pycharm/settings-http-proxy.html
 [^supervisely]: https://developer.supervisely.com/app-development/advanced/custom-configuration/fixing-ssl-certificate-errors-in-supervisely
 [^svn]: https://subversion.apache.org/faq.html#proxy
 [^terrateamio]: https://docs.terrateam.io/security-and-compliance/self-signed-certificates/
+[^test_image]: [Test Image Disclaimer](README.md#test-image)
 [^vault_cert]: https://developer.hashicorp.com/vault/api-docs/auth/jwt#jwks_ca_pem
 [^vscode_srv]: https://github.com/coder/code-server/blob/main/patches/proxy-uri.diff
 [^wget]: https://www.gnu.org/software/wget/manual/html_node/Wgetrc-Commands.html#Wgetrc-Commands-1

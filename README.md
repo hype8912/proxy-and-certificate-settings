@@ -47,7 +47,6 @@ For the most common scenario (Ubuntu + npm + Node.js):
 
    ```bash
    export NODE_EXTRA_CA_CERTS="/path/to/your/cert.pem"
-   export NODE_TLS_REJECT_UNAUTHORIZED=1
    ```
 
 3. Configure npm:

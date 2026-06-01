@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if command -v stack >/dev/null 2>&1; then
     echo "Updating Haskell Stack variable(s)."

@@ -55,7 +55,7 @@ If no information is provided in the `Proxy Instructions` or `Certificate Instru
 | micromamba | Micromamba | Debian | mambaorg/micromamba:latest | 33MB | | <pre><code class="language-bash">export CURL_CA_BUNDLE="$SSL_CA_CERT"&#13;export REQUESTS_CA_BUNDLE="$SSL_CERT_FILE"&#13;micromamba config set ssl_verify "$SSL_CERT_FILE"</code></pre> |
 | mvn<a name="mvn"></a> | Maven | Debian | maven:latest | 231MB | <pre><code class="language-bash">mvn -DproxySet=true -D proxyHost=$HTTP_PROXY_HOST \ &#13; -DproxyPort=$HTTP_PROXY_PORT \ &#13; -DproxyProtocol=http \ &#13; -DproxyId=http \ &#13; -DproxyNonProxyHosts=$NO_PROXY&#13;mvn -D proxyHost=$HTTPS_PROXY_HOST \ &#13; -DproxyPort=$HTTPS_PROXY_PORT \ &#13; -DproxyProtocol=https \ &#13; -DproxyId=https \ &#13; -DproxyNonProxyHosts=$NO_PROXY</code></pre> | See also [java](application-proxy-settings.md#java).<pre><code class="language-bash" style="white-space: pre-wrap;">export MAVEN_OPTS="-Djavax.net.ssl.trustStore=$SSL_KEYSTORE_FILE -Djavax.net.ssl.trustStorePassword={Password}"</code>[^maven_cert]</pre> |
 | nix<a name="nix"></a> | Nix Package Manager | NixOS | nixos/nix:latest | 213MB | | <code class="language-bash">export NIX_SSL_CERT_FILE="$SSL_CERT_FILE"</code>[^nix_cert] |
-| npm<a name="npm"></a> | Node Package Manager | Alpine<br>Debian | node:current-alpine<br>node:slim | 54MB<br>76MB | <pre><code class="language-bash">npm config set proxy "$HTTP_PROXY"&#13;npm config set https-proxy "$HTTPS_PROXY"&#13;npm config set noproxy "$NO_PROXY"</code></pre>Electron:<br><code class="language-bash">export ELECTRON_GET_USE_PROXY=true</code> | <pre><code class="language-bash">export NODE_EXTRA_CA_CERTS="$SSL_CERT_FILE"&#13;export NODE_TLS_REJECT_UNAUTHORIZED=1</code>[^node_certs]</pre> |
+| npm<a name="npm"></a> | Node Package Manager | Alpine<br>Debian | node:current-alpine<br>node:slim | 54MB<br>76MB | <pre><code class="language-bash">npm config set proxy "$HTTP_PROXY"&#13;npm config set https-proxy "$HTTPS_PROXY"&#13;npm config set noproxy "$NO_PROXY"</code></pre>Electron:<br><code class="language-bash">export ELECTRON_GET_USE_PROXY=true</code> | <pre><code class="language-bash">export NODE_EXTRA_CA_CERTS="$SSL_CERT_FILE"</code>[^node_certs]</pre> |
 | nuget | NuGet | Windows | mcr.microsoft.com/dotnet/framework/sdk:4.8.1 | 2.2GB | <pre><code class="language-bash">nuget config -set http_proxy="$HTTP_PROXY"&#13;nuget config -set https_proxy="$HTTPS_PROXY"</code></pre> | |
 | opam | opam | Alpine<br>Debian | ocaml/opam:alpine<br>ocaml/opam:latest | 477MB<br>604MB | | |
 | pacman<a name="pacman"></a> | Pacman | Arch Linux | archlinux:latest | 150MB | <code class="language-bash">export RSYNC_PROXY="$HTTP_PROXY"</code> | |
@@ -97,7 +97,7 @@ If no information is provided in the `Proxy Instructions` or `Certificate Instru
 These are known package managers but require more research and testing before being moved to the above table.
 
 | Package manager | Name | Image Base | Test Image[^test_image] | Test Image Size[^test_size] | Proxy Instructions | Certificate Instructions |
-| :---: |:---:| :---: | --- :---:| --- --- |
+| :---: |:---:| :---: | --- | :---: | --- | --- |
 | bal | Ballerina[^ballerina] | Alpine | ballerina/ballerina:1.2.57 | 357MB | `$HOME/.ballerina/Settings.toml`<pre><code class="language-toml">[proxy]&#13;host = "$HTTP_PROXY_HOST"&#13;port = "$HTTP_PROXY_PORT"</code></pre> | <pre><code class="language-bash">export BALLERINA_CA_BUNDLE="$SSL_CERT_FILE"&#13;export BALLERINA_CA_CERT="$SSL_CA_CERT"</code></pre> |
 | cfpm | ColdFusion Package Manager | Debian | adobecoldfusion/coldfusion:latest | 222MB | | |
 | crew | ChromeBrew[^crew] | Debian | satmandu/crewbuild:latest | 2.7GB | | |
@@ -108,7 +108,7 @@ These are known package managers but require more research and testing before be
 | pkgm[^pkgm] | | Debian | pkgxdev/pkgx:latest | 66MB | | |
 | qpkg | QPKG | Debian | owncloudci/qnap-qpkg-builder:latest | 197MB | | |
 | swift | Swift Package Manager | Debian | swift:latest | 921MB | | |
-| twine<a name="twine"></a> | Twine (python) | | | |  | <code class="language-bash">export TWINE_CERT="$SSL_CERT_FILE"</code>[^twine]<br>See also [pip](#pip) |
+| twine<a name="twine"></a> | Twine (python) | | | | | <code class="language-bash">export TWINE_CERT="$SSL_CERT_FILE"</code>[^twine]<br>See also [pip](#pip) |
 | vite<a name="vite"></a> | Vite (node) | | | | See [npm](#npm). | See [npm](#npm). |
 | vlt | vōlt (node) | | | | See [npm](#npm). | See [npm](#npm). |
 | winget<a name="winget"></a> | Windows Package Manager[^winget] | | | | | |
@@ -121,15 +121,14 @@ See the list of [Deprecated Package Managers](deprecated-package-manager-setting
 
 + [Package URL Type definitions](https://github.com/package-url/purl-spec/blob/346589846130317464b677bc4eab30bf5040183a/PURL-TYPES.rst)
 
-[^test_image]: [Test Image Disclaimer](README.md#test-image)
 [^ballerina]: https://ballerina.io/learn/configure-a-network-proxy/
 [^bower]: Bower is deprecated and suggested to move to [yarn](#yarn) or [vite](#vite).
 [^brew]: The homebrew image can be made significantly smaller by updating the `Dockerfile` to `git clone --depth 1` instead of the whole `homebrew-core` repo.
-[^cargo]: https://doc.rust-lang.org/cargo/reference/config.html#httpproxy
 [^cargo_cert]: https://doc.rust-lang.org/cargo/reference/config.html#httpcainfo
+[^cargo]: https://doc.rust-lang.org/cargo/reference/config.html#httpproxy
 [^choco_proxy]: https://docs.chocolatey.org/en-us/guides/usage/proxy-settings-for-chocolatey/
-[^composer_proxy]: PHP Versions 5.6+ are more likely to be able to automatically detect the system's default CA file. https://getcomposer.org/doc/faqs/how-to-use-composer-behind-a-proxy.md
 [^composer_cert]: https://getcomposer.org/doc/03-cli.md#composer-cafile
+[^composer_proxy]: PHP Versions 5.6+ are more likely to be able to automatically detect the system's default CA file. https://getcomposer.org/doc/faqs/how-to-use-composer-behind-a-proxy.md
 [^conan_cert]: https://docs.conan.io/1/reference/env_vars.html#conan-cacert-path
 [^crew]: https://github.com/chromebrew/chromebrew
 [^deno_cert]: https://docs.deno.com/runtime/reference/env_variables/#std%2Fcli
@@ -144,7 +143,8 @@ See the list of [Deprecated Package Managers](deprecated-package-manager-setting
 [^pip_cert]: https://pip.pypa.io/en/latest/topics/https-certificates/
 [^pkgm]: https://github.com/pkgxdev/pkgm
 [^sbt]: https://www.scala-sbt.org/1.x/docs/Command-Line-Reference.html#sbt+JVM+options+and+system+properties
+[^test_image]: [Test Image Disclaimer](README.md#test-image)
 [^twine]: https://twine.readthedocs.io/en/stable/#environment-variables
 [^unity_proxy]: https://discussions.unity.com/t/difficulties-in-proxy-environment/774349
 [^winget]: https://learn.microsoft.com/en-us/windows/package-manager/
-[^yarn]: `caFilePath` was changed to `httpsCaFilePath` in Yarn [Version 4.0](https://yarnpkg.com/advanced/changelog#major-changes).
+[^yarn]: `caFile` for Yarn 1.0. `caFilePath` for Yarn 2.0/3.0. `httpsCaFilePath` for [Yarn 4.0](https://yarnpkg.com/advanced/changelog#major-changes).

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if command -v aws >/dev/null 2>&1; then
     echo "Updating AWS-CLI variable(s)."

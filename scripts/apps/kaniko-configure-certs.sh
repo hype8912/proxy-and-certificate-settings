@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # Tested on: kaniko-project/executor:v1.23.2-debug
 
 # Define basic variables
