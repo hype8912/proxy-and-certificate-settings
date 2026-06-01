@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # Tested on:
 # nixos/nix:latest
 

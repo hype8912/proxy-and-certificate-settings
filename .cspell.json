@@ -13,6 +13,7 @@
     "filetypes-ext",
     "java-ext",
     "osDistroLinux",
+    "osDistroLinux",
     "osDistroNames",
     "packageManagers",
     "programmingLanguages",
@@ -24,7 +25,12 @@
     "softwareTerms-slang",
     "win32-ext"
   ],
-  "import": ["./.cspell/cspell-ext.json"],
+  "import": [
+    "./.cspell/cspell-ext.json"
+  ],
   "version": "0.2",
-  "words": ["elease"]
+  "words": [
+    "elease",
+    "taplo"
+  ]
 }

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if command -v node >/dev/null 2>&1 && [ -z "$NODE_EXTRA_CA_CERTS" ]; then
     echo "Updating Node/npm variable(s)."

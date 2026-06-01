@@ -1,3 +1,9 @@
 {
-  "shellcheck.customArgs": ["-x"]
+  "shellcheck.customArgs": [
+    "-x"
+  ],
+  "json.schemaDownload.trustedDomains": {
+    "https://raw.githubusercontent.com/streetsidesoftware/cspell/": true,
+    "https://raw.githubusercontent.com/DavidAnson/markdownlint/": true
+  }
 }

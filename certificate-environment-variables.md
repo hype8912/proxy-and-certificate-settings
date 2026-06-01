@@ -35,11 +35,14 @@ See also applicable [Proxy](proxy-environment-variables.md) environment variable
 | SSL_CERT_DIR[^openssl] | OpenSSL | See [Image Distro Certs](image-os-distro-settings.md) for location. | |
 | SSL_CERT_FILE[^openssl] | OpenSSL | $SSL_CERT_DIR/my-crt.pem | %SSL_CERT_DIR%\my-crt.pem |
 | SYSTEM_CERTIFICATE_PATH | [Haskell Stack](package-manager-settings.md#stack) | $SSL_CERT_DIR | %SSL_CERT_DIR% |
+| TAPLO_EXTRA_CA_CERTS[^taplo] | Taplo | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 | TEMPORAL_TLS_CA[^temporal] | Temporal | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 | TENSORSTORE_CA_BUNDLE[^tensorstore] | TensorStore | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 | TENSORSTORE_CA_PATH[^tensorstore] | TensorStore | $SSL_CERT_DIR | %SSL_CERT_DIR% |
 | TLS_CA_FILE[^mongo] | MongoDB | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 | TWINE_CERT | [Twine](package-manager-settings.md#twine) | $SSL_CERT_FILE | %SSL_CERT_FILE% |
+| VAULT_CACERT[^hashicorp_vault] | Hashicorp Vault | $SSL_CERT_FILE | %SSL_CERT_FILE% |
+| VAULT_CAPATH[^hashicorp_vault] | Hashicorp Vault | $SSL_CERT_DIR | %SSL_CERT_DIR% |
 
 ## Optional Suggested
 
@@ -51,6 +54,7 @@ See also applicable [Proxy](proxy-environment-variables.md) environment variable
 [^databricks]: https://docs.databricks.com/aws/en/repos/git-proxy#troubleshooting
 [^elasticsearch]: https://www.elastic.co/guide/en/fleet/7.17/agent-environment-variables.html
 [^gitlab_dps]: https://docs.gitlab.com/ee/user/application_security/dependency_scanning/#global-analyzer-settings
+[^hashicorp_vault]: https://developer.hashicorp.com/vault/docs/commands#vault_cacert
 [^libcloud]: https://libcloud.readthedocs.io/en/latest/other/ssl-certificate-validation.html#using-a-custom-ca-certificate
 [^megalinter]: https://megalinter.io/v5/reporters/GitlabCommentReporter/
 [^mongo]: https://www.mongodb.com/docs/languages/cpp/cpp-driver/current/connect/tls/#specify-a-ca-file
@@ -59,5 +63,6 @@ See also applicable [Proxy](proxy-environment-variables.md) environment variable
 [^py_requests]: https://requests.readthedocs.io/en/latest/user/advanced/#proxies
 [^suse]: https://documentation.suse.com/suma/4.3/en/suse-manager/administration/ssl-certs-imported.html#_import_certificates_for_new_installations
 [^tanzu]: https://github.com/halkyonio/tap
+[^taplo]: https://taplo.tamasfe.dev/configuration/file-selection.html#certificate-authority
 [^temporal]: https://docs.temporal.io/references/web-ui-environment-variables
-[^tensorstore]: https://google.github.io/tensorstore/environment.html#tls-ca-certificatesgithub.io/tensorstore/environment.html#tls-ca-certificates
+[^tensorstore]: https://google.github.io/tensorstore/environment.html

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Define external file sources
 certs_keystore="http://mycompany.com/Company_jks.keystore"

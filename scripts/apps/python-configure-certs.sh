@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if command -v python >/dev/null 2>&1; then
     echo "Updating Pip variable(s) if not already set."

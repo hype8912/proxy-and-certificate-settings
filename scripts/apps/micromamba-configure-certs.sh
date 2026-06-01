@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if command -v micromamba >/dev/null 2>&1; then
     echo "Updating Micromamba configuration"

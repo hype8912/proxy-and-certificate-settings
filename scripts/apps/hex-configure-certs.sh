@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if command -v hex >/dev/null 2>&1; then
     echo "Updating Hex variable(s)."

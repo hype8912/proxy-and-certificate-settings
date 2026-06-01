@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if command -v checkov >/dev/null 2>&1; then
     echo "Updating checkov variable(s)."
