@@ -10,8 +10,6 @@ See also applicable [Certificate](certificate-environment-variables.md) environm
 | BASH_IT_HTTPS_PROXY | [Bash-It](application-proxy-settings.md#bash_it) | $HTTPS_PROXY | %HTTPS_PROXY% |
 | BASH_IT_NO_PROXY | [Bash-It](application-proxy-settings.md#bash_it) | $NO_PROXY | %NO_PROXY% |
 | CGI_HTTP_PROXY | [Composer](package-manager-settings.md#composer) | $HTTP_PROXY | %HTTP_PROXY% |
-| CURLOPT_NOPROXY[^curl_npx] | libcurl | $NO_PROXY | %NO_PROXY% |
-| CURLOPT_PROXY[^curl_px] | libcurl | $HTTP_PROXY | %HTTP_PROXY% |
 | EC2_JVM_ARGS[^aws_cloudwatch] | AWS | <code class="language-bash" style="white-space:pre-wrap; max-width:276px;">-Dhttp.proxySet=true -Dhttp.proxyHost=$HTTP_PROXY_HOST -Dhttp.proxyPort=$HTTP_PROXY_PORT -Dhttps.proxyHost=$HTTPS_PROXY_HOST -Dhttps.proxyPort=$HTTPS_PROXY_PORT -Dhttp.nonProxyHosts=$NO_PROXY</code> | <code class="language-batchfile" style="white-space:pre-wrap; max-width:276px;">-Dhttp.proxySet=true -Dhttp.proxyHost=%HTTP_PROXY_HOST% -Dhttp.proxyPort=%HTTP_PROXY_PORT% -Dhttps.proxyHost=%HTTPS_PROXY_HOST% -Dhttps.proxyPort=%HTTPS_PROXY_PORT% -Dhttp.nonProxyHosts=%NO_PROXY%</code> |
 | FTP_PROXY | standard | | |
 | ftp_proxy | standard | $FTP_PROXY | %FTP_PROXY% |
@@ -61,8 +59,6 @@ Using the below variables will make it easier when having to set the values for 
 * [We need to talk: Can we standardize NO_PROXY?](https://about.gitlab.com/blog/2021/01/27/we-need-to-talk-no-proxy/)
 
 [^aws_cloudwatch]: https://gist.github.com/atushi/5898322#file-how_to_use_the_cloudwatch_api_about_getting_the_jvm_info_with_proxy-sh
-[^curl_npx]: https://curl.se/libcurl/c/CURLOPT_NOPROXY.html
-[^curl_px]: https://curl.se/libcurl/c/CURLOPT_PROXY.html
 [^databricks]: https://docs.databricks.com/aws/en/repos/git-proxy#troubleshooting
 [^global_agent]: https://www.npmjs.com/package/global-agent
 [^rsync]: https://ss64.com/bash/rsync.html

@@ -9,6 +9,7 @@ certs_zip_url="http://mycompany.com/Company_certs.zip"
 # Define basic variables
 LOCAL_CERTS_CRT_NAME="Company_CA.crt"
 LOCAL_CERTS_PEM_NAME="Company_CA.pem"
+LOCAL_CERTS_ZIP_NAME="Company_certs.zip"
 
 # Define OS variables
 DNF_SSL_CERT_DIR="/etc/pki/ca-trust/source/anchors"

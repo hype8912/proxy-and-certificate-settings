@@ -10,6 +10,7 @@ step_cli_rpm_package_url="https://dl.smallstep.com/cli/docs-cli-install/latest/s
 # Define basic variables
 LOCAL_CERTS_CRT_NAME="Company_CA.crt"
 LOCAL_CERTS_PEM_NAME="Company_CA.pem"
+LOCAL_CERTS_ZIP_NAME="Company_certs.zip"
 LOCAL_STEP_CLI_NAME="step-cli.rpm"
 
 # Define OS variables

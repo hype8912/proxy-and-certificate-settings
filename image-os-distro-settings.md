@@ -38,7 +38,7 @@
 
 [^coreos]: https://github.com/endocode/coreos-docs/blob/master/os/adding-certificate-authorities.md
 [^gentoo]: https://wiki.gentoo.org/wiki/Certificates#OpenSSL-compatible_ca-certificates
-[^nix_cert]: https://nix.dev/manual/nix/2.24/installation/env-variables.html#nix_ssl_cert_file
+[^nix_cert]: https://wiki.nixos.org/wiki/Enterprise
 [^redhat_certs]: https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/security_guide/sec-shared-system-certificates
 [^test_image]: [Test Image Disclaimer](README.md#test-image)
 [^windows_mac]: https://manuals.gfi.com/en/kerio/connect/content/server-configuration/ssl-certificates/adding-trusted-root-certificates-to-the-server-1605.html
