@@ -35,6 +35,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | OS/Distro | Package Manager |
 | :---: | --- |
 | AerynOS / Serpent OS | [moss](https://github.com/AerynOS/os-tools) |
+| AIX | [installp](https://www.ibm.com/docs/en/aix/7.3.0?topic=i-installp-command)<br>[RPM](https://github.com/rpm-software-management/rpm) |
 | Alice Linux | [apkg](https://codeberg.org/emmett1/alicelinux/src/branch/main/docs/packagemanager.md#apkg)<br>[spm](https://codeberg.org/emmett1/alicelinux/src/branch/main/docs/packagemanager.md) |
 | Alma Linux | See [Red Hat](#r) |
 | Alpine | [apk](https://gitlab.alpinelinux.org/alpine/apk-tools) |
@@ -54,6 +55,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 
 | OS/Distro | Package Manager |
 | :---: | --- |
+| Bazzite | See [CoreOS](#c) |
 | BlackArch | See [Arch Linux](#a) |
 | Bluestar | See [Arch Linux](#a) |
 | BusyBox | [opkg](https://openwrt.org/docs/guide-user/additional-software/opkg) |
@@ -88,7 +90,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | :---: | --- |
 | Elementary OS | [AppCenter](https://github.com/elementary/appcenter)<br>See [Debian](#d) |
 | Embedded Linux | [opkg](https://git.yoctoproject.org/opkg/about/) |
-| EndeavorOS | See [Arch Linux](#a) |
+| EndeavourOS | See [Arch Linux](#a) |
 | Euro Linux | See [Red Hat](#r) |
 
 ## F
@@ -99,6 +101,8 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Fedora Kinoite | See [CoreOS](#c) |
 | Fedora Silverblue | See [CoreOS](#c) |
 | FreeBSD | [pkg](https://github.com/freebsd/pkg) |
+| FreeDOS | [FDNPKG](https://help.fdos.org/en/hhstndrd/base/fdnpkg.htm) |
+| Fuchsia | [ffx package](https://fuchsia.dev/reference/tools/sdk/ffx)<br>[pm](https://fuchsia.googlesource.com/fuchsia/+/HEAD/garnet/go/src/pm/README.md) |
 | Funtoo | See [Gentoo Linux](#g) |
 | FuryBSD | See [FreeBSD](#f) |
 
@@ -109,8 +113,8 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Garuda Linux | See [Arch Linux](#a) |
 | GhostBSD | See [FreeBSD](#f) |
 | Gentoo Linux | [Portage](https://github.com/gentoo/portage) |
-| GNU/Linux | [Guix](https://guix.gnu.org) |
 | GoboLinux | [Compile](https://github.com/gobolinux/Compile) |
+| Guix System | [Guix](https://guix.gnu.org) |
 
 ## H
 
@@ -158,7 +162,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Mac OS | [fink](https://www.finkproject.org)<br>[Homebrew](https://github.com/Homebrew/brew)<br>[MacPorts](https://github.com/macports/macports-base)<br>[mas](https://github.com/mas-cli/mas)<br>[sps](https://github.com/alexykn/sps) |
 | Mageia Linux | [urpmi](https://wiki.mageia.org/en/URPMI) |
 | MakuluLinux | See [Debian](#d) |
-| Manjaro Linux | [pacmac](https://github.com/manjaro/pamac)<br>[Snap](https://snapcraft.io)<br>[Zap](https://github.com/srevinsaju/zap) |
+| Manjaro Linux | [Pamac](https://github.com/manjaro/pamac)<br>[Snap](https://snapcraft.io)<br>[Zap](https://github.com/srevinsaju/zap) |
 | MidnightBSD | [mport](https://github.com/MidnightBSD/mport) |
 | Minix | [pkgin](http://pkgin.net) |
 | MX Linux | See [Debian](#d) |
@@ -183,11 +187,13 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | OmniOS | [pkg](https://github.com/omniosorg/pkg5) |
 | OpenBSD | [pkg_add](https://man.openbsd.org/pkg_add)<br>[pkg_delete](https://man.openbsd.org/pkg_delete)<br>[pkg_info](https://man.openbsd.org/pkg_info) |
 | OpenHarmony OS | [ohpm](https://gitee.com/openharmony/developtools_ohpm) |
+| OpenIndiana | [pkg (IPS)](https://docs.openindiana.org/handbook/appendix/) |
 | OpenMandriva | See [Red Hat](#r) |
 | OpenSUSE | [Zap](https://github.com/srevinsaju/zap)<br>[zypper](https://github.com/openSUSE/zypper) |
 | OpenWrt | [opkg](https://openwrt.org/docs/guide-user/additional-software/opkg) |
 | OPNSense | See [FreeBSD](#f) |
 | Oracle Linux | See [Red Hat](#r) |
+| Oracle Solaris | [pkg (IPS)](https://docs.oracle.com/en/operating-systems/solaris/oracle-solaris/11.4/update-sys-add-sw/image-packaging-system.html) |
 
 ## P
 
@@ -200,6 +206,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | pfSense | See [FreeBSD](#f) |
 | Photon OS | [tdnf](https://github.com/vmware/tdnf) |
 | Pop!_OS | See [Debian](#d) |
+| postmarketOS | See [Alpine](#a) |
 | Proxmox | See [Debian](#d) |
 | Puppy Linux | [PETget](http://wikka.puppylinux.com/PETget) |
 
@@ -269,7 +276,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | OS/Distro | Package Manager |
 | :---: | --- |
 | Whonix | See [Debian](#d) |
-| Windows | [AppGet (dead)](https://github.com/appget/appget)<br>[apt-cyg](https://github.com/kou1okada/apt-cyg)<br>[Chocolatey](https://docs.chocolatey.org)<br>[Electric (dead)](https://github.com/dimensionhq/electric)<br>[hok](https://github.com/chawyehsu/hok)<br>[Ninite](https://ninite.com)<br>[Novus](https://www.novuspkg.com/)<br>[Npackd](https://www.wikiwand.com/en/articles/Netpkg)<br>[RuckZuck](https://ruckzuck.tools)<br>[Scoop](https://github.com/ScoopInstaller/Scoop)<br>[UniGetUI](https://github.com/marticliment/UniGetUI)<br>[WinGet](https://learn.microsoft.com/en-us/windows/package-manager/)<br>[WPKG](https://wpkg.org)<br>[Zero Install](https://0install.net) |
+| Windows | [AppGet (dead)](https://github.com/appget/appget)<br>[apt-cyg](https://github.com/kou1okada/apt-cyg)<br>[Chocolatey](https://docs.chocolatey.org)<br>[Electric (dead)](https://github.com/dimensionhq/electric)<br>[hok](https://github.com/chawyehsu/hok)<br>[Ninite](https://ninite.com)<br>[Novus](https://www.novuspkg.com/)<br>[Npackd](https://npackd.org)<br>[RuckZuck](https://ruckzuck.tools)<br>[Scoop](https://github.com/ScoopInstaller/Scoop)<br>[UniGetUI](https://github.com/marticliment/UniGetUI)<br>[WinGet](https://learn.microsoft.com/en-us/windows/package-manager/)<br>[WPKG](https://wpkg.org)<br>[Zero Install](https://0install.net) |
 | Wolfi | [apk](https://github.com/wolfi-dev) |
 
 ## X

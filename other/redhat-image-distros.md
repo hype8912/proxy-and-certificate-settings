@@ -6,12 +6,12 @@
 | almalinux:8                            |  69MB | DNF, RPM, Yum           |
 | almalinux:9-minimal                    |  34MB | MicroDNF, RPM           |
 | almalinux:9                            |  67MB | DNF, RPM, Yum           |
-| almalinux:10-minimal                   |  29MB | MicroDNF, RPM           |
-| almalinux:10                           |  64MB | DNF, RPM, Yum           |
+| almalinux:10-minimal                   |  30MB | MicroDNF, RPM           |
+| almalinux:10                           |  65MB | DNF, RPM, Yum           |
 | amazonlinux:1                          |  60MB | RPM, Yum                |
 | amazonlinux:2                          |  60MB | RPM, Yum                |
 | amazonlinux:2022                       |  55MB | DNF, RPM, Yum           |
-| amazonlinux:2023                       |  51MB | DNF, RPM, Yum           |
+| amazonlinux:2023                       |  52MB | DNF, RPM, Yum           |
 | quay.io/centos/centos:6                |  67MB | RPM, Yum                |
 | quay.io/centos/centos:7                |  73MB | RPM, Yum                |
 | quay.io/centos/centos:8                |  80MB | DNF, RPM, Yum           |
