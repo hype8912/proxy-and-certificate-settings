@@ -12,10 +12,10 @@ LOCAL_CERTS_PEM_NAME="Company_CA.pem"
 LOCAL_CERTS_TAR_NAME="Company_certs.tar"
 
 # Define OS variables
-SOLUS_REPO_LOCAL_PATH: "/etc/eopkg/repositories.d"
-SOLUS_INSTALL_PACKAGES: ""
-SOLUS_SSL_CERT_DIR: "/etc/ssl/certs"
-SOLUS_LOCAL_CRT_NAME: "ca_certificates.crt"
+SOLUS_REPO_LOCAL_PATH="/etc/eopkg/repositories.d"
+SOLUS_INSTALL_PACKAGES=""
+SOLUS_SSL_CERT_DIR="/etc/ssl/certs"
+SOLUS_LOCAL_CRT_NAME="ca_certificates.crt"
 
 # shellcheck source=../common-functions.sh
 . ../common-functions.sh

@@ -12,9 +12,9 @@ LOCAL_CERTS_PEM_NAME="Company_CA.pem"
 LOCAL_CERTS_TAR_NAME="Company_certs.tar"
 
 # Define OS variables
-GENTOO_REPO_LOCAL_PATH: "/etc/portage/repos.conf"
-GENTOO_INSTALL_PACKAGES: "ca-certificates"
-GENTOO_SSL_CERT_DIR: "/usr/local/share/ca-certificates"
+GENTOO_REPO_LOCAL_PATH="/etc/portage/repos.conf"
+GENTOO_INSTALL_PACKAGES="ca-certificates"
+GENTOO_SSL_CERT_DIR="/usr/local/share/ca-certificates"
 
 # shellcheck source=../common-functions.sh
 . ../common-functions.sh

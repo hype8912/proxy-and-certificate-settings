@@ -21,7 +21,7 @@ for tag in $(regctl tag ls "${image_name}"); do
         if [ "${pull_line_wrote}" = "false" ]; then
             echo "docker pull ${image_name}@${image_sha} \\" > $out_file
             matching_tag=true
-            matching_tag=true
+            pull_line_wrote=true
         else
             echo "${tag}"
             echo "&& docker image tag ${image_name}:${image_tag} ${destination_registry}/${image_name}:${tag} \\" >> $out_file

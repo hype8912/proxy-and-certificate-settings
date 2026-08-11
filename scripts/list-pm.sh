@@ -53,7 +53,7 @@ for manager in ${package_managers}; do
         fi
 	else
         if [[ "${use_printf}" = 1 ]]; then
-            printf "%s not found." "${manager}"
+            printf "%s not found.\n" "${manager}"
         else
             echo "${manager} not found."
         fi

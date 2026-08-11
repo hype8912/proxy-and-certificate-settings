@@ -12,9 +12,9 @@ LOCAL_CERTS_PEM_NAME="Company_CA.pem"
 LOCAL_CERTS_TAR_NAME="Company_certs.tar"
 
 # Define OS variables
-SLACKWARE_REPO_LOCAL_PATH: "/etc/slackpkg/mirrors"
-SLACKWARE_INSTALL_PACKAGES: "ca-certificates"
-SLACKWARE_SSL_CERT_DIR: "/etc/ssl/certs"
+SLACKWARE_REPO_LOCAL_PATH="/etc/slackpkg/mirrors"
+SLACKWARE_INSTALL_PACKAGES="ca-certificates"
+SLACKWARE_SSL_CERT_DIR="/etc/ssl/certs"
 
 # shellcheck source=../common-functions.sh
 . ../common-functions.sh

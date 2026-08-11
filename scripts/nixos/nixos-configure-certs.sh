@@ -12,9 +12,9 @@ LOCAL_CERTS_PEM_NAME="Company_CA.pem"
 LOCAL_CERTS_TAR_NAME="Company_certs.tar"
 
 # Define OS variables
-NIXOS_REPO_LOCAL_PATH: "/nix/store"
-NIXOS_INSTALL_PACKAGES: ""
-NIXOS_SSL_CERT_DIR: "/etc/ssl/certs"
+NIXOS_REPO_LOCAL_PATH="/nix/store"
+NIXOS_INSTALL_PACKAGES=""
+NIXOS_SSL_CERT_DIR="/etc/ssl/certs"
 
 # shellcheck source=../common-functions.sh
 . ../common-functions.sh
