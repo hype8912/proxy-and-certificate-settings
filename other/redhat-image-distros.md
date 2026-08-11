@@ -27,9 +27,10 @@
 | eurolinux/eurolinux-9:latest [^el-eol] |  61MB | DNF, RPM, Yum           |
 | fedora:40                              |  78MB | DNF, RPM, Yum           |
 | fedora:41                              |  57MB | DNF, MicroDNF, RPM, Yum |
-| fedora:42 (latest)                     |  58MB | DNF, MicroDNF, RPM, Yum |
+| fedora:42                              |  58MB | DNF, MicroDNF, RPM, Yum |
 | fedora:43                              |  64MB | DNF, MicroDNF, RPM, Yum |
-| fedora:44 (rawhide)                    |  64MB | DNF, MicroDNF, RPM, Yum |
+| fedora:44 (latest)                     |  66MB | DNF, MicroDNF, RPM, Yum |
+| fedora:45 (rawhide)                    |  67MB | DNF, MicroDNF, RPM, Yum |
 | oraclelinux:6                          |  67MB | RPM, Yum                |
 | oraclelinux:7-slim                     |  48MB | RPM, Yum                |
 | oraclelinux:7                          |  91MB | RPM, Yum                |

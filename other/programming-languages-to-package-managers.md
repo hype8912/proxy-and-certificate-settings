@@ -136,7 +136,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Coconut | See [Python](#python) |
 | CoffeeScript | See [JavaScript](#javascript) |
 | ColdFusion | [cfpm](https://helpx.adobe.com/coldfusion/using/coldfusion-package-manager.html) |
-| Common Lisp | [cfpm](https://gitlab.common-lisp.net/clpm/clpm) |
+| Common Lisp | [CLPM](https://gitlab.common-lisp.net/clpm/clpm)<br>[Quicklisp](https://www.quicklisp.org)<br>[Ultralisp](https://ultralisp.org) |
 | COMAL | :grey_question: |
 | Converge | :grey_question: |
 | Coq | See [OCaml](#ocaml) |
@@ -173,8 +173,9 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | EDL | :grey_question: |
 | Eiffel | [IRON](https://www.eiffel.org/doc/solutions/IRON-_Eiffel_package_repository#IRON_client_tool) |
 | ELAN | :grey_question: |
-| Elixir | See [Erlang](#erlang) |
+| Elixir | [Mix](https://hexdocs.pm/mix/Mix.html)<br>See also [Erlang](#erlang) |
 | Elm | [Elm Install](https://github.com/gdotdesign/elm-github-install) |
+| Emacs Lisp | [package.el](https://www.gnu.org/software/emacs/manual/html_node/emacs/Package-Installation.html) (built-in, uses [MELPA](https://melpa.org)/[ELPA](https://elpa.gnu.org))<br>[straight.el](https://github.com/radian-software/straight.el)<br>[use-package](https://github.com/jwiegley/use-package) |
 | Epigram | :grey_question: |
 | Erlang<a name="erlang"></a> | [agner](https://github.com/agner/agner)<br>[epax](https://github.com/erlware/epax)<br>[Hex](https://hex.pm)<br>[PARN](https://github.com/imerkle/parn) |
 | Euphoria | [eudrop (dead)](https://github.com/xecronix/eudrop) |
@@ -204,7 +205,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Game Maker Language | [Catalyst](https://gamemakerhub.net/catalyst) |
 | Gera | [gerap](https://github.com/geralang/gerap) |
 | GLBasic | :grey_question: |
-| Gleam | See [Erlang](#erlang) |
+| Gleam | [gleam](https://gleam.run/writing-gleam/gleam-toml/)<br>See also [Erlang](#erlang) |
 | Go | [Bingo](https://github.com/TekWizely/bingo)<br>[Dep (dead)](https://github.com/golang/dep)<br>[Glide](https://github.com/Masterminds/glide)<br>[Go Modules](https://go.dev/doc/modules/gomod-ref)<br>[Gopher](https://github.com/theghostmac/gopher)<br>[gpm (dead)](https://github.com/pote/gpm)<br>[gpm](https://github.com/mkloubert/go-package-manager)<br>[gopm (dead)](https://github.com/gpmgo/gopm)<br>[grog](https://github.com/LOTaher/grog)<br>[johnny-deps (dead)](https://github.com/VividCortex/johnny-deps)<br>[Melody (dead)](https://github.com/mdy/melody)<br>[pixi](https://prefix.dev/) |
 | GOAL | See [Java](#java) |
 | Gofer | :grey_question:[^gofer] |
@@ -228,7 +229,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Language | Package Manager |
 | :---: | --- |
 | IDL | :grey_question: |
-| Idris | [elba (dead)](https://github.com/elba/elba) |
+| Idris | [elba (dead)](https://github.com/elba/elba)<br>[pack](https://github.com/stefan-hoeck/idris2-pack) |
 | Io | [Eerie](https://github.com/IoLanguage/io) |
 | Inform | [Inbuild](https://ganelson.github.io/inform/inbuild/M-ui.html) |
 | INTERCAL | :grey_question: |
@@ -367,8 +368,10 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Racket | [PLaneT (dead)](https://docs.racket-lang.org/reference/require.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._planet%29%29)<br>[raco](https://docs.racket-lang.org/pkg/index.html) |
 | Raku | [Zef](https://github.com/ugexe/zef) |
 | REALbasic | |
+| ReasonML | [esy](https://esy.sh)<br>[opam](https://github.com/ocaml/opam)<br>See also [OCaml](#ocaml) |
 | Rebol | |
 | ReCT | [rectx (dead)](https://github.com/hrszpuk/rectx) |
+| ReScript | See [JavaScript](#javascript) |
 | REXX | |
 | Ring | |
 | RPG | |
@@ -418,6 +421,7 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 
 | Language | Package Manager |
 | :---: | --- |
+| Unison | Built into [ucm](https://www.unison-lang.org/docs/tooling/ucm/) (Unison Codebase Manager) |
 | Unknown | [opm (OpenResty PM)](https://github.com/openresty/opm) |
 | Unity | [Git Dependency Resolver](https://github.com/mob-sakai/GitDependencyResolverForUnity)<br>[OpenUPM](https://openupm.com)<br>[Projeny](https://github.com/modesttree/Projeny)<br>[Unity Package Manager CLI (dead)](https://github.com/upm-packages/upm-cli) |
 | Ur/Web | |
@@ -430,6 +434,8 @@ Please do not include [Meta Package Managers](meta-package-mangagers.md) in this
 | Vala | [valapkg](https://github.com/aleksrutins/valapkg)<br>[vamp (dead)](https://github.com/dar5hak/vamp)<br>[Vanat](https://vanat.github.io) |
 | VBScript | |
 | Verilog | [veritas](https://github.com/veritas-verilog/veritas)<br>[vpm](https://github.com/getinstachip/vpm) |
+| VHDL | See [HDL](#h) |
+| Vim Script (VimL) | [lazy.nvim](https://github.com/folke/lazy.nvim)<br>[packer.nvim (dead)](https://github.com/wbthomason/packer.nvim)<br>[Vundle](https://github.com/VundleVim/Vundle.vim)<br>[vim-plug](https://github.com/junegunn/vim-plug) |
 | Visual Basic | |
 | Visual Basic for Applications | [vba-blocks](https://github.com/vba-blocks/vba-blocks) |
 | Visual Basic.Net | See [C#](#csharp) |
