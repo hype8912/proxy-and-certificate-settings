@@ -7,9 +7,11 @@
 | | Bash-It<a name="bash_it"></a> | ellerbrock/bash-it:latest | 19MB | <pre><code class="language-bash">export BASH_IT_HTTP_PROXY="$HTTP_PROXY"&#13;export BASH_IT_HTTPS_PROXY="$HTTPS_PROXY"&#13;export BASH_IT_NO_PROXY="$NO_PROXY"</code>[^bash_it]</pre> | |
 | | Boto | demisto/boto3py3:1.0.0.3609814 | 48MB | | See [AWS CLI](#aws_cli) [^boto] |
 | checkov<a name="checkov"></a> | Checkov[^checkov] | bridgecrew/checkov:latest | 173MB | <pre><code class="language-bash">export PROXY_URL="$HTTP_PROXY"</code></pre> | <pre><code class="language-bash">export BC_CA_BUNDLE="$SSL_CERT_FILE"&#13;export PROXY_CA_PATH="$SSL_CERT_FILE"</code></pre> |
+| | Cypress<br>Playwright<br>Puppeteer[^binary_downloads] | | | Binary downloads honor the standard `HTTP_PROXY`/`HTTPS_PROXY`/`NO_PROXY` variables.<pre><code class="language-bash">export CYPRESS_DOWNLOAD_MIRROR="https://internal.mirror/cypress"&#13;export PLAYWRIGHT_DOWNLOAD_HOST="https://internal.mirror/playwright"&#13;export PUPPETEER_DOWNLOAD_BASE_URL="https://internal.mirror/chrome-for-testing"</code></pre> | See standard [Certificate](certificate-environment-variables.md) variables. |
 | | Databricks Cluster | | | | [Import Certs Script][^databricks_certs] |
 | docker | Docker Service[^docker_service] | | | `/etc/systemd/system/docker.service.d/http-proxy.conf`<pre><code class="language-ini">[Service]&#13;Environment="HTTP_PROXY=$HTTP_PROXY"&#13;Environment="HTTPS_PROXY=$HTTPS_PROXY"&#13;Environment="NO_PROXY=$NO_PROXY"</code></pre>`~/.docker/config.json`<pre><code class="language-json">{&#13;  "proxies": {&#13;    "default": {&#13;      "httpProxy": "$HTTP_PROXY",&#13;      "httpsProxy": "$HTTPS_PROXY",&#13;      "noProxy": "$NO_PROXY"&#13;    }&#13;  }&#13;}</code></pre> | |
 | freshclam | ClamAV<a name="clamav"></a> | clamav/clamav:latest | 254MB | `/etc/freshclam.conf`<pre><code class="language-ini">HTTPProxyServer "$HTTPS_PROXY_HOST"&#13;HTTPProxyPort "$HTTPS_PROXY_PORT"</code>[^clamav_proxy]</pre> | <pre><code class="language-bash">export CURL_CA_BUNDLE="$SSL_CA_CERT"</code>[^clamav_certs]</pre> |
+| | Firefox<br>Thunderbird[^firefox_nss] | | | Uses the OS proxy settings by default; can be overridden in `about:preferences#general` > Network Settings. | Firefox and Thunderbird use their own NSS certificate database rather than the OS trust store.<pre><code class="language-bash">certutil -A -n "My CA" -t "C,," -i "$SSL_CERT_FILE" -d sql:~/.mozilla/firefox/&lt;profile&gt;</code></pre> |
 | git<br>git-lfs<a name="git"></a> | | alpine/git:latest | 32MB | | <pre><code class="language-bash">export GIT_SSL_CAINFO="$SSL_CERT_FILE"&#13;export GIT_SSL_CAPATH="$SSL_CERT_DIR"&#13;git config --global http.sslVerify true</code>[^git_cainfo] [^git_capath]</pre>Windows-only:<br><code class="language-batchfile">git config --global credential.helper wincred&#13; git config --global http.sslbackend schannel</code><br><br>Mac-only:<br><code class="language-bash">git config --global credential.helper osxkeychain</code> |
 | | GitLab Runner Service | gitlab/gitlab-runner:latest | 106MB | `/etc/systemd/system/gitlab-runner.service.d/http-proxy.conf`[^gitlab_runner_proxy_conf]<pre><code class="language-ini" style="white-space:pre-wrap;">[Service]&#13;Environment="HTTP_PROXY=$HTTP_PROXY"&#13;Environment="HTTPS_PROXY=$HTTPS_PROXY"&#13;Environment="NO_PROXY=$NO_PROXY"</code></pre>`/etc/gitlab-runner/config.toml`[^gitlab_runner_proxy_docker]<pre><code class="language-toml" style="white-space:pre-wrap;">[[runners]]&#13;pre_get_sources_script = "git config --global http.proxy $HTTP_PROXY; git config --global https.proxy $HTTPS_PROXY"&#13;environment = ["https_proxy=$HTTPS_PROXY", "http_proxy=$HTTP_PROXY", "HTTPS_PROXY=$HTTPS_PROXY", "HTTP_PROXY=$HTTP_PROXY"]</code></pre> | `/etc/gitlab-runner/config.toml`[^gitlab_runner]<pre><code class="language-toml" style="white-space:pre-wrap;">[[runners]]&#13;tls-ca-file = "$SSL_CERT_FILE"&#13;&#13;[runners.docker]&#13;volumes = ["/path/to-ca-cert-dir/ca.crt:/etc/gitlab-runner/certs/ca.crt:ro"]</code></pre>`.gitlab-ci.yml`<pre><code class="language-yaml">variables:&#13;  ADDITIONAL_CA_CERT_BUNDLE: "$SSL_CERT_FILE"</code></pre> |
 | gcloud<a name="gcloud"></a> | Google Cloud SDK | | | | <code class="language-bash">gcloud config set core/custom_ca_certs_file "$SSL_CERT_FILE"</code>[^gcloud] |
@@ -24,12 +26,15 @@
 | | Netbeans IDE | | | 1. Open Netbeans, go to **Tools** then **Options** menu item.<br>2. Click the **General** tab.<br>3. Select **Manual Proxy Settings**.<br>4. Set **Address** to "$HTTP_PROXY_HOST" and **Port** to "$HTTP_PROXY_PORT". | |
 | | Periscope Authenticator | | | <pre><code class="language-bash" style="white-space:pre-wrap;">git config --global lfs.transfer.enablehrefrewrite true&#13;&#13;git config --global url."http://localhost:[Local Port]".insteadOf"[Git Host URL]"</code></pre> | |
 | pio | PlatformIO Core | | | | <code class="language-bash">export REQUESTS_CA_BUNDLE="$SSL_CERT_FILE"</code>[^platformio_cert] |
+| podman<a name="podman"></a> | Podman[^podman] | | | `$HOME/.config/containers/containers.conf` (rootless) or `/etc/containers/containers.conf` (rootful)[^podman]<pre><code class="language-toml">[containers]&#13;env = ["http_proxy=$HTTP_PROXY", "https_proxy=$HTTPS_PROXY", "no_proxy=$NO_PROXY"]</code></pre> | <code class="language-bash">podman run --cert-dir "$SSL_CERT_DIR" ...</code><br>Registry-specific certs: `/etc/containers/certs.d/<registry>/ca.crt`[^podman] |
+| | Postman | | | Settings > Proxy > configure "$HTTP_PROXY_HOST"/"$HTTP_PROXY_PORT" (or use the system proxy).[^postman_proxy] | Settings > Certificates > CA Certificates > toggle on and select "$SSL_CERT_FILE".[^postman_certs] |
 | pycharm | PyCharm | | | 1. Open PyCharm, go to **File** then **Settings** menu item.<br>2. Navigate to **Appearance & Behavior** > **System Settings** > **HTTP Proxy**.<br>3. Set **Host name** to "$HTTP_PROXY_HOST" and **Port number** to "$HTTP_PROXY_PORT".<br>4. Set **No proxy for** to "$NO_PROXY". [^pycharm_proxy] | 1. Open PyCharm, go to **File** then **Settings** menu item.<br>2. Navigate to **Appearance & Behavior** > **System Settings** > **Server Certificates**.<br>3. Select the **+** and choose the "$SSL_CERT_FILE". [^pycharm_certs] |
 | subscription-manager | RHEL Subscription Manager | redhat/ubi9:latest | 84MB | <code class="language-bash" style="white-space:pre-wrap;">subscription-manager config --server.proxy_hostname "$HTTP_PROXY_HOST" --server.proxy_port "$HTTP_PROXY_PORT" --server.no_proxy "$NO_PROXY"</code> | |
 | svn | Subversion | elleflorio/svn-server:latest | 18MB | `~/.subversion/servers` or `%APPDATA%\Subversion\servers`[^svn]<pre><code class="language-ini">[global]&#13;http-proxy-host=$HTTP_PROXY_HOST&#13;http-proxy-port=$HTTP_PROXY_PORT</code></pre> | `~/.subversion/servers` or `%APPDATA%\Subversion\servers`<pre><code class="language-ini">[global]&#13;ssl-trust-default-ca=no&#13;ssl-authority-files=$SSL_CERT_FILE</code></pre> |
 | <a name="supervisely"></a> | Supervisely | | | | <pre><code class="language-bash">export REQUESTS_CA_BUNDLE="$SSL_CERT_FILE"&#13;export SLY_EXTRA_CA_CERTS="$SSL_CERT_FILE"</code>[^supervisely]</pre> |
 | | TerraTeam | ghcr.io/terrateamio/terrat-oss:latest | | | <code class="language-yaml" style="white-space:pre-wrap;">hooks:&#13;  all:&#13;    pre:&#13;      - type: run&#13;        cmd: ['sh', '-c', 'echo "$SELF_SIGNED_CERT" > $SSL_CA_CERT && update-ca-certificates']</code>[^terrateamio] |
 | vault | HashiCorp Vault | | | | <code class="language-bash">vault write /auth/jwt/config jwks_ca_pem=$SSL_CERT_FILE</code>[^vault_cert] |
+| | VS Code Desktop[^vscode_desktop] | | | `settings.json`<pre><code class="language-json">{&#13;  "http.proxy": "$HTTP_PROXY",&#13;  "http.proxySupport": "on"&#13;}</code></pre> | <code class="language-bash">export NODE_EXTRA_CA_CERTS="$SSL_CERT_FILE"</code><br>`settings.json`<pre><code class="language-json">{&#13;  "http.proxyStrictSSL": true&#13;}</code></pre> |
 | <a name="vs-code-server"></a> | VS Code Server | | | <code class="language-bash">export VSCODE_PROXY_URI="$HTTP_PROXY"</code>[^vscode_srv] | |
 | wget | GNU Wget | alpine:latest | 4MB | | `/etc/wgetrc` or `~/.wgetrc` file[^wget]<pre><code class="language-properties">ca_certificate=$SSL_CERT_FILE&#13;ca_directory=$SSL_CERT_DIR</code></pre> |
 
@@ -41,12 +46,14 @@
 [^aws_cli]: https://docs.aws.amazon.com/cli/v1/userguide/cli-configure-envvars.html
 [^azure_cli]: https://learn.microsoft.com/en-us/cli/azure/use-azure-cli-successfully-troubleshooting#work-behind-a-proxy
 [^bash_it]: https://bash-it.readthedocs.io/en/latest/proxy_support/
+[^binary_downloads]: https://docs.cypress.io/app/references/advanced-installation<br>https://github.com/microsoft/playwright/issues/16128<br>https://github.com/puppeteer/puppeteer/pull/10130
 [^boto]: https://boto3.amazonaws.com/v1/documentation/api/latest/guide/configuration.html
 [^checkov]: https://www.checkov.io/2.Basics/CLI%20Command%20Reference.html#environment-variables
 [^clamav_certs]: https://docs.clamav.net/faq/faq-freshclam.html?highlight=certificate#problem-with-the-ssl-ca-cert
 [^clamav_proxy]: https://docs.clamav.net/manual/Usage/Configuration.html?highlight=proxy#freshclamconf
 [^databricks_certs]: https://kb.databricks.com/python/import-custom-ca-cert
 [^docker_service]: https://docs.docker.com/engine/daemon/proxy/#systemd-unit-file
+[^firefox_nss]: https://wiki.archlinux.org/title/User:Grawity/Adding_a_trusted_CA_certificate#Personal_%E2%80%93_NSS_(Chromium,_Firefox)
 [^gcloud]: https://cloud.google.com/sdk/docs/proxy-settings
 [^git_cainfo]: https://git-scm.com/docs/git-config#Documentation/git-config.txt-httpsslCAInfo
 [^git_capath]: https://git-scm.com/docs/git-config#Documentation/git-config.txt-httpsslCAPath
@@ -59,6 +66,9 @@
 [^minikube_cert]: https://minikube.sigs.k8s.io/docs/handbook/vpn_and_proxy/#x509-certificate-signed-by-unknown-authority
 [^net_framework_proxy]: https://learn.microsoft.com/en-us/dotnet/framework/configure-apps/file-schema/network/proxy-element-network-settings
 [^platformio_cert]: https://docs.platformio.org/en/latest/core/installation/proxy-configuration.html
+[^podman]: https://podman-desktop.io/docs/proxy
+[^postman_certs]: https://learning.postman.com/docs/sending-requests/authorization/certificates
+[^postman_proxy]: https://learning.postman.com/docs/sending-requests/capturing-request-data/capturing-https-traffic/
 [^pycharm_certs]: https://www.jetbrains.com/help/pycharm/settings-tools-server-certificates.html
 [^pycharm_proxy]: https://www.jetbrains.com/help/pycharm/settings-http-proxy.html
 [^supervisely]: https://developer.supervisely.com/app-development/advanced/custom-configuration/fixing-ssl-certificate-errors-in-supervisely
@@ -66,5 +76,6 @@
 [^terrateamio]: https://docs.terrateam.io/security-and-compliance/self-signed-certificates/
 [^test_image]: [Test Image Disclaimer](README.md#test-image)
 [^vault_cert]: https://developer.hashicorp.com/vault/api-docs/auth/jwt#jwks_ca_pem
+[^vscode_desktop]: https://code.visualstudio.com/docs/setup/network
 [^vscode_srv]: https://github.com/coder/code-server/blob/main/patches/proxy-uri.diff
 [^wget]: https://www.gnu.org/software/wget/manual/html_node/Wgetrc-Commands.html#Wgetrc-Commands-1

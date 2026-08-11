@@ -9,10 +9,12 @@ If no information is provided in the `Proxy Instructions` or `Certificate Instru
 | Package manager | Name | Image Base | Test Image[^test_image] | Test Image Size[^test_image] | Proxy Instructions | Certificate Instructions |
 | :---: | :---: | :---: | --- | :---: | --- | --- |
 | alr | Alire | Debian | esolang/ada:latest | 286MB | | |
+| ansible-galaxy<a name="ansible-galaxy"></a> | Ansible Galaxy[^ansible_galaxy] | | | | See [standard proxy variables](proxy-environment-variables.md). | <code class="language-bash">export REQUESTS_CA_BUNDLE="$SSL_CERT_FILE"</code>[^ansible_galaxy] |
 | apk | Alpine Package | Alpine | alpine:latest | 3.5MB | | |
 | apt<a name="apt"></a> | Advanced Package Tool | Debian | debian:stable-slim<br>ubuntu:latest | 27MB<br>28MB | <pre language="bash">echo 'Acquire::http::Proxy "$HTTP_PROXY";' > /etc/apt/apt.conf.d/00proxy&#13;echo 'Acquire::https::Proxy "$HTTPS_PROXY";' >> /etc/apt/apt.conf.d/00proxy&#13;echo 'Acquire::ftp::Proxy "$FTP_PROXY";' >> /etc/apt/apt.conf.d/00proxy</pre> | |
 | apt-get | | Debian | debian:stable-slim<br>ubuntu:latest | 27MB<br>28MB | See [apt](#apt). | |
 | apx | | Debian | ghcr.io/vanilla-os/desktop:v1.1.3 | 3.2GB | | |
+| bazel<a name="bazel"></a> | Bazel[^bazel] | Debian | | | <pre><code class="language-bash">bazel build --action_env=HTTP_PROXY="$HTTP_PROXY" --action_env=HTTPS_PROXY="$HTTPS_PROXY" //...</code></pre>[^bazel_proxy] | See [java](application-proxy-settings.md#java). |
 | bower | Bower (node)[^bower] | Debian | danlynn/ember-cli:latest | 717MB | <pre><code class="language-bash">export bower_proxy="$HTTP_PROXY"&#13;export bower_https_proxy="$HTTPS_PROXY"</code></pre>See also [npm](#npm). | <code class="language-bash">export bower_ca="$SSL_CERT_FILE"</code><br>See also [npm](#npm). |
 | brew | Homebrew | Debian | homebrew/brew:latest | 1.2GB[^brew] | | |
 | bun | Bun (node) | Alpine<br>Debian | oven/bun:alpine<br>oven/bun:latest | 44MB<br>88MB | See [npm](#npm). | See [npm](#npm). |
@@ -46,8 +48,10 @@ If no information is provided in the `Proxy Instructions` or `Certificate Instru
 | gradle | Gradle[^gradle] | Debian | gradle:latest | 377MB | <pre><code class="language-bash">gradlew -Dhttp.proxyHost=$HTTP_PROXY_HOST \ &#13; -Dhttp.proxyPort=$HTTP_PROXY_PORT \ &#13; -Dhttps.proxyHost=$HTTPS_PROXY_HOST \ &#13; -Dhttps.proxyPort=$HTTPS_PROXY_PORT \ &#13; -Dhttp.nonProxyHosts=$NO_PROXY \ &#13; -Dhttps.nonProxyHosts=$NO_PROXY</code></pre> | |
 | guix | GNU Guix | NixOS | metacall/guix:latest | 992MB | | |
 | hatch | Hatchling (python) | | | | | See [pip](#pip). |
+| helm<a name="helm"></a> | Helm[^helm] | | | | See [standard proxy variables](proxy-environment-variables.md).[^helm_proxy] | <code class="language-bash">helm repo add &lt;name&gt; &lt;url&gt; --ca-file "$SSL_CERT_FILE"</code>[^helm] |
 | hex<a name="hex"></a> | | Debian | erlang:slim | 119MB | | <code class="language-bash">export HEX_CACERTS_PATH="$SSL_CERT_FILE"</code>[^hex] |
 | hpm | HarmonyOS Package Manager[^hpm] | | | | <pre><code class="language-bash">hpm config set http_proxy $HTTP_PROXY&#13;hpm config set https_proxy $HTTPS_PROXY</code></pre> | |
+| julia<a name="julia"></a> | Julia Pkg[^julia] | Debian | julia:latest | | See [standard proxy variables](proxy-environment-variables.md).[^julia_proxy] | <code class="language-bash">export JULIA_SSL_CA_ROOTS_PATH="$SSL_CERT_FILE"</code>[^julia] |
 | lein<a name="lein"></a> | Leiningen | Debian | clojure:latest | 287MB | | See [java](application-proxy-settings.md#java). |
 | luarocks | LuaRocks | Alpine<br>Debian | nickblah/lua:5-luarocks-alpine3<br>nickblah/lua:latest | 7MB<br>47MB | | |
 | mamba | Mamba | Debian | condaforge/miniforge3:latest | 141MB | | <pre><code class="language-bash">export CURL_CA_BUNDLE="$SSL_CA_CERT"&#13;export REQUESTS_CA_BUNDLE="$SSL_CERT_FILE"</code></pre>See also [conda](#conda). |
@@ -75,7 +79,9 @@ If no information is provided in the `Proxy Instructions` or `Certificate Instru
 | poetry | Poetry (python) | Debian | sunpeek/poetry:py3.11-slim | 90MB | | See [pip](#pip). |
 | port | MacPorts | MacOS | | | | |
 | rpm<a name="rpm"></a> | RPM Package Manager | Red Hat | See [Red Hat Image Distros](other/redhat-image-distros.md) | | | |
+| rustup<a name="rustup"></a> | rustup (Rust toolchain)[^rustup] | Debian | rustlang/rust:nightly | | <code class="language-bash">export https_proxy="$HTTPS_PROXY"</code>[^rustup]<br>See also [cargo](#cargo). | See also [cargo](#cargo). |
 | sbt | simple build tool[^sbt] | Alpine | sbtscala/scala-sbt:eclipse-temurin-alpine-23.0.1_11_1.10.7_3.3.5 | 503MB | <pre><code class="language-bash" style="white-space: pre-wrap;">export JAVA_OPTS="$JAVA_OPTS -Dhttp.proxyHost=$HTTP_PROXY_HOST -Dhttp.proxyPort=$HTTP_PROXY_PORT -Dhttps.proxyHost=$HTTPS_PROXY_HOST -Dhttps.proxyPort=$HTTPS_PROXY_PORT"</code></pre> | See [java](application-proxy-settings.md#java). |
+| scoop<a name="scoop"></a> | Scoop[^scoop] | Windows | | | <code class="language-batchfile">scoop config proxy "$HTTP_PROXY_HOST:$HTTP_PROXY_PORT"</code>[^scoop] | |
 | slackpkg | Slack Package | Slackware | aclemons/slackware:latest | 66MB | | |
 | slapt-get | | Slackware | gnujaos/slapt-get-current-min:latest | 71MB | | |
 | snap | Snap | Arch Linux | manjarolinux/base:latest | 277MB | <pre><code class="language-bash">snap set system proxy.http="$HTTP_PROXY"&#13;snap set system proxy.https="$HTTPS_PROXY"</code></pre> | |
@@ -86,6 +92,7 @@ If no information is provided in the `Proxy Instructions` or `Certificate Instru
 | uv<a name="uv"></a> | uv (python) | Alpine | ghcr.io/astral-sh/uv:python3.13-alpine | 85MB | | <pre><code class="language-bash">export UV_NATIVE_TLS=true</code></pre>See also [pip](#pip). |
 | vcpkg | Visual C Package | Alpine<br>Debian | acgetchell/vcpkg-image:alpine<br>acgetchell/vcpkg-image:latest | 136MB<br>507MB | | |
 | volta | | Debian | domjtalbot/volta:latest | 92MB | | |
+| winget<a name="winget"></a> | Windows Package Manager[^winget] | Windows | | | <pre><code class="language-batchfile">winget settings --enable ProxyCommandLineOptions&#13;winget install Contoso.App --proxy "%HTTP_PROXY%"</code></pre>Also honors the standard `HTTP_PROXY`/`HTTPS_PROXY`/`NO_PROXY` environment variables.[^winget_proxy] | |
 | xbps | X Binary Package System | Void Linux | ghcr.io/void-linux/void-musl-full:latest | 81MB | | |
 | yarn<a name="yarn"></a> | Yet Another Resource Negotiator (node)[^yarn] | Alpine | jitesoft/node-yarn:lts-slim | 60MB | <pre><code class="language-bash">yarn config set httpProxy "$HTTP_PROXY"&#13;yarn config set httpsProxy "$HTTPS_PROXY"</code></pre>See also [npm](#npm). | <code class="language-bash">yarn config set httpsCaFilePath "$SSL_CERT_FILE"</code><br>See also [npm](#npm). |
 | yum | Yellowdog Update Modifier | Red Hat | See [Red Hat Image Distros](other/redhat-image-distros.md) | | <code class="language-bash">echo "proxy=$HTTP_PROXY" >> /etc/yum.conf</code> | |
@@ -111,7 +118,6 @@ These are known package managers but require more research and testing before be
 | twine<a name="twine"></a> | Twine (python) | | | | | <code class="language-bash">export TWINE_CERT="$SSL_CERT_FILE"</code>[^twine]<br>See also [pip](#pip) |
 | vite<a name="vite"></a> | Vite (node) | | | | See [npm](#npm). | See [npm](#npm). |
 | vlt | vōlt (node) | | | | See [npm](#npm). | See [npm](#npm). |
-| winget<a name="winget"></a> | Windows Package Manager[^winget] | | | | | |
 
 ## Deprecated Package Managers
 
@@ -121,7 +127,10 @@ See the list of [Deprecated Package Managers](deprecated-package-manager-setting
 
 + [Package URL Type definitions](https://github.com/package-url/purl-spec/blob/346589846130317464b677bc4eab30bf5040183a/PURL-TYPES.rst)
 
+[^ansible_galaxy]: https://docs.ansible.com/ansible/latest/collections_guide/collections_installing.html
 [^ballerina]: https://ballerina.io/learn/configure-a-network-proxy/
+[^bazel_proxy]: https://bazel.build/versions/8.0.0/external/advanced#using-proxies
+[^bazel]: https://bazel.build/reference/command-line-reference
 [^bower]: Bower is deprecated and suggested to move to [yarn](#yarn) or [vite](#vite).
 [^brew]: The homebrew image can be made significantly smaller by updating the `Dockerfile` to `git clone --depth 1` instead of the whole `homebrew-core` repo.
 [^cargo_cert]: https://doc.rust-lang.org/cargo/reference/config.html#httpcainfo
@@ -134,17 +143,24 @@ See the list of [Deprecated Package Managers](deprecated-package-manager-setting
 [^deno_cert]: https://docs.deno.com/runtime/reference/env_variables/#std%2Fcli
 [^gradle]: Gradle requires a `gradle.properties` file before being able to set the proxy.
 [^haskell_stack]: https://github.com/commercialhaskell/stack/blob/123622ab2a2b90d80fc617791b57e486aef725a1/doc/faq.md?plain=1#L218
+[^helm_proxy]: https://github.com/helm/helm/issues/12191
+[^helm]: https://helm.sh/docs/helm/helm_repo_add/
 [^hex]: https://hexdocs.pm/hex/Mix.Tasks.Hex.Config.html#module-config-keys
 [^hpm]: https://gitee.com/openharmony/docs/blob/master/en/device-dev/hpm-part/hpm-part-development.md
+[^julia_proxy]: https://discourse.julialang.org/t/installing-packages-via-an-ssh-socks-proxy-on-a-compute-cluster/71735
+[^julia]: https://docs.julialang.org/en/v1/stdlib/NetworkOptions/
 [^maven_cert]: https://maven.apache.org/guides/mini/guide-repository-ssl.html
 [^nix_cert]: https://wiki.nixos.org/wiki/Enterprise
 [^node_certs]: https://nodejs.org/docs/latest/api/cli.html#node_extra_ca_certsfile
 [^pear]: Requires the installation of [Crypt_GPG-1.4.2](https://pear.php.net/package/Crypt_GPG/download) before you can set the 'https_proxy'. See [info link](https://www.reddit.com/r/PHP/comments/4phpz2/errors_installing_crypt_gpg/) for more information.
 [^pip_cert]: https://pip.pypa.io/en/latest/topics/https-certificates/
 [^pkgm]: https://github.com/pkgxdev/pkgm
+[^rustup]: https://rust-lang.github.io/rustup/network-proxies.html
 [^sbt]: https://www.scala-sbt.org/1.x/docs/Command-Line-Reference.html#sbt+JVM+options+and+system+properties
+[^scoop]: https://github.com/ScoopInstaller/Scoop/wiki/Using-Scoop-behind-a-proxy
 [^test_image]: [Test Image Disclaimer](README.md#test-image)
 [^twine]: https://twine.readthedocs.io/en/stable/#environment-variables
 [^unity_proxy]: https://discussions.unity.com/t/difficulties-in-proxy-environment/774349
-[^winget]: https://learn.microsoft.com/en-us/windows/package-manager/
+[^winget_proxy]: https://github.com/microsoft/winget-cli/pull/1776
+[^winget]: https://learn.microsoft.com/en-us/windows/package-manager/winget/settings
 [^yarn]: `caFile` for Yarn 1.0. `caFilePath` for Yarn 2.0/3.0. `httpsCaFilePath` for [Yarn 4.0](https://yarnpkg.com/advanced/changelog#major-changes).

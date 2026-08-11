@@ -18,6 +18,8 @@
 | Linux From Scratch | LFS | sundev79/nutyx-images:nutyx | 130MB | | `/etc/ssl/local/` | <code class="language-bash">make-ca -g --force</code> |
 | NetBSD | Unix | | | | `/etc/openssl/certs/` | |
 | NixOS | NixOS | nixos/nix:latest | 213MB | | `/etc/ssl/certs/` | <code class="language-bash">export NIX_SSL_CERT_FILE="$SSL_CERT_FILE"</code>[^nix_cert] |
+| OpenBSD | Unix | | | | `/etc/ssl/cert.pem` | No built-in bulk-import tool.[^openbsd_certs]<pre><code class="language-bash">cat "$SSL_CERT_FILE" >> /etc/ssl/cert.pem</code></pre> |
+| Photon OS[^photon] | Photon OS | photon:5.0 | 29MB | curl, ca-certificates-pki | `/etc/ssl/certs/`<br>`/etc/pki/tls/certs/ca-bundle.crt` | <code class="language-bash">rehash_ca_certificates</code> |
 | Red Hat | RPM | See [Red Hat Image Distros](other/redhat-image-distros.md) | | curl, findutils, unzip, [step-cli.rpm](https://dl.smallstep.com/cli/docs-ca-install/latest/step-cli_amd64.rpm) | `/etc/pki/ca-trust/source/anchors/`<br>`/usr/share/pki/ca-trust-source/anchors/`[^redhat_certs] | <code class="language-bash">update-ca-trust extract</code> |
 | Slackware | Slackware | aclemons/slackware:latest | 66MB | | `/etc/ssl/certs/` | <code class="language-bash">update-ca-certificates</code> |
 | Solus | Other Linux | silkeh/solus:slim | 268MB | | `/usr/local/share/ca-certificates/` | <code class="language-bash">update-ca-certificates</code> |
@@ -25,6 +27,7 @@
 | SUSE | SUSE | opensuse/archive:13.2<br>opensuse/leap:latest<br>opensuse/tumbleweed:latest | 37MB<br>42MB<br>36MB | curl, unzip, [step-cli.rpm](https://dl.smallstep.com/cli/docs-ca-install/latest/step-cli_amd64.rpm) | `/etc/pki/trust/anchors/` | <code class="language-bash">update-ca-certificates</code> |
 | Void Linux | Other Linux | ghcr.io/void-linux/void-musl-full:latest | 81MB | | `/usr/local/share/ca-certificates/` | <code class="language-bash">update-ca-certificates</code> |
 | Windows | Windows | mcr.microsoft.com/dotnet/framework/sdk:4.8.1 | 2.2GB | | | <code class="language-bat">certutil.exe -addstore CA "%SSL_CERT_FILE%"</code>[^windows_mac] |
+| Wolfi[^wolfi] | Wolfi | cgr.dev/chainguard/wolfi-base:latest | 10MB | ca-certificates | `/etc/ssl/certs/ca-certificates.crt`<br>`/usr/local/share/ca-certificates/` | <code class="language-bash">update-ca-certificates</code> |
 
 ## See also
 
@@ -39,6 +42,9 @@
 [^coreos]: https://github.com/endocode/coreos-docs/blob/master/os/adding-certificate-authorities.md
 [^gentoo]: https://wiki.gentoo.org/wiki/Certificates#OpenSSL-compatible_ca-certificates
 [^nix_cert]: https://wiki.nixos.org/wiki/Enterprise
+[^openbsd_certs]: https://unix.stackexchange.com/questions/513384/how-to-add-ca-cert-to-openbsd-6-4
+[^photon]: https://github.com/vmware/photon/issues/1307
 [^redhat_certs]: https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/security_guide/sec-shared-system-certificates
 [^test_image]: [Test Image Disclaimer](README.md#test-image)
 [^windows_mac]: https://manuals.gfi.com/en/kerio/connect/content/server-configuration/ssl-certificates/adding-trusted-root-certificates-to-the-server-1605.html
+[^wolfi]: https://edu.chainguard.dev/chainguard/chainguard-images/features/ca-docs/custom-assembly-certs/

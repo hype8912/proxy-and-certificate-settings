@@ -17,7 +17,6 @@ This is a generic list of package managers that need testing beyond making the l
 | opkg<a name="opkg"></a> | OPKG[^opkg] |
 | petget | PETget - Puppy Linux |
 | rzget | RuckZuck[^ruckzuck] - Windows |
-| scoop | Scoop[^scoop_proxy] - Windows |
 | sps | SPS[^sps] - Darwin |
 | unearth | Unearth[^unearth] - Python. Used by uv to download packages. |
 | wpkg<a name="wpkg"></a> | WPKG[^wpkg] - Windows |
@@ -33,7 +32,6 @@ This is a generic list of package managers that need testing beyond making the l
 [^npackd]: https://npackd.appspot.com/
 [^opkg]: https://git.yoctoproject.org/opkg/about/#opkg-package-manager
 [^ruckzuck]: https://ruckzuck.tools
-[^scoop_proxy]: https://github.com/ScoopInstaller/Scoop/wiki/Using-Scoop-behind-a-proxy
 [^sps]: https://github.com/alexykn/sps
 [^unearth]: https://unearth.readthedocs.io/en/latest/
 [^wpkg]: https://wpkg.org
