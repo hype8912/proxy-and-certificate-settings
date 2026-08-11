@@ -20,6 +20,7 @@ See also applicable [Proxy](proxy-environment-variables.md) environment variable
 | GIT_SSL_CAPATH | [Git](application-proxy-settings.md#git) | $SSL_CERT_DIR | %SSL_CERT_DIR% |
 | GITLAB_CERTIFICATE_PATH[^megalinter] | MegaLinter | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 | GRYPE_DB_CA_CERT | [Grype](application-proxy-settings.md#grype) | $SSL_CA_CERT | %SSL_CA_CERT% |
+| HATCH_INDEX_CA_CERT[^hatch] | Hatch | $SSL_CA_CERT | %SSL_CA_CERT% |
 | HEX_CACERTS_PATH | [Hex](package-manager-settings.md#hex) | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 | KIBANA_CA[^elasticsearch] | Kibana | $SSL_CERT_FILE | %SSL_CERT_FILE% |
 | MAVEN_OPTS | [Maven](package-manager-settings.md#mvn) | <code class="language-bash" style="white-space:pre-wrap;">-Djavax.net.ssl.trustStore=$SSL_KEYSTORE_FILE -Djavax.net.ssl.trustStorePassword={Password}</code> | <code class="language-batchfile" style="white-space:pre-wrap;">-Djavax.net.ssl.trustStore=%SSL_KEYSTORE_FILE% -Djavax.net.ssl.trustStorePassword={Password}</code> |
@@ -55,6 +56,7 @@ See also applicable [Proxy](proxy-environment-variables.md) environment variable
 [^elasticsearch]: https://www.elastic.co/guide/en/fleet/7.17/agent-environment-variables.html
 [^gitlab_dps]: https://docs.gitlab.com/ee/user/application_security/dependency_scanning/#global-analyzer-settings
 [^hashicorp_vault]: https://developer.hashicorp.com/vault/docs/commands#vault_cacert
+[^hatch]: https://hatch.pypa.io/latest/cli/reference/#hatch-publish
 [^libcloud]: https://libcloud.readthedocs.io/en/latest/other/ssl-certificate-validation.html#using-a-custom-ca-certificate
 [^megalinter]: https://megalinter.io/v5/reporters/GitlabCommentReporter/
 [^mongo]: https://www.mongodb.com/docs/languages/cpp/cpp-driver/current/connect/tls/#specify-a-ca-file
